@@ -3,6 +3,9 @@
 \usepackage{hyphenat}
 \usepackage{indentfirst}
 \usepackage{caption}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
 \usepackage[english, russian]{babel}
 
 % Цитирование.
@@ -19,7 +22,7 @@
 
     % Название статьи
     \begin{center}
-    \large
+    \Large
     \textbf{Разрешение циклических зависимостей графовой математической модели триссируемости требований к ПО на файлы исходного кода}
 
     % Построение графовой математической модели функциональных зависимостей и трассируемости на требования на графовой математической моделе
@@ -28,25 +31,22 @@
 
     \end{center}
 
-    \tableofcontents
-    \newpage
-
-    \section{Аннотация}
+    \section*{Аннотация}
     \input{annotation}
 
-    \section{Введение}
+    \section*{Введение}
     \input{introduction}
 
-    \section{Описание модели}
+    \section*{Описание модели}
     \input{model_description}
 
-    \section{Программная реализация}
+    \section*{Программная реализация}
     \input{software_implementation}
 
-    \section{Эксперименты и обсуждение}
+    \section*{Эксперименты и обсуждение}
     \input{experiments_and_discussion}
 
-    \section{Заключение}
+    \section*{Заключение}
     \input{conclusion}
 
 \end{document}
