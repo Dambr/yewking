@@ -3,3 +3,142 @@
 % Провести сравнение результатов с достижениями других исследователей в данной области
 
 % 2 ссылки на литературу
+
+В целях проверки работоспособности программной реализации описанной модели проводился ряд экспериментов. В качестве входных данных использовались значения числа элементов графа в различных числовых диапазонах. Такое разделение приводит к загрублению результатов пропорционально количеству экспериментальных запусков.
+
+В таблицах 1-3 приведены сведения о времени выполнения операций преобразования результирующего графа при заданных параметрах генератора исходных данных для следующих реализациях коллекции Set:
+\begin{enumerate}
+    \item HashSet - таблица \ref{tab:hashset};
+    \item LinkedHashSet - таблица \ref{tab:linkedhashset};
+    \item TreeSet - таблица \ref{tab:treeset}.
+\end{enumerate}
+
+\begin{table}[H]
+    \caption{Результаты работы программной реализации с применением HashSet}
+    \label{tab:hashset}
+    \begin{tabularx}{1\textwidth} { | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | }    
+        \hline
+        \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+        \hline
+        1 & 100 & 100 & 30 & 30 & 178 \\
+        \hline
+        2 & 100 & 100 & 30 & 50 & 52 \\
+        \hline
+        3 & 100 & 100 & 50 & 30 & 60 \\
+        \hline
+        4 & 100 & 100 & 50 & 50 & 41 \\
+        \hline
+        5 & 100 & 1000 & 30 & 300 & 57 \\
+        \hline
+        6 & 100 & 1000 & 30 & 500 & 77 \\
+        \hline
+        7 & 100 & 1000 & 50 & 300 & 63 \\
+        \hline
+        8 & 100 & 1000 & 50 & 500 & 65 \\
+        \hline
+        9 & 1000 & 100 & 300 & 30 & 7830 \\
+        \hline
+        10 & 1000 & 100 & 300 & 50 & 7402 \\
+        \hline
+        11 & 1000 & 100 & 500 & 30 & 8364 \\
+        \hline
+        12 & 1000 & 100 & 500 & 50 & 8163 \\
+        \hline
+        13 & 1000 & 1000 & 300 & 300 & 6932 \\
+        \hline
+        14 & 1000 & 1000 & 300 & 500 & 6807 \\
+        \hline
+        15 & 1000 & 1000 & 500 & 300 & 8191 \\
+        \hline
+        16 & 1000 & 1000 & 500 & 500 & 8496 \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \caption{Результаты работы программной реализации с применением LinkedHashSet}
+    \label{tab:linkedhashset}
+    \begin{tabularx}{1\textwidth} { | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | }    
+        \hline
+        \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+        \hline
+        1 & 100 & 100 & 30 & 30 & 100 \\
+        \hline
+        2 & 100 & 100 & 30 & 50 & 52 \\
+        \hline
+        3 & 100 & 100 & 50 & 30 & 40 \\
+        \hline
+        4 & 100 & 100 & 50 & 50 & 29 \\
+        \hline
+        5 & 100 & 1000 & 30 & 300 & 88 \\
+        \hline
+        6 & 100 & 1000 & 30 & 500 & 48 \\
+        \hline
+        7 & 100 & 1000 & 50 & 300 & 52 \\
+        \hline
+        8 & 100 & 1000 & 50 & 500 & 71 \\
+        \hline
+        9 & 1000 & 100 & 300 & 30 & 4061 \\
+        \hline
+        10 & 1000 & 100 & 300 & 50 & 2894 \\
+        \hline
+        11 & 1000 & 100 & 500 & 30 & 3065 \\
+        \hline
+        12 & 1000 & 100 & 500 & 50 & 3083 \\
+        \hline
+        13 & 1000 & 1000 & 300 & 300 & 2755 \\
+        \hline
+        14 & 1000 & 1000 & 300 & 500 & 2892 \\
+        \hline
+        15 & 1000 & 1000 & 500 & 300 & 3017 \\
+        \hline
+        16 & 1000 & 1000 & 500 & 500 & 3415 \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \caption{Результаты работы программной реализации с применением TreeSet}
+    \label{tab:treeset}
+    \begin{tabularx}{1\textwidth} { | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | >{\centering\arraybackslash}X | }    
+        \hline
+        \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+        \hline
+        1 & 100 & 100 & 30 & 30 & 186 \\
+        \hline
+        2 & 100 & 100 & 30 & 50 & 116 \\
+        \hline
+        3 & 100 & 100 & 50 & 30 & 70 \\
+        \hline
+        4 & 100 & 100 & 50 & 50 & 52 \\
+        \hline
+        5 & 100 & 1000 & 30 & 300 & 51 \\
+        \hline
+        6 & 100 & 1000 & 30 & 500 & 58 \\
+        \hline
+        7 & 100 & 1000 & 50 & 300 & 78 \\
+        \hline
+        8 & 100 & 1000 & 50 & 500 & 119 \\
+        \hline
+        9 & 1000 & 100 & 300 & 30 & 8083 \\
+        \hline
+        10 & 1000 & 100 & 300 & 50 & 6264 \\
+        \hline
+        11 & 1000 & 100 & 500 & 30 & 7509 \\
+        \hline
+        12 & 1000 & 100 & 500 & 50 & 7562 \\
+        \hline
+        13 & 1000 & 1000 & 300 & 300 & 6640 \\
+        \hline
+        14 & 1000 & 1000 & 300 & 500 & 6911 \\
+        \hline
+        15 & 1000 & 1000 & 500 & 300 & 7982 \\
+        \hline
+        16 & 1000 & 1000 & 500 & 500 & 7705 \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+Результаты экспериментов показывают, что резкое увеличение времени выполнения преобразования графа происходит при увеличении числа файлов исходного кода, а значительное увеличение числа требований к ПО к такому эффекту не приводит.
+
+Наибольшее время требуется при работе с реализацией HashSet и составляет 8496 мс. Наименьшее время требуется при работе с LinkedHashSet. При использовании этой реализации коллекции Set наибольшее время составляет 4061 мс, в то время как для TreeSet максимальное время достигает 8083 мс.
