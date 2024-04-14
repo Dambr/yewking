@@ -6,22 +6,24 @@
 
 В целях проверки работоспособности программной реализации описанной модели проводился ряд экспериментов. В качестве входных данных использовались значения числа элементов графа в различных числовых диапазонах.
 
-В таблицах \ref{tab:hashset}-\ref{tab:treeset} приведены сведения о среднем времени выполнения операций в 1000 экспериментах по преобразованию $G$ в $G'$ при заданных параметрах генератора исходных данных для следующих реализаций коллекции Set:
+В таблицах \ref{tab:hashset}-\ref{tab:treeset} приведены сведения о среднем времени выполнения операций в экспериментах по преобразованию $G$ в $G'$, которые были выполнены по 1000 раз каждый при заданных параметрах генератора исходных данных для следующих реализаций коллекции Set:
 \begin{enumerate}
     \item HashSet - таблица \ref{tab:hashset};
     \item LinkedHashSet - таблица \ref{tab:linkedhashset};
     \item TreeSet - таблица \ref{tab:treeset}.
 \end{enumerate}
 
+На рисунке \ref{fig:bar} приводится графическая интерпретация результатов экспериментов.
+
 \begin{longtable}{|c|c|c|c|c|c|}
     \caption{Результаты работы программной реализации с применением HashSet}
     \label{tab:hashset}\\   
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время, мс} \\
     \hline
     \endfirsthead
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
     \hline
     \endhead
     \hline
@@ -63,11 +65,11 @@
     \caption{Результаты работы программной реализации с применением LinkedHashSet}
     \label{tab:linkedhashset}\\
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
     \hline
     \endfirsthead
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
     \hline
     \endhead
     \hline
@@ -109,11 +111,11 @@
     \caption{Результаты работы программной реализации с применением TreeSet}
     \label{tab:treeset}\\
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
     \hline
     \endfirsthead
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Время, мс} \\
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
     \hline
     \endhead
     \hline
@@ -151,8 +153,6 @@
     \hline
 \end{longtable}
 
-На рисунке \ref{fig:bar} приводится графическое представление результатов экспериментов.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{bar}
@@ -162,4 +162,4 @@
 
 Результаты экспериментов показывают, что резкое увеличение времени выполнения преобразования графа происходит при увеличении числа файлов исходного кода, а значительное увеличение числа требований к ПО к такому эффекту не приводит.
 
-Наибольшее время требуется при работе с реализацией HashSet и составляет 8496 мс. Наименьшее время требуется при работе с LinkedHashSet. При использовании этой реализации коллекции Set наибольшее время составляет 4061 мс, в то время как для TreeSet максимальное время достигает 8083 мс.
+В среднем наибольшее время требуется при работе с реализацией HashSet - 8496 мс. Наименьшее время требуется при работе с LinkedHashSet. При использовании этой реализации коллекции Set наибольшее среднее время составляет 4061 мс, в то время как для TreeSet максимальное значение среднего времени достигает 8083 мс при наибольшем количестве файлов исходного кода.
