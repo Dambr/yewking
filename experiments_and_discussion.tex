@@ -4,7 +4,14 @@
 
 % 2 ссылки на литературу
 
-В целях проверки работоспособности программной реализации описанной модели проводился ряд экспериментов. В качестве входных данных использовались значения числа элементов графа в различных числовых диапазонах.
+В целях проверки работоспособности программной реализации описанной модели проводилась серия экспериментов. В качестве входных данных использовались различные комбинации значений параметров для модуля генерации исходных данных.
+
+Характеристики оборудования, используемого для проведения экспериментов:
+\begin{itemize}
+    \item операционная система - Ubuntu 23.04;
+    \item процессор - 2‑ядерный процессор Intel Core i5 с тактовой частотой 1,8 GHz;
+    \item объем ОЗУ - 8 ГБ.
+\end{itemize}
 
 В таблицах \ref{tab:hashset}-\ref{tab:treeset} приведены сведения о среднем времени выполнения операций в экспериментах по преобразованию $G$ в $G'$, которые были выполнены по 1000 раз каждый при заданных параметрах генератора исходных данных для следующих реализаций коллекции Set:
 \begin{enumerate}
@@ -13,19 +20,17 @@
     \item TreeSet - таблица \ref{tab:treeset}.
 \end{enumerate}
 
-На рисунке \ref{fig:bar} приводится графическая интерпретация результатов экспериментов.
+На рисунках \ref{fig:f_bar} и \ref{fig:l_bar} приводится графическая интерпретация результатов экспериментов при работе с числом файлов исходного кода в 100 и 1000 единиц соответтвенно.
 
 \begin{longtable}{|c|c|c|c|c|c|}
     \caption{Результаты работы программной реализации с применением HashSet}
     \label{tab:hashset}\\   
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время, мс} \\
-    \hline
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfd} & \bfseries{Mfr} & \bfseries{Среднее время, мс} \\
     \endfirsthead
-    \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
-    \hline
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfd} & \bfseries{Mfr} & \bfseries{Среднее время, мс} \\
     \endhead
+    \endfoot
     \hline
     1 & 100 & 100 & 30 & 30 & 42 \\
     \hline
@@ -65,13 +70,11 @@
     \caption{Результаты работы программной реализации с применением LinkedHashSet}
     \label{tab:linkedhashset}\\
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
-    \hline
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfd} & \bfseries{Mfr} & \bfseries{Среднее время, мс} \\
     \endfirsthead
-    \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
-    \hline
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfd} & \bfseries{Mfr} & \bfseries{Среднее время, мс} \\
     \endhead
+    \endfoot
     \hline
     1 & 100 & 100 & 30 & 30 & 37 \\
     \hline
@@ -111,13 +114,14 @@
     \caption{Результаты работы программной реализации с применением TreeSet}
     \label{tab:treeset}\\
     \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
-    \hline
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfd} & \bfseries{Mfr} & \bfseries{Среднее время, мс} \\
+    % \hline
     \endfirsthead
-    \hline
-    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfc} & \bfseries{Mfr} & \bfseries{Средне время} \\
-    \hline
+    % \hline
+    \bfseries{№} & \bfseries{Fc} & \bfseries{Rc} & \bfseries{Mfd} & \bfseries{Mfr} & \bfseries{Среднее время, мс} \\
+    % \hline
     \endhead
+    \endfoot
     \hline
     1 & 100 & 100 & 30 & 30 & 65 \\
     \hline
@@ -155,11 +159,18 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{bar}
-    \caption{Графическая интерпретация результатов экспериментов}
-    \label{fig:bar}
+    \includegraphics[width=0.8\textwidth]{f_bar}
+    \caption{Графическая интерпретация результатов экспериментов при работе с числом файлов исходного кода в 100 единиц}
+    \label{fig:f_bar}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{l_bar}
+    \caption{Графическая интерпретация результатов экспериментов при работе с числом файлов исходного кода в 1000 единиц}
+    \label{fig:l_bar}
 \end{figure}
 
 Результаты экспериментов показывают, что резкое увеличение времени выполнения преобразования графа происходит при увеличении числа файлов исходного кода, а значительное увеличение числа требований к ПО к такому эффекту не приводит.
 
-В среднем наибольшее время требуется при работе с реализацией HashSet - 8496 мс. Наименьшее время требуется при работе с LinkedHashSet. При использовании этой реализации коллекции Set наибольшее среднее время составляет 4061 мс, в то время как для TreeSet максимальное значение среднего времени достигает 8083 мс при наибольшем количестве файлов исходного кода.
+Наибольшее среднее время требуется при работе с реализацией HashSet - 8496~мс. Наименьшее время требуется при работе с LinkedHashSet. При использовании этой реализации коллекции Set наибольшее среднее время составляет 4061~мс, в то время как для TreeSet максимальное значение среднего времени достигает 8083~мс в экспериментах по взаимодействию с файлами исходного кода в количестве 1000 единиц.
