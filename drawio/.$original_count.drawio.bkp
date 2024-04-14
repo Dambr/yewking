@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-04-14T13:43:27.130Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="fSn04R9P4rS4X5CpWMeE" version="24.2.5" type="device">
+<mxfile host="Electron" modified="2024-04-14T13:41:37.930Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="3t0ITl4JzZvrAHzdkBxK" version="24.2.5" type="device">
   <diagram name="Страница — 1" id="Dx4HJu2XlHP2NclFZBdM">
     <mxGraphModel dx="1696" dy="674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -32,7 +32,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aCNr2ZCx3YeNcreIHC94-3" value="F&lt;sup&gt;3&lt;/sup&gt;&lt;sub&gt;sc&lt;/sub&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;strokeWidth=2;fillColor=#E5E4E2;" parent="1" vertex="1">
+        <mxCell id="aCNr2ZCx3YeNcreIHC94-3" value="F3&lt;sub&gt;sc&lt;/sub&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;strokeWidth=2;fillColor=#E5E4E2;" parent="1" vertex="1">
           <mxGeometry x="360" y="160" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="aCNr2ZCx3YeNcreIHC94-4" value="R&lt;sup&gt;1&lt;/sup&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=20;strokeWidth=2;fillColor=#B2BEB5;" parent="1" vertex="1">
