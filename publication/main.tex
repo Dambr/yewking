@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{tempora}
+\usepackage{hyphenat}
+\usepackage{indentfirst}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
+\usepackage[english, russian]{babel}
+\usepackage{tabularray}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{mathtools}
+\usepackage{hhline}
+
+\definecolor{light-colar}{rgb}
+{0.9411764705882353, 0.5019607843137255, 0.5019607843137255}
+
+\definecolor{light-orange}{rgb}
+{0.996078431372549, 0.8470588235294118, 0.6941176470588235}
+
+\definecolor{crayola}{rgb}
+{1, 0.43529411764705883, 1}
+
+\definecolor{light-green}{rgb}
+{0.5647058823529412, 0.9333333333333333, 0.5647058823529412}
+
+\definecolor{light-blue}{rgb}
+{0.6784313725490196, 0.8470588235294118, 0.9019607843137255}
+
+\definecolor{mauve}{rgb}
+{0.8784313725490196, 0.6901960784313725, 1}
+
+\definecolor{ash-grey}{rgb}
+{0.6980392156862745, 0.7450980392156863, 0.7098039215686275}
+
+\definecolor{platinum}{rgb}
+{0.8980392156862745, 0.8941176470588236, 0.8862745098039215}
+
+% Цитирование.
+% Беря за основу исследование <автора>, где <за что в той статье зацепились>, предположим, что ...
+% Таким образом рассмотреть порядка 10 исследований
+
+% Описание исследования должно происходить в контексте новизны диссертации
+% Исследуя труды <авторов> и пришли к выводу, что тема <название, описание темы> раскрыта неполностью
+% Исследуя труды <авторов> и пришли к выводу, что тема <название, описание темы> никогда не была иссладована в контексте <название, описание контекста>
+
+
+
+\begin{document}
+
+    % Название статьи
+    \begin{center}
+    \Large
+    \textbf{Разрешение циклических зависимостей графовой математической модели триссируемости требований к ПО на файлы исходного кода}
+    \end{center}
+
+    \section*{Аннотация}
+    \input{annotation}
+
+    \section*{Введение}
+    \input{introduction}
+
+    \section*{Описание модели}
+    \input{model_description}
+
+    \section*{Программная реализация}
+    \input{software_implementation}
+
+    \section*{Эксперименты и обсуждение}
+    \input{experiments_and_discussion}
+
+    \section*{Заключение}
+    \input{conclusion}
+
+    \section*{Литература}
+    \input{literature}
+
+\end{document}
