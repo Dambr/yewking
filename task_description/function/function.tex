@@ -19,13 +19,14 @@
 \usepackage[english, russian]{babel}
 \begin{document}
   \thispagestyle{empty}
+  
   Целевая функция:
   \begin{itemize}
     \item[] $\displaystyle min \sum E^{rr} \cdot R^{d}_{t} \quad (dim = n \times 1)$
     \item[] $R^{d}_{t} = Cim(E^{rf} \cdot F^{d}_{t}) \quad (dim = n \times 1)$
     \item[] $F^{d}_{t} = Cin(E^{fp} \cdot (P^{d})^{T}) \quad (dim = m \times 1)$
     \item[] $P^{d} = F^{dep} \cdot E^{fp} \quad (dim = 1 \times k)$
-    \item[] $\displaystyle F^{dep} = F^{u} + (\sum^{m - 1}_{i = 0}D(i))^{T} \quad (dim = 1 \times m)$
+    \item[] $\displaystyle F^{dep} = F^{u} + \sum^{m - 1}_{i = 0}D(i) \quad (dim = 1 \times m)$
     \item[] $F^{u} = R^{u} \cdot E^{rf} \quad (dim = 1 \times m)$
   \end{itemize}
 
@@ -48,11 +49,12 @@
     \item[] $
       D(x) =
       \begin{cases}
-        E^{ff} \cdot (F^{u})^{T} & \quad \text{если } x = 0 \quad (dim = m \times 1)\\
-        E^{ff} \cdot D(x - 1) & \quad \text{если } x > 0 \quad (dim = m \times 1)
+        F^{u} \cdot E^{ff}  & \quad \text{если } x = 0 \quad (dim = 1 \times m)\\
+        D(x - 1) \cdot E^{ff} & \quad \text{если } x > 0 \quad (dim = 1 \times m)
       \end{cases}
     $
   \end{itemize}
+  
   Используемые обозначения:
   \begin{itemize}
     \item[] $n$ - кол-во требований
@@ -64,6 +66,7 @@
     \item[] $E^{ff} = m \times m$ - матрица зависимостей файлов исходного кода друг относительно друга
     \item[] $E^{fp} = m \times k$ - матрица распределения файлов исходного кода по плагинам. Рассчет ее элементов необходимо произвести
   \end{itemize}
+  
   На элементы матрицы $E^{fp}$ действуют следующие ограничения:
   \begin{center}
     $\displaystyle \sum^{k}_{i}e^{fp}_{1, i} = 1, \sum^{k}_{i}e^{fp}_{2, i} = 1, \cdots, \sum^{k}_{i}e^{fp}_{m, i} = 1$
