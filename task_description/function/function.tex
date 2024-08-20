@@ -9,7 +9,6 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{floatrow}
-\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
 \floatsetup[table]{capposition=top}
 \makeatletter
 \graphicspath{ {./images/} }
@@ -22,7 +21,7 @@
   
   Целевая функция:
   \begin{itemize}
-    \item[] $\displaystyle min \sum E^{rr} \cdot R^{d}_{t} \quad (dim = n \times 1)$
+    \item[] $\displaystyle min \sum (E^{rr} \cdot R^{d}_{t}) \quad (dim = n \times 1)$
     \item[] $R^{d}_{t} = Cim(E^{rf} \cdot F^{d}_{t}) \quad (dim = n \times 1)$
     \item[] $F^{d}_{t} = Cin(E^{fp} \cdot (P^{d})^{T}) \quad (dim = m \times 1)$
     \item[] $P^{d} = F^{dep} \cdot E^{fp} \quad (dim = 1 \times k)$
@@ -49,12 +48,12 @@
     \item[] $
       D(x) =
       \begin{cases}
-        F^{u} \cdot E^{ff}  & \quad \text{если } x = 0 \quad (dim = 1 \times m)\\
+        F^{u} \cdot E^{ff} & \quad \text{если } x = 0 \quad (dim = 1 \times m)\\
         D(x - 1) \cdot E^{ff} & \quad \text{если } x > 0 \quad (dim = 1 \times m)
       \end{cases}
     $
   \end{itemize}
-  
+
   Используемые обозначения:
   \begin{itemize}
     \item[] $n$ - кол-во требований
@@ -71,4 +70,5 @@
   \begin{center}
     $\displaystyle \sum^{k}_{i}e^{fp}_{1, i} = 1, \sum^{k}_{i}e^{fp}_{2, i} = 1, \cdots, \sum^{k}_{i}e^{fp}_{m, i} = 1$
   \end{center}
+
 \end{document}
