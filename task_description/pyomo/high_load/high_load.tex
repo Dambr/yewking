@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{tempora}
+\usepackage{indentfirst}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+\makeatletter
+\graphicspath{ {./images/} }
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\makeatother
+\usepackage{float}
+\usepackage[english, russian]{babel}
+\begin{document}
+  Нагрузка по матрицам. Необходимо сделать так, чтобы потом решен можно было расширить до генерации не одной матрицы, а плодить их в больших количествах.
+
+  Можно вообще в файл их писать (json) например.
+
+  Что я подаю на вход?
+  Набор чисел:
+  \begin{itemize}
+    \item число комплектаций
+    \item минимальное число полезных требований в комплектации
+    \item максимальное число полезных требований в комплектации
+    \item число требований
+    \item число число файлов исходного кода
+    \item число плагинов
+    \item минимальное число зависимостей у файла
+    \item максимальное число зависимостей у файла
+    \item минимальная цена вхождения требования в поставку
+    \item максимальная цена вхождения требования в поставку
+  \end{itemize}
+
+  Что я ожидаю получить на выходе?
+  Набор матриц:
+  \begin{itemize}
+    \item список комплектаций
+    \item матрица стоимостей
+    \item матрица трассируемости требований на файлы
+    \item матрица зависимостей между файлами
+  \end{itemize}
+
+  На что направлен функционал этой генерации?
+  Варианты:
+  \begin{itemize}
+    \item поиск такого объема параметров в моделе, на котором glpk начнет ломаться
+    \item сбор информации о различном потребном для работы времени glpk на различных объемах параметров в модели
+  \end{itemize}
+
+  
+  
+\end{document}
