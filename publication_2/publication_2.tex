@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{tempora}
+\usepackage{hyphenat}
+\usepackage{indentfirst}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
+\usepackage[english, russian]{babel}
+\usepackage{tabularray}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{mathtools}
+\usepackage{hhline}
+
+% Цитирование.
+% Беря за основу исследование <автора>, где <за что в той статье зацепились>, предположим, что ...
+% Таким образом рассмотреть порядка 10 исследований
+
+% Описание исследования должно происходить в контексте новизны диссертации
+% Исследуя труды <авторов> и пришли к выводу, что тема <название, описание темы> раскрыта неполностью
+% Исследуя труды <авторов> и пришли к выводу, что тема <название, описание темы> никогда не была иссладована в контексте <название, описание контекста>
+
+
+
+\begin{document}
+
+    % Название статьи
+    \begin{center}
+    \Large
+    \textbf{Оптимизация поставок функционала в плагинной среде выполнения}
+    \end{center}
+
+    \section*{Аннотация}
+    \input{annotation}
+
+    \section*{Введение}
+    \input{introduction}
+
+    \section*{Описание модели}
+    \input{model_description}
+
+    \section*{Программная реализация}
+    \input{software_implementation}
+
+    \section*{Эксперименты и обсуждение}
+    \input{experiments_and_discussion}
+
+    \section*{Заключение}
+    \input{conclusion}
+
+    \section*{Литература}
+    \input{literature}
+
+\end{document}
