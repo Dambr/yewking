@@ -22,5 +22,5 @@ class SolveAction():
         end_time = time.time()
         duration = end_time - start_time
 
-        result = SolveResult(instance.A, duration)
+        result = SolveResult(instance, duration)
         return result
