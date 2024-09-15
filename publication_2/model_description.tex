@@ -45,31 +45,43 @@
   Описание функции $f_{dep}$ приведено далее.
   \item Определить плагины, которые должны войти в поставку:
   \begin{center}
-    $P_{1 \times k} = f_{in}(\hat{F} \cdot A)$
+    $\dot{P}_{k \times 1} = [f_{in}(\hat{F} \cdot A)]^{T}$
   \end{center}
   \begin{center}
-    $\dot{P}_{k \times 1} = P^{T}$
+    $
+    f_{in} =
+    \begin{cases}
+      0 & \quad \text{если } x = 0 \\
+      1 & \quad \text{если } x > 0
+    \end{cases}
+    $
   \end{center}
-  $f_{in}$ - функция, определяющая, входит ли элемент в поставку путем приведения значения к $0$ или $1$. Ее описание приведено далее.
   \item Определить все файлы исходного кода, которые должны войти в поставку:
   \begin{center}
-    $\dot{F}_{m \times 1} = f_{bm}(A, \dot{P})$
+    $\dot{F}_{m \times 1} = A \cdot \dot{P}$
   \end{center}
-  $f_{bm}$ - функция, заменяющая обычное перемножение матриц бинарных отношений для исключения нелинейности в целевой функции. Ее описание приведено далее.
   \item Определить все реализованные требования в поставке:
   \begin{center}
     $\dot{R}_{n \times 1} = f_{im}(T \cdot \dot{F})$
   \end{center}
-  $f_{im}$ - функция, определяющая, реализовано ли требование в рамках поставки путем приведения значения к $0$ или $1$. Ее описание приведено далее.
+  \begin{center}
+    $
+    f_{im} =
+    \begin{cases}
+      0 & \quad \text{если } x < 1 \\
+      1 & \quad \text{если } x \geq 1
+    \end{cases}
+    $
+  \end{center}
   \item Рассчитать стоимость сопровождения комплектации:
   \begin{center}
-    $\sum (P \cdot \dot{R})$
+    $\dot{R}^{T} \cdot (P \cdot \dot{R})$
   \end{center}
 \end{enumerate}
 
-Таким образом
+Таким образом целевая функция - это:
   \begin{center}
-    $f_{p}(i) = \sum(P \cdot f_{im}(T \cdot f_{bm}(A, [f_{in}((E_{i} \cdot T + \sum^{m}_{j = 1}f_{dep}(j)) \cdot A)]^{T})))$
+    $\displaystyle min \sum^{l}_{i = 1} \Bigg[\Bigg[f_{im}\Bigg(T \cdot \bigg(A \cdot \bigg[f_{in}\Big(\big(E_{i} \cdot T + \sum^{m}_{j = 1}f_{dep}(j)\big) \cdot A\Big)\bigg]^{T}\bigg)\Bigg)\Bigg]^{T} \cdot \Bigg[P \cdot~f_{im}\Bigg(T~\cdot~\bigg(A \cdot \bigg[f_{in}\Big(\big(E_{i} \cdot T + \sum^{m}_{j = 1}f_{dep}(j)\big) \cdot A\Big)\bigg]^{T}\bigg)\Bigg)\Bigg]\Bigg]$
   \end{center}
 
 \subsection*{Функция разрешения зависимостей между файлами исходного кода}
@@ -152,145 +164,3 @@
 где $x$ - уровень вложенности зависимостей.
 
 Примечателен тот факт, что значение элемента не важно. Если оно больше $0$, значит элемент активен.
-
-\subsection*{Функция перемножения бинарных матриц}
-Функция перемножения бинарных матриц $f_{bm}$ используется как альтернатива обычному перемножению для исключения в моделе нелинейности. Перемножая матрицы обычным способом появляются нелинейные выражения. В рассматриваемой задаче такая нелинейность возникает на этапе вычисления $\dot{F}$. На этом этапе матрица пеменных умножается на матрицу также содержащую переменные, которая образовалась при вычислении $P$. Наличие такой нелинейности в моделе приведет к значительному увеличению параметров в целевой функции и невозможности ее решения большинством программных решателей.
-
-С целью невелирования этого обстоятельства целевая функция в частности и модель в целом должны быть переработаны. Переработка базируется на том обстоятельстве, что перемножаются не матрицы в общем виде, а матрицы именно бинарных отношений. Перемножение матриц заключается в суммировании произведений элементов двух матриц. Каждое произведение элементов $x \cdot y$, где $x$ и $y$ значения бинарных параметров, может быть заменено дополнительной переменной $f$, значение которой должно удовлетворять следующим ограничениям:
-\begin{center}
-  $
-  \begin{cases}
-    x + y <= f + 1 & \quad \text{в таблице \ref{tab:fbm} имеет обозначение } f_{1} \\
-    f <= x     & \quad \text{в таблице \ref{tab:fbm} имеет обозначение } f_{2} \\
-    f <= y     & \quad \text{в таблице \ref{tab:fbm} имеет обозначение } f_{3}
-  \end{cases}
-  $
-\end{center}
-Демонстрация робастности ограничений приведена в таблице \ref{tab:fbm}:
-\begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Робастность ограничений $f_{bm}$}
-  \label{tab:fbm}\\   
-  \hline
-  $x$ & $y$ & $f$ & $f_{1}$ & $f_{2}$ & $f_{3}$ & $f_{1} \vee f_{2} \vee f_{3}$ \\
-  \endfirsthead
-  $x$ & $y$ & $f$ & $f_{1}$ & $f_{2}$ & $f_{3}$ & $f_{1} \vee f_{2} \vee f_{3}$ \\
-  \endhead
-  \endfoot
-  \hline
-  0 & 0 & 0 & true  & true  & true  & true \\
-  \hline
-  0 & 0 & 1 & true  & false & false & false \\
-  \hline
-  0 & 1 & 0 & true  & true  & true  & true \\
-  \hline
-  0 & 1 & 1 & true  & false & true  & false \\
-  \hline
-  1 & 0 & 0 & true  & true  & true  & true \\
-  \hline
-  1 & 0 & 1 & true  & true  & false & false \\
-  \hline
-  1 & 1 & 0 & false & true  & true  & false \\
-  \hline
-  1 & 1 & 1 & true  & true  & true  & true \\
-  \hline
-\end{longtable}
-
-\subsection*{Функция определения вхождения}
-Функция определения вхождения $f_{in}$ применяется с целью преобразования большего или равного $0$ входного параметра в бинарное значение по следующей формуле:
-\begin{center}
-  $
-  f_{in}(x) = \begin{cases}
-    0 & \quad \text{если } x = 0 \\
-    1 & \quad \text{если } x > 0
-  \end{cases}
-  $
-\end{center}
-
-Данное выражение следует представить в виде переменных и ограничений в модели. Для этого используется метод big M. Этот метод предписывает заведение в модели дополнительной бинарной переменной $f$, значение которой должно удовлетворять следующим ограничениям:
-\begin{center}
-  $
-  \begin{cases}
-    f < x + 1 & \quad \text{в таблице \ref{tab:fin} имеет обозначение } f_{1} \\
-    x \le M \cdot f & \quad \text{в таблице \ref{tab:fin} имеет обозначение } f_{2}
-  \end{cases}
-  $
-\end{center}
-
-Здесь $M$ - условно большое число. Демонстрация робастности ограничений приведена в таблице \ref{tab:fin}:
-\begin{longtable}{|c|c|c|c|c|}
-  \caption{Робастность ограничений $f_{in}$}
-  \label{tab:fin}\\   
-  \hline
-  $x$ & $f$ & $f_{1}$ & $f_{2}$ & $f_{1} \vee f_{2}$ \\
-  \endfirsthead
-  $x$ & $f$ & $f_{1}$ & $f_{2}$ & $f_{1} \vee f_{2}$ \\
-  \endhead
-  \endfoot
-  \hline
-  0              & 0 & true  & true  & true \\
-  \hline
-  0              & 1 & false & true  & false \\
-  \hline
-  (0 ; 1)        & 0 & true  & false & false \\
-  \hline
-  (0 ; 1)        & 1 & true  & true  & true \\
-  \hline
-  1              & 0 & true  & false & false \\
-  \hline
-  1              & 1 & true  & true  & true \\
-  \hline
-  (1 ; $\infty$) & 0 & true  & false & false \\
-  \hline
-  (1 ; $\infty$) & 1 & true  & true  & true \\
-  \hline
-\end{longtable}
-
-\subsection*{Функция определения реализованности}
-Функция определения реализованности $f_{im}$ применяется с целью преобразования большего или равного $0$ входного параметра в бинарное значение по следующей формуле:
-\begin{center}
-  $
-  f_{im}(x) = \begin{cases}
-    0 & \quad \text{если } x < 1 \\
-    1 & \quad \text{если } x \geq 1
-  \end{cases}
-  $
-\end{center}
-
-Данное выражение следует представить в виде переменных и ограничений в модели. Для этого используется ранее упомянутый метод big M. Следуя ему, ограничения на значение дополнительной бинарной переменной $f$ следующие:
-\begin{center}
-  $
-  \begin{cases}
-    x \geq f & \quad \text{в таблице \ref{tab:fim} имеет обозначение } f_{1} \\
-    x < M \cdot f + 1 & \quad \text{в таблице \ref{tab:fim} имеет обозначение } f_{2}
-  \end{cases}
-  $
-\end{center}
-
-Демонстрация робастности ограничений приведена в таблице \ref{tab:fim}:
-\begin{longtable}{|c|c|c|c|c|}
-  \caption{Робастность ограничений $f_{im}$}
-  \label{tab:fim}\\   
-  \hline
-  $x$ & $f$ & $f_{1}$ & $f_{2}$ & $f_{1} \vee f_{2}$ \\
-  \endfirsthead
-  $x$ & $f$ & $f_{1}$ & $f_{2}$ & $f_{1} \vee f_{2}$ \\
-  \endhead
-  \endfoot
-  \hline
-  0              & 0 & true  & true  & true \\
-  \hline
-  0              & 1 & false & true  & false \\
-  \hline
-  (0 ; 1)        & 0 & true  & true  & true \\
-  \hline
-  (0 ; 1)        & 1 & false & true  & false \\
-  \hline
-  1              & 0 & true  & false & false \\
-  \hline
-  1              & 1 & true  & true  & true \\
-  \hline
-  (1 ; $\infty$) & 0 & true  & false & false \\
-  \hline
-  (1 ; $\infty$) & 1 & true  & true  & true \\
-  \hline
-\end{longtable}

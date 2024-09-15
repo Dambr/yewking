@@ -62,7 +62,7 @@ class ModelBuilder():
             calculate_delivery_files_action = CalculateDeliveryFilesAction(calculate_plugins_action, add_multiply_constraints_action, A)
             implement_checker = ImplementChecker(checker, M)
             calculate_delivery_requirements_action = CalculateDeliveryRequirementsAction(calculate_delivery_files_action, implement_checker, T)
-            calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, P)
+            calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, add_multiply_constraints_action, P)
             
             equipment_cost = calculate_equipment_cost_action.calculate()
             equipment_costs.append(equipment_cost)
