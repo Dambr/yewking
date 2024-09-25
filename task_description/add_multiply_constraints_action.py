@@ -14,6 +14,4 @@ class AddMultiplyConstraintsAction():
         constraints.add((x + y <= f + 1))
         constraints.add((f <= x))
         constraints.add((f <= y))
-        print('from add multiply')
-        constraints.pprint()
         return f

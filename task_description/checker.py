@@ -20,6 +20,4 @@ class Checker():
             constraint_2 = check_function_2(x, f)
             constraints.add(constraint_1)
             constraints.add(constraint_2)
-            constraints.pprint()
-            print()
         return np.array(result)
