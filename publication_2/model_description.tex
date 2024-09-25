@@ -395,6 +395,17 @@
 
 Построение математической модели по шагам:
 \begin{enumerate}
+  \item Бинарные параметры матрицы $A$ дополняют модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        a_{1,1} + a_{1,2} + a_{1,3} = 1 \\ % 1
+        a_{2,1} + a_{2,2} + a_{2,3} = 1 \\ % 2
+        a_{3,1} + a_{3,2} + a_{3,3} = 1 \\ % 3
+        a_{4,1} + a_{4,2} + a_{4,3} = 1 % 4
+      \end{cases}
+    $
+  \end{center}
   \item Вектор полезных требований $R_{1 \times 5}$
   \begin{center}
     $
@@ -573,16 +584,33 @@
       \end{pmatrix}
     $
   \end{center}
-  На значения этих переменных действуют следующие ограничения:
-  \begin{itemize}
-    \item[] $-\infty \le f_{1} + 1 / M - (a_{1,1} + a_{3,1} + 1) \le 0$ % 5
-    \item[] $-\infty \le a_{1,1} + a_{3,1} - M \cdot f_{1} \le 0$ % 6
-    \item[] $-\infty \le f_{2} + 1 / M - (a_{1,2} + a_{3,2} + 1) \le 0$ % 7
-    \item[] $-\infty \le a_{1,2} + a_{3,2} - M \cdot f_{2} \le 0$ % 8
-    \item[] $-\infty \le f_{3} + 1 / M - (a_{1,3} + a_{3,3} + 1) \le 0$ % 9
-    \item[] $-\infty \le a_{1,3} + a_{3,3} + M \cdot f_{3} \le 0$ % 10
-  \end{itemize}
-
+  Добавление бинарного параметра $f_{1}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{1} + 1 / M - (a_{1,1} + a_{3,1} + 1) \le 0 \\ % 5
+        -\infty \le a_{1,1} + a_{3,1} - M \cdot f_{1} \le 0 % 6
+      \end{cases}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{2}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{2} + 1 / M - (a_{1,2} + a_{3,2} + 1) \le 0 \\ % 7
+        -\infty \le a_{1,2} + a_{3,2} - M \cdot f_{2} \le 0 % 8
+      \end{cases}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{3}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{3} + 1 / M - (a_{1,3} + a_{3,3} + 1) \le 0 \\ % 9
+        -\infty \le a_{1,3} + a_{3,3} + M \cdot f_{3} \le 0 % 10
+      \end{cases}
+    $
+  \end{center}
   \item Файлы исходного кода, которые должны войти в поставку $\dot{F}_{m \times 1}$
   \begin{center}
     $
@@ -607,81 +635,128 @@
     \end{pmatrix}
     $
   \end{center}
-  Получившиеся выражения в элементах матрицы нелинейны. Однако в силу того, что элементы матрицы $A$ и параметры $f_{1}, f_{2}$ и $f_{3}$ бинарны, можно применить правило умножения матриц бинарных отношений. В результате
-  \begin{itemize}
-    \item $a_{1, 1} \cdot f_{1}$ заменяется на $f_{4}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{1} + a_{1,1} - (f_{4} + 1) \le 0$ % 11
-      \item[] $-\infty \le f_{4} - f_{1} \le 0$ % 12
-      \item[] $-\infty \le f_{4} - a_{1,1} \le 0$ % 13
-    \end{itemize}
-    \item $a_{1, 2} \cdot f_{2}$ заменяется на $f_{5}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{2} + a_{1,2} - (f_{5} + 1) \le 0$ % 14
-      \item[] $-\infty \le f_{5} - f_{2} \le 0$ % 15
-      \item[] $-\infty \le f_{5} - a_{1,2} \le 0$ % 16
-    \end{itemize}
-    \item $a_{1, 3} \cdot f_{3}$ заменяется на $f_{6}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{3} + a_{1,3} - (f_{6} + 1) \le 0$ % 17
-      \item[] $-\infty \le f_{6} - f_{3} \le 0$ % 18
-      \item[] $-\infty \le f_{6} - a_{1,3} \le 0$ % 19
-    \end{itemize}
-    \item $a_{2, 1} \cdot f_{1}$ заменяется на $f_{7}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{1} + a_{2,1} - (f_{7} + 1) \le 0$ % 20
-      \item[] $-\infty \le f_{7} - f_{1} \le 0$ % 21
-      \item[] $-\infty \le f_{7} - a_{2,1} \le 0$ % 22
-    \end{itemize}
-    \item $a_{2, 2} \cdot f_{2}$ заменяется на $f_{8}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{2} + a_{2,2} - (f_{8} + 1) \le 0$ % 23
-      \item[] $-\infty \le f_{8} - f_{2} \le 0$ % 24
-      \item[] $-\infty \le f_{8} - a_{2,2} \le 0$ % 25
-    \end{itemize}
-    \item $a_{2, 3} \cdot f_{3}$ заменяется на $f_{9}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{3} + a_{2,3} - (f_{9} + 1) \le 0$ % 26
-      \item[] $-\infty \le f_{9} - f_{3} \le 0$ % 27
-      \item[] $-\infty \le f_{9} - a_{2,3} \le 0$ % 28
-    \end{itemize}
-    \item $a_{3, 1} \cdot f_{1}$ заменяется на $f_{10}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{1} + a_{3,1} - (f_{10} + 1) \le 0$ % 29
-      \item[] $-\infty \le f_{10} - f_{1} \le 0$ % 30
-      \item[] $-\infty \le f_{10} - a_{3,1} \le 0$ % 31
-    \end{itemize}
-    \item $a_{3, 2} \cdot f_{2}$ заменяется на $f_{11}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{2} + a_{3,2} - (f_{11} + 1) \le 0$ % 32
-      \item[] $-\infty \le f_{11} - f_{2} \le 0$ % 33
-      \item[] $-\infty \le f_{11} - a_{3,2} \le 0$ % 34
-    \end{itemize}
-    \item $a_{3, 3} \cdot f_{3}$ заменяется на $f_{12}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{3} + a_{3,3} - (f_{12} + 1) \le 0$ % 35
-      \item[] $-\infty \le f_{12} - f_{3} \le 0$ % 36
-      \item[] $-\infty \le f_{12} - a_{3,3} \le 0$ % 37
-    \end{itemize}
-    \item $a_{4, 1} \cdot f_{1}$ заменяется на $f_{13}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{1} + a_{4,1} - (f_{13} + 1) \le 0$ % 38
-      \item[] $-\infty \le f_{13} - f_{1} \le 0$ % 39
-      \item[] $-\infty \le f_{13} - a_{4,1} \le 0$ % 40
-    \end{itemize}
-    \item $a_{4, 2} \cdot f_{2}$ заменяется на $f_{14}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{2} + a_{4,2} - (f_{14} + 1) \le 0$ % 41
-      \item[] $-\infty \le f_{14} - f_{2} \le 0$ % 42
-      \item[] $-\infty \le f_{14} - a_{4,2} \le 0$ % 43
-    \end{itemize}
-    \item $a_{4, 3} \cdot f_{3}$ заменяется на $f_{15}$ с действующими ограничениями:
-    \begin{itemize}
-      \item[] $-\infty \le f_{3} + a_{4,3} - (f_{15} + 1) \le 0$ % 44
-      \item[] $-\infty \le f_{15} - f_{3} \le 0$ % 45
-      \item[] $-\infty \le f_{15} - a_{4,3} \le 0$ % 46
-    \end{itemize}
-  \end{itemize}
+  Получившиеся выражения в элементах матрицы нелинейны. Однако в силу того, что элементы матрицы $A$ и параметры $f_{1}, f_{2}$ и $f_{3}$ бинарны, можно применить правило умножения матриц бинарных отношений.
+  
+  $a_{1, 1} \cdot f_{1}$ заменяется на $f_{4}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{1} + a_{1,1} - (f_{4} + 1) \le 0 \\ % 11
+        -\infty \le f_{4} - f_{1} \le 0 \\ % 12
+        -\infty \le f_{4} - a_{1,1} \le 0 % 13
+      \end{cases}
+    $
+  \end{center}
+  $a_{1, 2} \cdot f_{2}$ заменяется на $f_{5}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{2} + a_{1,2} - (f_{5} + 1) \le 0 \\ % 14
+        -\infty \le f_{5} - f_{2} \le 0 \\ % 15
+        -\infty \le f_{5} - a_{1,2} \le 0 % 16
+      \end{cases}
+    $
+  \end{center}
+  $a_{1, 3} \cdot f_{3}$ заменяется на $f_{6}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{3} + a_{1,3} - (f_{6} + 1) \le 0 \\ % 17
+        -\infty \le f_{6} - f_{3} \le 0 \\ % 18
+        -\infty \le f_{6} - a_{1,3} \le 0 % 19
+      \end{cases}
+    $
+  \end{center}
+  $a_{2, 1} \cdot f_{1}$ заменяется на $f_{7}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{1} + a_{2,1} - (f_{7} + 1) \le 0 \\ % 20
+        -\infty \le f_{7} - f_{1} \le 0 \\ % 21
+        -\infty \le f_{7} - a_{2,1} \le 0 \\ % 22
+      \end{cases}
+    $
+  \end{center}
+  $a_{2, 2} \cdot f_{2}$ заменяется на $f_{8}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{2} + a_{2,2} - (f_{8} + 1) \le 0 \\ % 23
+        -\infty \le f_{8} - f_{2} \le 0 \\ % 24
+        -\infty \le f_{8} - a_{2,2} \le 0 % 25
+      \end{cases}
+    $
+  \end{center}
+  $a_{2, 3} \cdot f_{3}$ заменяется на $f_{9}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{3} + a_{2,3} - (f_{9} + 1) \le 0 \\ % 26
+        -\infty \le f_{9} - f_{3} \le 0 \\ % 27
+        -\infty \le f_{9} - a_{2,3} \le 0 \\ % 28
+      \end{cases}
+    $
+  \end{center}
+  $a_{3, 1} \cdot f_{1}$ заменяется на $f_{10}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{1} + a_{3,1} - (f_{10} + 1) \le 0 \\ % 29
+        -\infty \le f_{10} - f_{1} \le 0 \\ % 30
+        -\infty \le f_{10} - a_{3,1} \le 0 % 31
+      \end{cases}
+    $
+  \end{center}
+  $a_{3, 2} \cdot f_{2}$ заменяется на $f_{11}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{2} + a_{3,2} - (f_{11} + 1) \le 0 \\ % 32
+        -\infty \le f_{11} - f_{2} \le 0 \\ % 33
+        -\infty \le f_{11} - a_{3,2} \le 0 \\ % 34
+      \end{cases}
+    $
+  \end{center}
+  $a_{3, 3} \cdot f_{3}$ заменяется на $f_{12}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{3} + a_{3,3} - (f_{12} + 1) \le 0 \\ % 35
+        -\infty \le f_{12} - f_{3} \le 0 \\ % 36
+        -\infty \le f_{12} - a_{3,3} \le 0 % 37
+      \end{cases}
+    $
+  \end{center}
+  $a_{4, 1} \cdot f_{1}$ заменяется на $f_{13}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{1} + a_{4,1} - (f_{13} + 1) \le 0 \\ % 38
+        -\infty \le f_{13} - f_{1} \le 0 \\ % 39
+        -\infty \le f_{13} - a_{4,1} \le 0 % 40
+      \end{cases}
+    $
+  \end{center}
+  $a_{4, 2} \cdot f_{2}$ заменяется на $f_{14}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{2} + a_{4,2} - (f_{14} + 1) \le 0 \\ % 41
+        -\infty \le f_{14} - f_{2} \le 0 \\ % 42
+        -\infty \le f_{14} - a_{4,2} \le 0 % 43
+      \end{cases}
+    $
+  \end{center}
+  $a_{4, 3} \cdot f_{3}$ заменяется на $f_{15}$ с добавлением в моделе следующих ограничений:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{3} + a_{4,3} - (f_{15} + 1) \le 0 \\ % 44
+        -\infty \le f_{15} - f_{3} \le 0 \\ % 45
+        -\infty \le f_{15} - a_{4,3} \le 0 % 46
+      \end{cases}
+    $
+  \end{center}
   \begin{center}
     $
       \dot{F}
@@ -694,8 +769,92 @@
       \end{pmatrix}
     $
   \end{center}
-  \item Реализованные в поставке требования
-
+  \item Реализованные в поставке требования $\dot{R}_{n \times 1}$
+  \begin{center}
+    $
+      T \cdot \dot{F}
+      =
+      \begin{pmatrix}
+          1 &   0 &   0 & 0   \\
+        0.5 & 0.5 &   0 & 0   \\
+          0 & 0.5 & 0.5 & 0   \\
+          0 &   0 & 0.5 & 0.5 \\
+          0 &   0 &   0 & 1 
+      \end{pmatrix}
+      \cdot
+      \begin{pmatrix}
+        f_{4} + f_{5} + f_{6} \\ 
+        f_{7} + f_{8} + f_{9} \\
+        f_{10} + f_{11} + f_{12} \\
+        f_{13} + f_{14} + f_{15}
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        f_{4} + f_{5} + f_{6} \\
+        0.5 \cdot (f_{4} + f_{5} + f_{6}) + 0.5 \cdot (f_{7} + f_{8} + f_{9}) \\
+        0.5 \cdot (f_{7} + f_{8} + f_{9}) + 0.5 \cdot (f_{10} + f_{11} + f_{12}) \\
+        0.5 \cdot (f_{10} + f_{11} + f_{12}) + 0.5 \cdot (f_{13} + f_{14} + f_{15}) \\
+        f_{13} + f_{14} + f_{15}
+      \end{pmatrix}
+    $
+  \end{center}
+  Применяя функцию $f_{im}$ образуется вектор, включающий дополнительные бинарные переменные:
+  \begin{center}
+    $
+      \dot{P} = \begin{pmatrix}
+        f_{16} \\ 
+        f_{17} \\
+        f_{18} \\
+        f_{19} \\
+        f_{20}
+      \end{pmatrix}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{16}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{16} - (f_{4} + f_{5} + f_{6}) \le 0 \\ % 47
+        -\infty \le f_{4} + f_{5} + f_{6} + 1 / M - (1 + M \cdot f_{16}) \le 0 \\ % 48
+      \end{cases}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{17}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{17} - (0.5 \cdot (f_{4} + f_{5} + f_{6}) + 0.5 \cdot (f_{7} + f_{8} + f_{9})) \le 0 \\ % 49
+        -\infty \le 0.5 \cdot (f_{4} + f_{5} + f_{6}) + 0.5 \cdot (f_{7} + f_{8} + f_{9}) + 1 / M - (1 + M \cdot f_{17}) \le 0 \\ % 50
+      \end{cases}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{18}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{18} - (0.5 \cdot (f_{7} + f_{8} + f_{9}) + 0.5 \cdot (f_{10} + f_{11} + f_{12})) \le 0 \\ % 51
+        -\infty \le 0.5 \cdot (f_{7} + f_{8} + f_{9}) + 0.5 \cdot (f_{10} + f_{11} + f_{12}) + 1 / M - (1 + M \cdot f_{18}) \le 0 \\ % 52
+      \end{cases}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{19}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{19} - (0.5 \cdot (f_{10} + f_{11} + f_{12}) + 0.5 \cdot (f_{13} + f_{14} + f_{15})) \le 0 \\ % 53
+        -\infty \le 0.5 \cdot (f_{10} + f_{11} + f_{12}) + 0.5 \cdot (f_{13} + f_{14} + f_{15}) + 1 / M - (1 + M \cdot f_{19}) \le 0 \\ % 54
+      \end{cases}
+    $
+  \end{center}
+  Добавление бинарного параметра $f_{20}$ дополняет модель следующими ограничениями:
+  \begin{center}
+    $
+      \begin{cases}
+        -\infty \le f_{20} - (f_{13} + f_{14} + f_{15}) \le 0 \\ % 55
+        -\infty \le f_{13} + f_{14} + f_{15} + 1 / M - (1 + M \cdot f_{20}) \le 0 \\ % 56
+      \end{cases}
+    $
+  \end{center}  
 \end{enumerate}
 
 Результирующая математическая модель включает $71$ ограничение и $37$ параметров. Из них $12$ являются искомыми значениями, а $25$ дополнительными параметрами.
