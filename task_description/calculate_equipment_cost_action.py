@@ -4,18 +4,18 @@ import numpy as np
 
 
 class CalculateEquipmentCostAction():
-    def __init__(self, calculate_delivery_requirements_action, add_multiply_constraints_action, P):
+    def __init__(self, calculate_delivery_requirements_action, add_multiply_constraints_action, C):
         self.calculate_delivery_requirements_action = calculate_delivery_requirements_action
         self.add_multiply_constraints_action = add_multiply_constraints_action
-        self.P = P
+        self.C = C
 
     def calculate(self):
         calculate_delivery_requirements_action = self.calculate_delivery_requirements_action
         bin_multiply = self.__bin_multiply
-        P = self.P
+        C = self.C
 
         delivery_requirements = calculate_delivery_requirements_action.calculate()
-        costs = np.dot(P, delivery_requirements)
+        costs = np.dot(C, delivery_requirements)
         result = bin_multiply(delivery_requirements, costs)
         return result
     
@@ -30,15 +30,3 @@ class CalculateEquipmentCostAction():
             f = add_multiply_constraints_action.add_multiply_constraints(p1, p2)
             result.append(f)
         return sum(result)
-        # result = []
-        # for row_number in range(rows_count):
-        #     matrix_row = matrix[row_number]
-        #     terms = []
-        #     for col_number in range(cols_count):
-        #         vector_element = vector[col_number]
-        #         matrix_element = matrix_row[col_number]
-        #         term = add_multiply_constraints_action.add_multiply_constraints(vector_element, matrix_element)
-        #         terms.append(term)
-        #     sum_terms = sum(terms)
-        #     result.append(sum_terms)
-        # return np.array(result)

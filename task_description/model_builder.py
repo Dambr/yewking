@@ -19,14 +19,14 @@ class ModelBuilder():
     # k                                   - число плагинов
     # T (traceability)        (n x m)     - матрица трассируемости требований к ПО на файлы исходного кода
     # D (dependency)          (m x m)     - матрица зависимостей между файлами исходного кода
-    # P (price)               (n x n)     - матрица расчета стоимости сопровождения требований в поставке
+    # C (cost)                (n x n)     - матрица расчета стоимости сопровождения требований в поставке
     # E (equirements)         (e x n)     - матрица потребных комплектаций
-    def __init__(self, M, k, T, D, P, E):
+    def __init__(self, M, k, T, D, C, E):
         self.M = M
         self.k = k
         self.T = T
         self.D = D
-        self.P = P
+        self.C = C
         self.E = E
     
     def build(self):
@@ -35,7 +35,7 @@ class ModelBuilder():
         
         T = self.T
         D = self.D
-        P = self.P
+        C = self.C
         E = self.E
 
         m = np.shape(T)[1]
@@ -62,7 +62,7 @@ class ModelBuilder():
             calculate_delivery_files_action = CalculateDeliveryFilesAction(calculate_plugins_action, add_multiply_constraints_action, A)
             implement_checker = ImplementChecker(checker, M)
             calculate_delivery_requirements_action = CalculateDeliveryRequirementsAction(calculate_delivery_files_action, implement_checker, T)
-            calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, add_multiply_constraints_action, P)
+            calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, add_multiply_constraints_action, C)
             
             equipment_cost = calculate_equipment_cost_action.calculate()
             equipment_costs.append(equipment_cost)

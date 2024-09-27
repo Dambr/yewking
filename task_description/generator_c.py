@@ -4,7 +4,7 @@ from random import randint
 import numpy as np
 
 
-class GeneratorP():
+class GeneratorC():
     # min_value - минимальное значение стоимости сопровождения единицы функционала
     # max_value - максимальное значение стоимости сопровождения единицы функционала
     def __init__(self, n, min_value, max_value):

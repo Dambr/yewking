@@ -15,9 +15,9 @@ class SolveAction():
         solver_name = self.solver_name
         model = self.model
         
-        start_time = time.time()
         solver = pyo.SolverFactory(solver_name)
         instance = model.create_instance()
+        start_time = time.time()
         result = solver.solve(instance)
         end_time = time.time()
         duration = end_time - start_time
