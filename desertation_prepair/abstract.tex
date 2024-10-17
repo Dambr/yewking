@@ -15,6 +15,22 @@
 \usepackage[table]{xcolor}
 \usepackage{mathtools}
 \usepackage{hhline}
+\usepackage{pdfpages}
+
+% \hoffset=-5.4mm
+% \voffset=-20.4mm
+% \marginparwidth=0mm
+% \marginparsep=0mm
+% \marginparpush=0mm
+% \evensidemargin=0mm
+% \oddsidemargin=0mm
+% \topmargin=0mm
+% \headheight=15mm
+% \headsep=5mm
+% \textwidth=180mm
+% \textheight=247mm
+% \footskip=10mm
+% \setlength{\unitlength}{1mm}
 
 \begin{document}
     \Large
@@ -22,9 +38,11 @@
     \pagestyle{empty}
     \input{title_page}
 
+    \includepdf[pages=-]{passport.pdf}
+
     \newpage
-    \pagestyle{plain}
     \input{info}
+    \pagestyle{plain}
 
     \newpage
     \begin{center}
