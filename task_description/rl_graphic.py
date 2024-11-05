@@ -12,7 +12,10 @@ class RlGraphic:
     def append_value(self, value):
         self.values.append(value)
 
-    def show(self):
+    def clear(self):
+        self.values.clear()
+
+    def violinplot(self):
         dataset = {'': self.values}
 
         df = pd.DataFrame(dataset)
@@ -21,3 +24,9 @@ class RlGraphic:
         sns.violinplot(x='variable', y='value', data=df_melted, width=0.5, dodge=False, hue='variable').set(title=title)
         plt.xlabel('')
         plt.ylabel('fitness')
+
+    def plot(self):
+        length = len(self.values)
+        x = range(length)
+        y = self.values
+        plt.plot(x, y)

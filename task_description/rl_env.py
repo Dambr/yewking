@@ -26,7 +26,7 @@ class RlEnv(gym.Env):
             self.best_fitness = fitness
             self.best_solution = self.observation
             
-        self.graphic.append_value(fitness)
+        self.graphic.append_value(self.best_fitness)
 
         truncated = False
         terminated = False
@@ -38,4 +38,5 @@ class RlEnv(gym.Env):
         self.observation = self.default_observation
         self.best_solution = self.default_observation
         self.best_fitness = 0
+        self.graphic.clear()
         return (self.observation, self.info)
