@@ -2,6 +2,8 @@
 
 import pygad
 
+from timer import Timer
+
 class GeneticSolver:
     def __init__(self, config, fitness_calculator, progress):
         self.config = config
@@ -35,9 +37,13 @@ class GeneticSolver:
                        gene_type=int
         )
         
+        timer = Timer()
+        timer.start()
         self.ga_instance.run()
-        best_solution = self.ga_instance.best_solution()
-        return best_solution
+        timer.stop()
+        duration = timer.get_duration()
+        best_solution, best_fitness, best_idx, = self.ga_instance.best_solution()
+        return best_solution, best_fitness, best_idx, duration
 
     def on_start(self, ga_instance):
         pass

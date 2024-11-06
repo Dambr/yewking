@@ -1,10 +1,9 @@
 # Решение задачи оптимизации заданным решателем
 
-import time
 import pyomo.environ as pyo
 
 from solve_result import SolveResult
-
+from timer import Timer
 
 class SolveAction():
     def __init__(self, model, solver_name):
@@ -17,10 +16,11 @@ class SolveAction():
         
         solver = pyo.SolverFactory(solver_name)
         instance = model.create_instance()
-        start_time = time.time()
+        timer = Timer()
+        timer.start()
         result = solver.solve(instance)
-        end_time = time.time()
-        duration = end_time - start_time
+        timer.stop()
+        duration = timer.get_duration()
 
         result = SolveResult(instance, duration)
         return result
