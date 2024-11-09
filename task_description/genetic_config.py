@@ -2,7 +2,7 @@
 # Настройка осуществляется через редактирование свойств экземпляра класса
 
 class GeneticConfig:
-    def __init__(self, space_config):
+    def __init__(self):
         self.num_generations = 100
         self.sol_per_pop = 4
         self.num_parents_mating = 2
@@ -11,6 +11,17 @@ class GeneticConfig:
         self.crossover_type = "scattered" # single_point, two_points, uniform, scattered
         self.mutation_type = "scramble" # random - не использовать, swap, inversion, scramble, adaptive
         self.mutation_percent_genes = 10
-        self.min_value = space_config.min_value
-        self.max_value = space_config.max_value
-        self.num_genes = space_config.num_genes
+
+    def to_dict(self):
+        result = {
+            'num_generations': self.num_generations,
+            'sol_per_pop': self.sol_per_pop,
+            'num_parents_mating': self.num_parents_mating,
+            'parent_selection_type': self.parent_selection_type,
+            'keep_parents': self.keep_parents,
+            'crossover_type': self.crossover_type,
+            'mutation_type': self.mutation_type,
+            'mutation_percent_genes': self.mutation_percent_genes
+        }
+        return result
+

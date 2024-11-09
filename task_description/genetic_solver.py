@@ -5,22 +5,24 @@ import pygad
 from timer import Timer
 
 class GeneticSolver:
-    def __init__(self, config, fitness_calculator, progress):
+    def __init__(self, config, space_config, fitness_calculator, progress):
         self.config = config
+        self.space_config = space_config
         self.fitness_calculator = fitness_calculator
         self.progress = progress
 
     def solve(self):
         
         self.ga_instance = pygad.GA(
+                       num_genes=self.space_config.num_genes,
+                       init_range_low=self.space_config.min_value,
+                       init_range_high=self.space_config.max_value + 1,
+                       random_mutation_min_val=self.space_config.min_value,
+                       random_mutation_max_val=self.space_config.max_value,
+            
                        num_generations=self.config.num_generations,
                        num_parents_mating=self.config.num_parents_mating,
                        sol_per_pop=self.config.sol_per_pop,
-                       num_genes=self.config.num_genes,
-                       init_range_low=self.config.min_value,
-                       init_range_high=self.config.max_value + 1,
-                       random_mutation_min_val=self.config.min_value,
-                       random_mutation_max_val=self.config.max_value,
                        parent_selection_type=self.config.parent_selection_type,
                        keep_parents=self.config.keep_parents,
                        crossover_type=self.config.crossover_type,
