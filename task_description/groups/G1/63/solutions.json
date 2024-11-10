@@ -1,0 +1,162 @@
+[
+  {
+    "name": "glpk",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 0.09731721878051758
+        }
+      }
+    ]
+  },
+  {
+    "name": "xpress",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 0.1095590591430664
+        }
+      }
+    ]
+  },
+  {
+    "name": "mpec_minlp",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 0.13727617263793945
+        }
+      }
+    ]
+  },
+  {
+    "name": "ilogcp",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 0.14775681495666504
+        }
+      }
+    ]
+  },
+  {
+    "name": "binary_genetic",
+    "solutions": [
+      {
+        "config": {
+          "k": 2,
+          "num_generations": 100,
+          "sol_per_pop": 4,
+          "num_parents_mating": 2,
+          "parent_selection_type": "sss",
+          "keep_parents": 1,
+          "crossover_type": "scattered",
+          "mutation_type": "scramble",
+          "mutation_percent_genes": 10
+        },
+        "result": {
+          "fitness": 0.0,
+          "duration": 0.24886298179626465
+        }
+      }
+    ]
+  },
+  {
+    "name": "discrete_genetic",
+    "solutions": [
+      {
+        "config": {
+          "k": 2,
+          "num_generations": 100,
+          "sol_per_pop": 4,
+          "num_parents_mating": 2,
+          "parent_selection_type": "sss",
+          "keep_parents": 1,
+          "crossover_type": "scattered",
+          "mutation_type": "scramble",
+          "mutation_percent_genes": 10
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 2.226999044418335
+        }
+      }
+    ]
+  },
+  {
+    "name": "binary_rl_A2C",
+    "solutions": [
+      {
+        "config": {
+          "k": 2,
+          "total_timesteps": 100
+        },
+        "result": {
+          "fitness": 0.0,
+          "duration": 0.3022639751434326
+        }
+      }
+    ]
+  },
+  {
+    "name": "binary_rl_PPO",
+    "solutions": [
+      {
+        "config": {
+          "k": 2,
+          "total_timesteps": 100
+        },
+        "result": {
+          "fitness": 0.0,
+          "duration": 3.1379892826080322
+        }
+      }
+    ]
+  },
+  {
+    "name": "discrete_rl_A2C",
+    "solutions": [
+      {
+        "config": {
+          "k": 2,
+          "total_timesteps": 100
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 2.934303045272827
+        }
+      }
+    ]
+  },
+  {
+    "name": "discrete_rl_PPO",
+    "solutions": [
+      {
+        "config": {
+          "k": 2,
+          "total_timesteps": 100
+        },
+        "result": {
+          "fitness": 0.001953125,
+          "duration": 52.28649592399597
+        }
+      }
+    ]
+  }
+]

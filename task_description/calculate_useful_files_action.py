@@ -19,7 +19,11 @@ class CalculateUsefulFilesAction():
         for i in range(m):
             dependencies = calculate_dependencies(i)
             useful_files += dependencies
-        return useful_files
+
+        normalize = lambda x: 0 if x == 0 else 1
+        result = np.array([normalize(x) for x in useful_files])
+        
+        return result
 
     def __calculate_dependencies(self, i):
         useful_requirements = self.useful_requirements

@@ -43,6 +43,7 @@ class ModelBuilder():
         model = pyo.ConcreteModel(name = 'Optimal decomposition')
         model.constraints = pyo.ConstraintList()
         model.f = pyo.VarList(domain=pyo.Binary)
+        model.M = pyo.Param(initialize=M)
         set_m = pyo.Set(initialize=range(m))
         set_k = pyo.Set(initialize=range(k))
         # A (allocation)          (m x k)     - матрица распределения файлов исходного кода по плагинам
@@ -56,11 +57,11 @@ class ModelBuilder():
         for useful_requirements in E:
             calculate_useful_files_action = CalculateUsefulFilesAction(useful_requirements, T, D)
             checker = Checker(model.constraints, model.f)
-            include_checker = IncludeChecker(checker, M)
+            include_checker = IncludeChecker(checker, model.M)
             calculate_plugins_action = CalculatePluginsAction(calculate_useful_files_action, include_checker, A)
             add_multiply_constraints_action = AddMultiplyConstraintsAction(model.constraints, model.f)
             calculate_delivery_files_action = CalculateDeliveryFilesAction(calculate_plugins_action, add_multiply_constraints_action, A)
-            implement_checker = ImplementChecker(checker, M)
+            implement_checker = ImplementChecker(checker, model.M)
             calculate_delivery_requirements_action = CalculateDeliveryRequirementsAction(calculate_delivery_files_action, implement_checker, T)
             calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, add_multiply_constraints_action, C)
             
