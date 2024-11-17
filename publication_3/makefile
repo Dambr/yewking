@@ -1,11 +1,6 @@
-all:build clean
-
-clean:
-	rm -f publication_3.aux
-	rm -f publication_3.log
-	rm -f publication_3.toc
+all:build
 
 build:
-	pdflatex publication_3.tex
-	pdflatex publication_3.tex
-	pdflatex publication_3.tex
+	pdflatex -jobname='Vak3' publication_3.tex
+	pdflatex -jobname='Vak3' publication_3.tex
+	pdflatex -jobname='Vak3' publication_3.tex
