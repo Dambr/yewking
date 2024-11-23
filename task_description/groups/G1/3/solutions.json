@@ -7,50 +7,22 @@
           "k": 2
         },
         "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 0.08916878700256348
+          "fitness": 0.0015432098765432098,
+          "duration": 0.06140899658203125
         }
       }
     ]
   },
   {
-    "name": "xpress",
+    "name": "cbc",
     "solutions": [
       {
         "config": {
           "k": 2
         },
         "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 0.09822583198547363
-        }
-      }
-    ]
-  },
-  {
-    "name": "mpec_minlp",
-    "solutions": [
-      {
-        "config": {
-          "k": 2
-        },
-        "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 0.10039615631103516
-        }
-      }
-    ]
-  },
-  {
-    "name": "ilogcp",
-    "solutions": [
-      {
-        "config": {
-          "k": 2
-        },
-        "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 0.16109418869018555
+          "fitness": 0.0015432098765432098,
+          "duration": 0.11295795440673828
         }
       }
     ]
@@ -72,7 +44,7 @@
         },
         "result": {
           "fitness": 0.0,
-          "duration": 0.18518900871276855
+          "duration": 0.16324305534362793
         }
       }
     ]
@@ -93,68 +65,8 @@
           "mutation_percent_genes": 10
         },
         "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 0.7405209541320801
-        }
-      }
-    ]
-  },
-  {
-    "name": "binary_rl_A2C",
-    "solutions": [
-      {
-        "config": {
-          "k": 2,
-          "total_timesteps": 100
-        },
-        "result": {
-          "fitness": 0.0,
-          "duration": 0.3012409210205078
-        }
-      }
-    ]
-  },
-  {
-    "name": "binary_rl_PPO",
-    "solutions": [
-      {
-        "config": {
-          "k": 2,
-          "total_timesteps": 100
-        },
-        "result": {
-          "fitness": 0.0,
-          "duration": 2.806144952774048
-        }
-      }
-    ]
-  },
-  {
-    "name": "discrete_rl_A2C",
-    "solutions": [
-      {
-        "config": {
-          "k": 2,
-          "total_timesteps": 100
-        },
-        "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 1.4695439338684082
-        }
-      }
-    ]
-  },
-  {
-    "name": "discrete_rl_PPO",
-    "solutions": [
-      {
-        "config": {
-          "k": 2,
-          "total_timesteps": 100
-        },
-        "result": {
-          "fitness": 0.0013850415512465374,
-          "duration": 25.074218034744263
+          "fitness": 0.0015432098765432098,
+          "duration": 0.5945100784301758
         }
       }
     ]
