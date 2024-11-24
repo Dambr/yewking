@@ -1,4 +1,4 @@
-TARGET='Vak3'
+TARGET='Вак3'
 SRC='publication_3'
 
 all:build_document clean_artifacts
@@ -14,8 +14,6 @@ clean_document:
 	rm -f $(TARGET).pdf
 
 build_document:
-	pdflatex -jobname='Vak3' publication_3.tex
-	pdflatex -jobname='Vak3' publication_3.tex
-	pdflatex -jobname='Vak3' publication_3.tex
-
-
+	pdflatex -jobname=$(TARGET) publication_3.tex
+	pdflatex -jobname=$(TARGET) publication_3.tex
+	pdflatex -jobname=$(TARGET) publication_3.tex
