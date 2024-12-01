@@ -10,6 +10,15 @@
           "fitness": 0.00125,
           "duration": 0.6129791736602783
         }
+      },
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.00125,
+          "duration": 0.29886317253112793
+        }
       }
     ]
   },
@@ -23,6 +32,15 @@
         "result": {
           "fitness": 0.00125,
           "duration": 0.4515190124511719
+        }
+      },
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.00125,
+          "duration": 0.32944679260253906
         }
       }
     ]
@@ -67,6 +85,65 @@
         "result": {
           "fitness": 0.00125,
           "duration": 48.99522686004639
+        }
+      },
+      {
+        "config": {
+          "k": 2,
+          "num_generations": 100,
+          "sol_per_pop": 4,
+          "num_parents_mating": 2,
+          "parent_selection_type": "sss",
+          "keep_parents": 1,
+          "crossover_type": "scattered",
+          "mutation_type": "scramble",
+          "mutation_percent_genes": 10
+        },
+        "result": {
+          "fitness": 0.00125,
+          "duration": 0.52923583984375
+        }
+      }
+    ]
+  },
+  {
+    "name": "xpress",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.00125,
+          "duration": 0.4447939395904541
+        }
+      }
+    ]
+  },
+  {
+    "name": "mpec_minlp",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.00125,
+          "duration": 0.3401758670806885
+        }
+      }
+    ]
+  },
+  {
+    "name": "ilogcp",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.00125,
+          "duration": 0.21689701080322266
         }
       }
     ]

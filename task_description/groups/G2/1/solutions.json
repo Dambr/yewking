@@ -10,6 +10,15 @@
           "fitness": 0.001736111111111111,
           "duration": 0.5128917694091797
         }
+      },
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001736111111111111,
+          "duration": 0.3159050941467285
+        }
       }
     ]
   },
@@ -23,6 +32,15 @@
         "result": {
           "fitness": 0.001736111111111111,
           "duration": 0.3397648334503174
+        }
+      },
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001736111111111111,
+          "duration": 0.48621606826782227
         }
       }
     ]
@@ -67,6 +85,65 @@
         "result": {
           "fitness": 0.001736111111111111,
           "duration": 70.17491602897644
+        }
+      },
+      {
+        "config": {
+          "k": 2,
+          "num_generations": 100,
+          "sol_per_pop": 4,
+          "num_parents_mating": 2,
+          "parent_selection_type": "sss",
+          "keep_parents": 1,
+          "crossover_type": "scattered",
+          "mutation_type": "scramble",
+          "mutation_percent_genes": 10
+        },
+        "result": {
+          "fitness": 0.001736111111111111,
+          "duration": 0.602747917175293
+        }
+      }
+    ]
+  },
+  {
+    "name": "xpress",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001736111111111111,
+          "duration": 0.5819089412689209
+        }
+      }
+    ]
+  },
+  {
+    "name": "mpec_minlp",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001736111111111111,
+          "duration": 0.27504992485046387
+        }
+      }
+    ]
+  },
+  {
+    "name": "ilogcp",
+    "solutions": [
+      {
+        "config": {
+          "k": 2
+        },
+        "result": {
+          "fitness": 0.001736111111111111,
+          "duration": 0.4284958839416504
         }
       }
     ]
