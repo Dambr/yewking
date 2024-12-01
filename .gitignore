@@ -1,8 +1,12 @@
 main.pdf
 */.DS_Store
 .DS_Store
+*/*.aux
+*/*.log
+*/*.toc
 */*.pdf
 */*.key
 */.ipynb_checkpoints/
 */*.bkp
 publication_2/literature/
+**/__pycache__/
