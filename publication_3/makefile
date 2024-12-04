@@ -15,5 +15,5 @@ clean_document:
 
 build_document:
 	pdflatex -jobname=$(TARGET) publication_3.tex
-	pdflatex -jobname=$(TARGET) publication_3.tex
-	pdflatex -jobname=$(TARGET) publication_3.tex
+# 	pdflatex -jobname=$(TARGET) publication_3.tex
+# 	pdflatex -jobname=$(TARGET) publication_3.tex

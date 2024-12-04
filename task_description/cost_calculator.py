@@ -2,15 +2,16 @@ import numpy as np
 from timer import Timer
 
 class CostCalculator:
-    def __init__(self, T, deps, C, E, A):
+    def __init__(self, T, sum_D, C, E, A):
         self.T = T
-        self.deps = deps
+        self.sum_D = sum_D
         self.C = C
         self.E = E
         self.A = A
 
     def calculate(self):
         T = self.T
+        sum_D = self.sum_D
         C = self.C
         E = self.E
         A = self.A
@@ -24,7 +25,7 @@ class CostCalculator:
         for requirements in E:
             
             files = np.dot(requirements, T)
-            files_with_dependencies = np.dot(files, self.deps)
+            files_with_dependencies = np.dot(files, sum_D)
             
             plugins = np.dot(files_with_dependencies, A)
             plugins = np.array([f_in(x) for x in plugins])

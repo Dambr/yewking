@@ -1,0 +1,118 @@
+$Q_{n \times l} = ||q_{i, j}||$ - матрица комплектаций
+
+$C_{n \times n} = ||c_{i, j}||$ - матрица дельт изменений стоимости
+
+$T_{n \times m} = ||t_{i, j}||$ - матрица трассируемости требований на файлы исходного кода
+
+$D_{m \times m} = ||d_{i, j}||$ - матрица зависимостей между файлами исходного кода
+
+$X_{m \times k} = ||x_{i, j}||$ - матрица распределения файлов исходного кода по плагинам
+
+Целевая функция:
+
+$\displaystyle min \quad \sum^{n}_{i} \ddot{a}_{i}$
+
+ограничения:
+
+$
+  \displaystyle
+  \\
+  \begin{cases}
+    c_{1, i} \cdot \dot{a}_{1} + c_{2, i} \cdot \dot{a}_{2} + \cdots c_{n, i} \cdot \dot{a}_{n} - (\ddot{a}_{i} + 1) \le 0 \\
+    \ddot{a}_{i} - \dot{a}_{i} \le 0 \\
+    \ddot{a}_{i} - (c_{1, i} \cdot \dot{a}_{1} + c_{2, i} \cdot \dot{a}_{2} + \cdots c_{n, i} \cdot \dot{a}_{n}) \le 0
+  \end{cases}
+  \quad i = \overline{1, n}
+  \\
+  \\
+  \\
+  \tiny
+  \begin{cases}
+    \dot{a}_{i} - t_{i, 1} \cdot (\acute{a}_{1} + \acute{a}_{2} + \cdots + \acute{a}_{k}) + t_{i, 2} \cdot (\acute{a}_{k + 1} + \acute{a}_{k + 2} + \cdots + \acute{a}_{2 \cdot k}) + \cdots + t_{i, m} \cdot (\acute{a}_{(m - 1) \cdot k + 1} + \acute{a}_{(m - 1) \cdot k + 2} + \cdots + \acute{a}_{m \cdot k}) \le 0 \\
+    t_{i, 1} \cdot (\acute{a}_{1} + \acute{a}_{2} + \cdots + \acute{a}_{k}) + t_{i, 2} \cdot (\acute{a}_{k + 1} + \acute{a}_{k + 2} + \cdots + \acute{a}_{2 \cdot k}) + \cdots + t_{i, m} \cdot (\acute{a}_{(m - 1) \cdot k + 1} + \acute{a}_{(m - 1) \cdot k + 2} + \cdots + \acute{a}_{m \cdot k}) + 1 / M - (1 + M \cdot \dot{a}_{i}) \le 0
+  \end{cases}
+  \normalsize
+  \quad i = \overline{1, n}
+  \\
+  \\
+  \\
+  \begin{cases}
+    \acute{a}_{j} + x_{i, j} - (\grave{a}_{k \cdot (i - 1) + j} + 1) \le 0 \\
+    \grave{a}_{k \cdot (i - 1) + j} - \acute{a}_{j} \le 0 \\
+    \grave{a}_{k \cdot (i - 1) + j} - x_{i, j} \le 0
+  \end{cases}
+  \quad i = \overline{1, m}
+  \quad j = \overline{1, k}
+  \\
+  \\
+  \\
+  \begin{cases}
+    \acute{a}_{i} + 1 / M - (\hat{f}_{1} \cdot x_{1, i} + \hat{f}_{2} \cdot x_{2, i} + \cdots + \hat{f}_{m} \cdot x_{m, i} + 1) \le 0 \\
+    \hat{f}_{1} \cdot x_{1, i} + \hat{f}_{2} \cdot x_{2, i} + \cdots + \hat{f}_{m} \cdot x_{m, i} - M \cdot \acute{a}_{i} \le 0
+  \end{cases}
+  \quad i = \overline{1, k}
+  \\
+  \\
+  \\
+  \hat{F}_{1 \times m} = 
+  Q_{i} \cdot T + Q_{i} \cdot T \cdot \sum^{m}_{j = 1} D^{j} =
+  Q_{i} \cdot T \cdot (E + \sum^{m}_{j = 1} D^{j}) =
+  Q_{i} \cdot T \cdot \sum^{m}_{j = 0} D^{j}
+  \quad i = \overline{1, l}
+$
+
+% \begin{center}
+%   $
+%   \displaystyle 
+%   \hat{F}_{1 \times m} = 
+%   Q_{i} \cdot T + Q_{i} \cdot T \cdot \sum^{m}_{j = 1} D^{j} =
+%   Q_{i} \cdot T \cdot (E + \sum^{m}_{j = 1} D^{j}) =
+%   Q_{i} \cdot T \cdot \sum^{m}_{j = 0} D^{j}
+%   \quad i = \overline{1, l}
+%   $
+% \end{center}
+
+% \begin{center}
+%   $
+%   \begin{cases}
+%     \acute{a}_{i} + 1 / M - (\hat{f}_{1} \cdot x_{1, i} + \hat{f}_{2} \cdot x_{2, i} + \cdots + \hat{f}_{m} \cdot x_{m, i} + 1) \le 0 \\
+%     \hat{f}_{1} \cdot x_{1, i} + \hat{f}_{2} \cdot x_{2, i} + \cdots + \hat{f}_{m} \cdot x_{m, i} - M \cdot \acute{a}_{i} \le 0
+%   \end{cases}
+%   \quad i = \overline{1, k}
+%   $
+% \end{center}
+
+% \begin{center}
+%   $
+%   \begin{cases}
+%     \acute{a}_{j} + x_{i, j} - (\grave{a}_{k \cdot (i - 1) + j} + 1) \le 0 \\
+%     \grave{a}_{k \cdot (i - 1) + j} - \acute{a}_{j} \le 0 \\
+%     \grave{a}_{k \cdot (i - 1) + j} - x_{i, j} \le 0
+%   \end{cases}
+%   \quad i = \overline{1, m}
+%   \quad j = \overline{1, k}
+%   $
+% \end{center}
+
+% \tiny
+% \begin{center}
+%   $
+%     \begin{cases}
+%       \dot{a}_{i} - t_{i, 1} \cdot (\acute{a}_{1} + \acute{a}_{2} + \cdots + \acute{a}_{k}) + t_{i, 2} \cdot (\acute{a}_{k + 1} + \acute{a}_{k + 2} + \cdots + \acute{a}_{2 \cdot k}) + \cdots + t_{i, m} \cdot (\acute{a}_{(m - 1) \cdot k + 1} + \acute{a}_{(m - 1) \cdot k + 2} + \cdots + \acute{a}_{m \cdot k}) \le 0 \\
+%       t_{i, 1} \cdot (\acute{a}_{1} + \acute{a}_{2} + \cdots + \acute{a}_{k}) + t_{i, 2} \cdot (\acute{a}_{k + 1} + \acute{a}_{k + 2} + \cdots + \acute{a}_{2 \cdot k}) + \cdots + t_{i, m} \cdot (\acute{a}_{(m - 1) \cdot k + 1} + \acute{a}_{(m - 1) \cdot k + 2} + \cdots + \acute{a}_{m \cdot k}) + 1 / M - (1 + M \cdot \dot{a}_{i}) \le 0
+%     \end{cases}
+%     \quad i = \overline{1, n}
+%   $
+% \end{center}
+
+% \normalsize
+% \begin{center}
+%   $
+%     \begin{cases}
+%       c_{1, i} \cdot \dot{a}_{1} + c_{2, i} \cdot \dot{a}_{2} + \cdots c_{n, i} \cdot \dot{a}_{n} - (\ddot{a}_{i} + 1) \le 0 \\
+%       \ddot{a}_{i} - \dot{a}_{i} \le 0 \\
+%       \ddot{a}_{i} - (c_{1, i} \cdot \dot{a}_{1} + c_{2, i} \cdot \dot{a}_{2} + \cdots c_{n, i} \cdot \dot{a}_{n}) \le 0
+%     \end{cases}
+%     \quad i = \overline{1, n}
+%   $
+% \end{center}
