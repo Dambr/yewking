@@ -22,12 +22,6 @@ class DependenciesCalculator:
         return deps
 
     def normalize_deps(self, deps):
-        result = np.zeros(np.shape(deps))
         f_in = lambda x: 0 if x == 0 else 1
-        rows_count = len(deps)
-        for i in range(rows_count):
-            row = deps[i]
-            cols_count = len(row)
-            for j in range(cols_count):
-                result[i][j] = f_in(deps[i][j])
-        return result
+        result = [[f_in(el) for el in row] for row in deps]
+        return np.array(result)
