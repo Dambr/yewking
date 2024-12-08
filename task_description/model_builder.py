@@ -21,11 +21,11 @@ class ModelBuilder():
     # D (dependency)          (m x m)     - матрица зависимостей между файлами исходного кода
     # C (cost)                (n x n)     - матрица расчета стоимости сопровождения требований в поставке
     # E (equirements)         (e x n)     - матрица потребных комплектаций
-    def __init__(self, M, k, T, D, C, E):
+    def __init__(self, M, k, T, sum_D, C, E):
         self.M = M
         self.k = k
         self.T = T
-        self.D = D
+        self.sum_D = sum_D
         self.C = C
         self.E = E
     
@@ -34,7 +34,7 @@ class ModelBuilder():
         k = self.k
         
         T = self.T
-        D = self.D
+        sum_D = self.sum_D
         C = self.C
         E = self.E
 
@@ -55,7 +55,7 @@ class ModelBuilder():
 
         equipment_costs = []
         for useful_requirements in E:
-            calculate_useful_files_action = CalculateUsefulFilesAction(useful_requirements, T, D)
+            calculate_useful_files_action = CalculateUsefulFilesAction(useful_requirements, T, sum_D)
             checker = Checker(model.constraints, model.f)
             include_checker = IncludeChecker(checker, model.M)
             calculate_plugins_action = CalculatePluginsAction(calculate_useful_files_action, include_checker, A)

@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "name": "glpk",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": 0.0001885369532428356,
+          "duration": 48.131738901138306
+        }
+      }
+    ]
+  },
+  {
+    "name": "cbc",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": 0.0001885369532428356,
+          "duration": 16.86539912223816
+        }
+      }
+    ]
+  },
+  {
+    "name": "mpec_minlp",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": 0.0001885369532428356,
+          "duration": 48.88471078872681
+        }
+      }
+    ]
+  },
+  {
+    "name": "ilogcp",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": 0.0001885369532428356,
+          "duration": 3.5089149475097656
+        }
+      }
+    ]
+  },
+  {
+    "name": "discrete_genetic",
+    "solutions": [
+      {
+        "config": {
+          "k": 3,
+          "num_generations": 100,
+          "sol_per_pop": 4,
+          "num_parents_mating": 2,
+          "parent_selection_type": "sss",
+          "keep_parents": 1,
+          "crossover_type": "scattered",
+          "mutation_type": "scramble",
+          "mutation_percent_genes": 10
+        },
+        "result": {
+          "fitness": 0.0001885369532428356,
+          "duration": 2.335963249206543
+        }
+      }
+    ]
+  }
+]

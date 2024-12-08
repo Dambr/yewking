@@ -1,7 +1,7 @@
-TARGET='Vak3'
+TARGET='Вак3'
 SRC='publication_3'
 
-all:build_document 
+all:build_document clean_artifacts
 
 clean:clean_document clean_artifacts
 
