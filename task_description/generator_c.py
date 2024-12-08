@@ -16,6 +16,12 @@ class GeneratorC():
         n = self.n
         min_value = self.min_value
         max_value = self.max_value
-    
-        result = [[randint(min_value, max_value) for i in range(n)] for j in range(n)]
-        return np.array(result)
+
+        result = np.identity(n, dtype=float)
+        for i in range(n):
+            for j in range(n):
+                if i != j:
+                    value = randint(min_value, max_value)
+                    result[i][j] = value
+        
+        return result
