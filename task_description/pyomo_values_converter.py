@@ -6,7 +6,7 @@ class PyomoValuesConverter:
 
     def convert(self, solution):
         values = solution.extract_values()
-        (m, k) = np.shape(A)
+        (m, k) = np.shape(solution)
         result = np.zeros((m, k))
         for i in range(m):
             for j in range(k):
