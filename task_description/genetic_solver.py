@@ -70,7 +70,6 @@ class GeneticSolver:
 
     def fitness_func(self, ga_instance, solution, solution_idx):
         fitness = self.fitness_calculator.calculate(solution)
-        # print(fitness)
         return fitness
 
     def plot_fitness(self):

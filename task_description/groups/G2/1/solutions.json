@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "name": "glpk",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": -466.0,
+          "duration": 0.6528942584991455
+        }
+      }
+    ]
+  },
+  {
+    "name": "cbc",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": -251.0,
+          "duration": 0.9187898635864258
+        }
+      }
+    ]
+  },
+  {
+    "name": "mpec_minlp",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": -466.0,
+          "duration": 0.5284080505371094
+        }
+      }
+    ]
+  },
+  {
+    "name": "ilogcp",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": -466.0,
+          "duration": 0.3191871643066406
+        }
+      }
+    ]
+  },
+  {
+    "name": "random",
+    "solutions": [
+      {
+        "config": {
+          "k": 3
+        },
+        "result": {
+          "fitness": -466.0,
+          "duration": 0.00021719932556152344
+        }
+      }
+    ]
+  }
+]
