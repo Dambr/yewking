@@ -20,12 +20,29 @@ class GeneratorE():
         max_value = self.max_value
 
         equipments = []
-        for equipment_number in range(l):
+        equipment_hashs = set()
+        try_count = 0
+        while len(equipments) < l:
+        # for equipment_number in range(l):
           total_count = randint(min_value, max_value)
           requirements = np.zeros(n)
           for i in range(n):
             if i < total_count:
               requirements[i] = 1
           shuffle(requirements)
-          equipments.append(requirements)
-        return np.array(equipments)
+          hashed_requirements = str(requirements)
+          if hashed_requirements not in equipment_hashs:
+            equipment_hashs.add(hashed_requirements)
+            equipments.append(requirements)
+          try_count += 1
+          if try_count > 100 * l:
+              raise Exception('try_count too large')
+
+        array = np.array(equipments)
+        unique = np.unique(array, axis=0)
+        if unique.size != array.size:
+            print(unique)
+            print(array)
+            raise Exception('Equipments not unique')
+        
+        return array

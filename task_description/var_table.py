@@ -28,8 +28,8 @@ class VarTable:
         }
         self.df = pd.DataFrame.from_dict(data, orient='index', columns=columns)
 
-    def get_nested_directory(self, group_name, experiment_number):
-        nested_directory = 'groups/{}/{}'.format(group_name, experiment_number)
+    def get_nested_directory(self, experiment_number):
+        nested_directory = 'experiments/{}'.format(experiment_number)
         return nested_directory
     
     def get_group_names(self):
