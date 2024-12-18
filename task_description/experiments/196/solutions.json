@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "name": "random",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -19099.0,
+          "duration": 2.8848648071289062e-05
+        }
+      }
+    ]
+  },
+  {
+    "name": "single_point genetic",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -17034.0,
+          "duration": 0.5882790088653564
+        }
+      }
+    ]
+  },
+  {
+    "name": "two_points genetic",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -16811.0,
+          "duration": 0.6054470539093018
+        }
+      }
+    ]
+  },
+  {
+    "name": "uniform genetic",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -16572.0,
+          "duration": 0.6288361549377441
+        }
+      }
+    ]
+  },
+  {
+    "name": "glpk",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -16546.0,
+          "duration": 106.79226803779602
+        }
+      }
+    ]
+  },
+  {
+    "name": "cbc",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -18075.0,
+          "duration": 138.78481698036194
+        }
+      }
+    ]
+  },
+  {
+    "name": "mpec_minlp",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -16546.0,
+          "duration": 106.44930100440979
+        }
+      }
+    ]
+  }
+]

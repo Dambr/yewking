@@ -3,14 +3,14 @@
 
 class GeneticConfig:
     def __init__(self):
-        self.num_generations = 10
-        self.sol_per_pop = 10000
-        self.num_parents_mating = 1000
+        self.num_generations = 100
+        self.sol_per_pop = 4
+        self.num_parents_mating = 2
         self.parent_selection_type = "sss" # sss, rws, sus, rank, random, tournament
         self.keep_parents = 1
-        self.crossover_type = "uniform" # single_point, two_points, uniform, scattered
+        self.crossover_type = "single_point" # single_point, two_points, uniform, scattered
         self.mutation_type = "swap" # random - не использовать, swap, inversion, scramble, adaptive
-        self.mutation_percent_genes = 50
+        self.mutation_percent_genes = 10
 
     def to_dict(self):
         result = {
