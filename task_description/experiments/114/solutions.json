@@ -5,44 +5,44 @@
       {
         "config": {},
         "result": {
-          "fitness": -31358.0,
+          "fitness": -19663.0,
           "duration": 2.7179718017578125e-05
         }
       }
     ]
   },
   {
-    "name": "single_point genetic",
+    "name": "many generations",
     "solutions": [
       {
         "config": {},
         "result": {
-          "fitness": -28761.0,
-          "duration": 0.5365021228790283
+          "fitness": -17912.0,
+          "duration": 4.152275085449219
         }
       }
     ]
   },
   {
-    "name": "two_points genetic",
+    "name": "two points crossover",
     "solutions": [
       {
         "config": {},
         "result": {
-          "fitness": -29725.0,
-          "duration": 0.6443078517913818
+          "fitness": -17884.0,
+          "duration": 0.4645876884460449
         }
       }
     ]
   },
   {
-    "name": "uniform genetic",
+    "name": "large population",
     "solutions": [
       {
         "config": {},
         "result": {
-          "fitness": -28974.0,
-          "duration": 0.6818196773529053
+          "fitness": -16259.0,
+          "duration": 40.57922291755676
         }
       }
     ]
@@ -53,8 +53,8 @@
       {
         "config": {},
         "result": {
-          "fitness": -31260.0,
-          "duration": 59.61512017250061
+          "fitness": -17522.0,
+          "duration": 53.816092014312744
         }
       }
     ]
@@ -65,8 +65,8 @@
       {
         "config": {},
         "result": {
-          "fitness": -27790.0,
-          "duration": 49.23367404937744
+          "fitness": -17097.0,
+          "duration": 17.261398792266846
         }
       }
     ]
@@ -77,8 +77,8 @@
       {
         "config": {},
         "result": {
-          "fitness": -31260.0,
-          "duration": 60.70844483375549
+          "fitness": -17522.0,
+          "duration": 56.59448218345642
         }
       }
     ]
