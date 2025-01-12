@@ -38,17 +38,21 @@ class ModelBuilder():
         C = self.C
         E = self.E
 
-        m = np.shape(T)[1]
+        n, m = np.shape(T)
         
         model = pyo.ConcreteModel(name = 'Optimal decomposition')
         model.constraints = pyo.ConstraintList()
         model.f = pyo.VarList(domain=pyo.Binary)
         model.M = pyo.Param(initialize=M)
+        set_n = pyo.Set(initialize=range(n))
+        set_n_2 = pyo.Set(initialize = range(2 ** n))
         set_m = pyo.Set(initialize=range(m))
         set_k = pyo.Set(initialize=range(k))
         # A (allocation)          (m x k)     - матрица распределения файлов исходного кода по плагинам
         model.A = pyo.Var(set_m, set_k, domain=pyo.Binary)
+        model.U = pyo.Var(set_n_2, set_n, domain=pyo.Binary, initialize=0)
         A = np.array(model.A)
+        U = np.array(model.U)
 
         for row in A:
             model.constraints.add((sum(row) == 1))
@@ -63,10 +67,25 @@ class ModelBuilder():
             calculate_delivery_files_action = CalculateDeliveryFilesAction(calculate_plugins_action, add_multiply_constraints_action, A)
             implement_checker = ImplementChecker(checker, model.M)
             calculate_delivery_requirements_action = CalculateDeliveryRequirementsAction(calculate_delivery_files_action, implement_checker, T)
-            calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, add_multiply_constraints_action, C)
+            R = calculate_delivery_requirements_action.calculate()
+
+            length = len(R)
+            index = 0
+            for i in range(length):
+                value = R[i]
+                pow_value = length - (i + 1)
+                term = value * (2 ** pow_value)
+                index += term
+            print(index)
+
+            # for i in range(length):
+            #     model.U[index][i].value = R[i]
+
+        
+            # calculate_equipment_cost_action = CalculateEquipmentCostAction(calculate_delivery_requirements_action, add_multiply_constraints_action, C)
             
-            equipment_cost = calculate_equipment_cost_action.calculate()
-            equipment_costs.append(equipment_cost)
+            # equipment_cost = calculate_equipment_cost_action.calculate()
+            # equipment_costs.append(equipment_cost)
             
-        model.OBJ = pyo.Objective(expr = sum(equipment_costs), sense=pyo.minimize)
+        model.OBJ = pyo.Objective(expr = 1, sense=pyo.minimize)
         return model
