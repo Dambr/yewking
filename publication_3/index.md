@@ -103,6 +103,10 @@ $$\hat{F} = F + F' + F'' + ... + F^{(m)} = F + F \cdot D + F \cdot D^{2} + ... +
 
 $$x_{i, j} \in {0, 1} \quad \sum X_{i} = 1 \quad i = \overline{1, m} \quad j = \overline{1, k}$$
 
+### Рассчет стоимости
+
+
+
 $$\varPhi \quad \varphi \quad \Alpha \quad \alpha \quad \Beta \quad \beta \quad \Gamma \quad \gamma$$
 
 Алгоритм определения состава комплектации:
@@ -120,6 +124,8 @@ $$\varPhi \quad \varphi \quad \Alpha \quad \alpha \quad \Beta \quad \beta \quad 
 
 ### Рассчет стоимости
 
-### Линеаризация
+### Целевая функция
+
+### Линелиаризация
 
 ### Генетический алгоритм
