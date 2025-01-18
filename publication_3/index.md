@@ -51,7 +51,7 @@ $$n, m, k > 0 \quad n, m, k \in \mathbb{Z}$$
 ### Полезные требования
 Полезных требований может быть $l$ комбинаций. Каждой из таких комбинаций должна соответствовать комплектация, которая обеспечивает выполнение полезных требований. Соответственно должно быть $l$ комплектаций. 
 
-Полезные требования образуют матрицу $R_{l \times n}$. В ней номер строки соответствует номеру комплектации. Номер столбца соответствует индексу требования. Если в рамках $i$-й комплектации $j$-е требование полезно $r_{i, j} = 1$. Иначе $r_{i, j} = 0$.
+Полезные требования образуют матрицу $R_{l \times n} = ||r_{i, j}||$. В ней номер строки соответствует номеру комплектации. Номер столбца соответствует индексу требования. Если в рамках $\tilde{l}$-й комплектации $\tilde{n}$-е требование полезно $r_{i, j} = 1$. Иначе $r_{i, j} = 0$.
 
 $$r_{i, j} \in \{0, 1\} \quad \sum R_{i} \ge 1 \quad i = \overline{1, l} \quad j= \overline{1, n}$$
 
@@ -234,14 +234,18 @@ $$\dot{R}_{l \times n} = f_{im}([Q \cdot \dot{F}]^{T})$$
 
 $$\sum^{l}_{\tilde{l} = 1} (\dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}})$$
 
-$$\varPhi \quad \varphi \quad \Alpha \quad \alpha \quad \Beta \quad \beta \quad \Gamma \quad \gamma$$
+<!-- $$\varPhi \quad \varphi \quad \Alpha \quad \alpha \quad \Beta \quad \beta \quad \Gamma \quad \gamma$$ -->
 
 <!-- Про линеаризацию и построение задачи линейного программирования -->
 ### Задача линейного программирования
 
 Оптимизационная задача может быть решена как задача линейного программирования. С этой целью необходимо построить математическую модель: описать целевую функции и ограничения на значения задействованных переменных.
 
-Цель оптимизационной задачи - поиск значений элементов матрицы $X$. На них действуют следующие ограничения:
+Для описания ограничений в общем виде используются следующие переменные:
+
+$$\tilde{l} = \overline{1, l} \quad \tilde{n} = \overline{1, n} \quad \tilde{m} = \overline{1, m} \quad \tilde{k} = \overline{1, k}$$
+
+Например, согласно условиям на значения элементов матрицы $X$ действуют следующие ограничения:
 
 $$
 \begin{cases}
@@ -250,6 +254,92 @@ $$
     ... \\
     x_{m, 1} + x_{m, 2} + ... + x_{m, k} = 1
 \end{cases}
+$$
+
+Используя введенные переменные они будут записаны так:
+
+$$\sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$$
+
+Формирование целевой функции осуществляется при следовании этапам вышеописанных алгоритмов.
+
+Следуя алгоритму определения состава комплектаций первые три шага не подразумевают наличия переменных, а значит для целевой функции важны значения матрицы $\hat{F}$:
+
+$$\hat{F} = R \cdot Q \ \sum^{m}_{s = 0} D^{s} =
+\begin{pmatrix}
+    \hat{f}_{1, 1} & \hat{f}_{1, 2} & \cdots & \hat{f}_{1, m} \\
+    \hat{f}_{2, 1} & \hat{f}_{2, 2} & \cdots & \hat{f}_{2, m} \\
+    \vdots         & \vdots         & \ddots & \vdots         \\
+    \hat{f}_{n, 1} & \hat{f}_{n, 2} & \cdots & \hat{f}_{n, m}
+\end{pmatrix}
+$$
+
+Далее $\hat{F}$ необходимо умножить на $X$:
+
+$$
+\hat{F} \cdot X = 
+\begin{pmatrix}
+    \hat{f}_{1, 1} \cdot x_{1, 1} + \hat{f}_{1, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{1, m} \cdot x_{m, 1} &
+    \hat{f}_{1, 1} \cdot x_{1, 2} + \hat{f}_{1, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{1, m} \cdot x_{m, 2} &
+    \cdots &
+    \hat{f}_{1, 1} \cdot x_{1, k} + \hat{f}_{1, 2} \cdot x_{2, k} + \cdots + \hat{f}_{1, m} \cdot x_{m, k} \\
+
+    \hat{f}_{2, 1} \cdot x_{1, 1} + \hat{f}_{2, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{2, m} \cdot x_{m, 1} &
+    \hat{f}_{2, 1} \cdot x_{1, 2} + \hat{f}_{2, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{2, m} \cdot x_{m, 2} &
+    \cdots &
+    \hat{f}_{2, 1} \cdot x_{1, k} + \hat{f}_{2, 2} \cdot x_{2, k} + \cdots + \hat{f}_{2, m} \cdot x_{m, k} \\
+
+    \vdots   & \vdots   & \ddots & \vdots   \\
+
+    \hat{f}_{n, 1} \cdot x_{1, 1} + \hat{f}_{n, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{n, m} \cdot x_{m, 1} &
+    \hat{f}_{n, 1} \cdot x_{1, 2} + \hat{f}_{n, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{n, m} \cdot x_{m, 2} &
+    \cdots &
+    \hat{f}_{n, 1} \cdot x_{1, k} + \hat{f}_{n, 2} \cdot x_{2, k} + \cdots + \hat{f}_{n, m} \cdot x_{m, k} \\
+\end{pmatrix}
+$$
+
+Для рассчета $P$ к каждому элементу матрицы необходимо применить $f_{in}(x)$, для которой так же необходимо выполнить линеаризацию. Для ее линеаризации используется метод big M. Следуя ему, вводится постоянная величина $M$ - условно большое число. Так же модель дополняется бинарной переменной $\alpha$, на которую действуют следующие ограничения:
+
+$$
+f_{in}(x) = 
+\begin{cases}
+    \alpha < x + 1 \\
+    x \le M \cdot \alpha
+\end{cases}
+\\
+\alpha \in \{0, 1\}
+$$
+
+Доказательство корректности ограничений приведено в таблице:
+
+| $x$   | $\alpha$   | $f_{1}=(\alpha < x + 1)$ | $f_{2} = (x \le M \cdot \alpha)$ | $f_{1} \wedge f_{2}$
+|     :-:      |  :-:  | :-:   |  :-:  |  :-:  |
+|      0       |   0   | true  | true  | true  |
+|      0       |   1   | false | true  | false |
+|    (0;1)     |   0   | true  | false | false |
+|    (0;1)     |   1   | true  | true  | true  |
+|      1       |   0   | true  | false | false |
+|      1       |   1   | true  | true  | true  |
+| (1;$\infty$) |   0   | false | false | false |
+| (1;$\infty$) |   1   | true  | true  | true  |
+
+Для будущей программной реализации строгое неравенство должно быть заменено нестрогим. С этой целью вводится постоянная величина $1 / M$ - условно малое число. Тогда, например, выражение вида $a < b$ будет записано как $a + 1 / M \le b$.
+
+Выражение $f_{in}(\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}})$ заменяется на $\alpha_{\tilde{l}, \tilde{k}}$, а модель дополняется ограничениями:
+$$
+\begin{cases}
+    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - (\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}}) \le 0 \\
+    \hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}} \cdot x_{m, 1} - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
+\end{cases}
+$$
+
+Состав плагинов каждой из комплектаций:
+$$P = 
+\begin{pmatrix}
+    \alpha_{1, 1} & \alpha_{1, 2} & \cdots & \alpha_{1, k} \\
+    \alpha_{2, 1} & \alpha_{2, 2} & \cdots & \alpha_{2, k} \\
+    \vdots        & \vdots        & \ddots & \vdots         \\
+    \alpha_{m, 1} & \alpha_{m, 2} & \cdots & \alpha_{m, k}
+\end{pmatrix}
 $$
 
 
