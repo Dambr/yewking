@@ -185,7 +185,7 @@ $$\dot{r}_{i, j} \in \{0, 1\} \quad i = \overline{1, l} \quad j = \overline{1, n
 
 Матрицы $\dot{R}$ и $\dot{F}$ связаны друг с другом через $Q$:
 
-$$\dot{R} = f_{im}([Q \cdot \dot{F}]^{T})$$
+$$\dot{R} = f_{im}\big((Q \cdot \dot{F})^{T}\big)$$
 
 ### Стоимостные характеристики
 
@@ -210,7 +210,7 @@ $$\dot{r}_{\tilde{l}, i} \cdot (с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 
 
 Стоимость одной комплектации - это суммарная стоимость всех реализованных в ней требований:
 
-$$\sum^{n}_{i = 1} (\dot{r}_{\tilde{l}, i} \cdot (с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n})) = \dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}$$
+$$\sum^{n}_{i = 1} \big(\dot{r}_{\tilde{l}, i} \cdot (с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n})\big) = \dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}$$
 
 Суммарная стоимость всех требований во всех комплектациях:
 
@@ -228,7 +228,7 @@ $$\dot{F}_{m \times l} = X \cdot P^{T}$$
 
 3. Выявляется состав реализованных требований в каждой из комплектаций:
 
-$$\dot{R}_{l \times n} = f_{im}([Q \cdot \dot{F}]^{T})$$
+$$\dot{R}_{l \times n} = f_{im}\big((Q \cdot \dot{F})^{T}\big)$$
 
 4. Рассчитать стоимость комплектаций:
 
@@ -249,14 +249,14 @@ $$\tilde{l} = \overline{1, l} \quad \tilde{n} = \overline{1, n} \quad \tilde{m} 
 
 $$
 \begin{cases}
-    x_{1, 1} + x_{1, 2} + ... + x_{1, k} = 1 \\
-    x_{2, 1} + x_{2, 2} + ... + x_{2, k} = 1 \\
-    ... \\
-    x_{m, 1} + x_{m, 2} + ... + x_{m, k} = 1
+    x_{1, 1} + x_{1, 2} + \cdots + x_{1, k} = 1 \\
+    x_{2, 1} + x_{2, 2} + \cdots + x_{2, k} = 1 \\
+    \cdots \\
+    x_{m, 1} + x_{m, 2} + \cdots + x_{m, k} = 1
 \end{cases}
 $$
 
-Используя введенные переменные они будут записаны так:
+Используя введенные переменные вышеуказанные ограничения будут записаны так:
 
 $$\sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$$
 
@@ -276,7 +276,7 @@ $$
 Далее $\hat{F}$ необходимо умножить на $X$:
 
 $$
-\hat{F} \cdot X = 
+P = \hat{F} \cdot X = 
 \begin{pmatrix}
     \hat{f}_{1, 1} \cdot x_{1, 1} + \hat{f}_{1, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{1, m} \cdot x_{m, 1} &
     \hat{f}_{1, 1} \cdot x_{1, 2} + \hat{f}_{1, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{1, m} \cdot x_{m, 2} &
@@ -297,7 +297,7 @@ $$
 \end{pmatrix}
 $$
 
-Для рассчета $P$ к каждому элементу матрицы необходимо применить $f_{in}(x)$, для которой так же необходимо выполнить линеаризацию. Для ее линеаризации используется метод big M. Следуя ему, вводится постоянная величина $M$ - условно большое число. Так же модель дополняется бинарной переменной $\alpha$, на которую действуют следующие ограничения:
+Для рассчета $P$ к каждому элементу матрицы необходимо применить $f_{in}(x)$, для которой так же необходимо выполнить линеаризацию. Для ее линеаризации используется метод big M. Следуя ему, вводится постоянная величина $M$ - условно большое число. Так же модель дополняется бинарной переменной $\alpha \in \{0, 1\}$, на которую действуют следующие ограничения:
 
 $$
 f_{in}(x) = 
@@ -305,11 +305,9 @@ f_{in}(x) =
     \alpha < x + 1 \\
     x \le M \cdot \alpha
 \end{cases}
-\\
-\alpha \in \{0, 1\}
 $$
 
-Доказательство корректности ограничений приведено в таблице:
+Доказательство корректности ограничений методом разбора случаев приведено в таблице:
 
 | $x$   | $\alpha$   | $f_{1}=(\alpha < x + 1)$ | $f_{2} = (x \le M \cdot \alpha)$ | $f_{1} \wedge f_{2}$
 |     :-:      |  :-:  | :-:   |  :-:  |  :-:  |
@@ -332,13 +330,96 @@ $$
 \end{cases}
 $$
 
+Эти преобразования дополнили модель $l \cdot k$ переменными и $2 \cdot l \cdot k$ ограничениями.
+
 Состав плагинов каждой из комплектаций:
 $$P = 
 \begin{pmatrix}
     \alpha_{1, 1} & \alpha_{1, 2} & \cdots & \alpha_{1, k} \\
     \alpha_{2, 1} & \alpha_{2, 2} & \cdots & \alpha_{2, k} \\
     \vdots        & \vdots        & \ddots & \vdots         \\
-    \alpha_{m, 1} & \alpha_{m, 2} & \cdots & \alpha_{m, k}
+    \alpha_{l, 1} & \alpha_{l, 2} & \cdots & \alpha_{l, k}
+\end{pmatrix}
+$$
+
+Определение состава поставляемого кода:
+
+$$\dot{F} = X \cdot P^{T} =
+ 
+\begin{pmatrix}
+    x_{1, 1} \cdot \alpha_{1, 1} + x_{1, 2} \cdot \alpha_{1, 2} + \cdots + x_{1, k} \cdot \alpha_{1, k} &
+    x_{1, 1} \cdot \alpha_{2, 1} + x_{1, 2} \cdot \alpha_{2, 2} + \cdots + x_{1, k} \cdot \alpha_{2, k} &
+    \cdots &
+    x_{1, 1} \cdot \alpha_{l, 1} + x_{1, 2} \cdot \alpha_{l, 2} + \cdots + x_{1, k} \cdot \alpha_{l, k} \\
+
+    x_{2, 1} \cdot \alpha_{1, 1} + x_{2, 2} \cdot \alpha_{1, 2} + \cdots + x_{2, k} \cdot \alpha_{1, k} &
+    x_{2, 1} \cdot \alpha_{2, 1} + x_{2, 2} \cdot \alpha_{2, 2} + \cdots + x_{2, k} \cdot \alpha_{2, k} &
+    \cdots &
+    x_{2, 1} \cdot \alpha_{l, 1} + x_{2, 2} \cdot \alpha_{l, 2} + \cdots + x_{2, k} \cdot \alpha_{l, k} \\
+
+    \vdots & \vdots & \ddots & \vdots \\
+
+    x_{m, 1} \cdot \alpha_{1, 1} + x_{m, 2} \cdot \alpha_{1, 2} + \cdots + x_{m, k} \cdot \alpha_{1, k} &
+    x_{m, 1} \cdot \alpha_{2, 1} + x_{m, 2} \cdot \alpha_{2, 2} + \cdots + x_{m, k} \cdot \alpha_{2, k} &
+    \cdots &
+    x_{m, 1} \cdot \alpha_{l, 1} + x_{m, 2} \cdot \alpha_{l, 2} + \cdots + x_{m, k} \cdot \alpha_{l, k} \\
+\end{pmatrix}
+$$
+
+Выражения в матрице $\dot{F}$ нелинейны. Однако в силу того, что переменные $x$ и $\alpha$ бинарные, каждое из этих выражений может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\beta \in \{0, 1\}$ и дополнию модели следующими ограничениями:
+
+$$
+\begin{cases}
+    x + \alpha \le \beta + 1 \\
+    \beta \le x \\
+    \beta \le \alpha
+\end{cases}
+$$
+
+Доказательство корректности ограничений методом разбора случаев приведенов таблице:
+
+| $x$ | $\alpha$ | $\beta$ | $f_{1}=(x + \alpha \le \beta + 1)$ | $f_{2} = (\beta \le x)$ | $f_{3} = (\beta \le \alpha)$ | $f_{1} \wedge f_{2} \wedge f_{3}$
+| :-: | :-: | :-: | :-:   | :-:   |  :-:  |  :-:  |
+|  0  |  0  |  0  | true  | true  | true  | true  |
+|  0  |  0  |  1  | true  | false | false | false |
+|  0  |  1  |  0  | true  | true  | true  | true  |
+|  0  |  1  |  1  | true  | false | true  | false |
+|  1  |  0  |  0  | true  | true  | true  | true  |
+|  1  |  0  |  1  | true  | true  | false | false |
+|  1  |  1  |  0  | false | true  | true  | false |
+|  1  |  1  |  1  | true  | true  | true  | true  |
+
+Эти преобразования дополняют модель $l \cdot m \cdot k$ переменными и $3 \cdot l \cdot m \cdot k$ ограничениями:
+
+$$
+\begin{cases}
+    x_{\tilde{m}, \tilde{l}} + \alpha_{\tilde{l}, \tilde{k}} - (\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} + 1) \le 0 \\
+    \beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - x_{\tilde{m}, \tilde{k}} \le 0 \\
+    \beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - \alpha_{\tilde{l}, \tilde{k}} \le 0 \\
+\end{cases}
+$$
+
+Состав поствляемого кода:
+
+$$\dot{F} =
+\begin{pmatrix}
+    \beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1} & 
+    \beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2} &
+    \cdots &
+    \beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l} \\
+
+    \beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1} &
+    \beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2} &
+    \cdots &
+    \beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l} \\
+
+    \vdots & \vdots & \ddots & \vdots \\
+
+    \beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1} &
+    \beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2} &
+    \cdots &
+    \beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l} \\
+
 \end{pmatrix}
 $$
 
