@@ -481,4 +481,10 @@ $$
 
 Эти преобразования дополняют модель $l \cdot n$ переменными и $2 \cdot l \cdot n$ ограничениями:
 
+$$
+\begin{cases}
+    \gamma_{\tilde{l}, \tilde{n}} - q_{\tilde{n}, 1} \cdot (\beta_{\tilde{l}, 1} + \beta_{\tilde{l}, 2} + \cdots + \beta_{\tilde{l}, k}) +  
+\end{cases}
+$$
+
 ### Генетический алгоритм
