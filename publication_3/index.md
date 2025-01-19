@@ -550,7 +550,7 @@ $$
 
 Размер модели:
 
-1. Количество переменных: $m \cdot k + l \cdot (k \cdot (1 + m) + 2 \cdot n)$
+1. Количество переменных: $m \cdot k + l \cdot (k + k \cdot m + 2 \cdot n)$
 
 2. Количество ограничений: $l \cdot (m + 3 \cdot m \cdot k + 2 \cdot k + 5 \cdot n)$
 
