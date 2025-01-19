@@ -483,8 +483,69 @@ $$
 
 $$
 \begin{cases}
-    \gamma_{\tilde{l}, \tilde{n}} - q_{\tilde{n}, 1} \cdot (\beta_{\tilde{l}, 1} + \beta_{\tilde{l}, 2} + \cdots + \beta_{\tilde{l}, k}) +  
+    \gamma_{\tilde{l}, \tilde{n}} - \big(q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}} ) \big) \le 0 \\
+    q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}}) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0
 \end{cases}
 $$
+
+Тогда состав реализованных требований с учетом введенных переменных:
+
+$$
+\dot{R} = 
+\begin{pmatrix}
+    \gamma_{1, 1} & \gamma_{1, 2} & \cdots & \gamma_{1, n} \\
+    \gamma_{2, 1} & \gamma_{2, 2} & \cdots & \gamma_{2, n} \\
+    \vdots        & \vdots        & \ddots & \vdots \\
+    \gamma_{l, 1} & \gamma_{l, 2} & \cdots & \gamma_{l, n}
+\end{pmatrix}
+$$
+
+Определение суммарной стоимости реализованных требований в комплектациях:
+
+$$
+\sum^{l}_{\tilde{l} = 1} (\dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}) = 
+    \sum^{l}_{\tilde{l} = 1} \big(
+        \gamma_{\tilde{l}, \tilde{n}} \cdot (\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n})
+    \big)
+$$
+
+Выражение нелинейно. Однако в силу того, что переменные $\gamma$ бинарные, это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$ и дополнению модели следующими ограничениями от умножения бинарных переменных:
+
+$$
+\begin{cases}
+    \gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n} - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0 \\
+    \varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0 \\
+    \varphi_{\tilde{l}, \tilde{n}} - (\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n}) \le 0
+\end{cases}
+$$
+
+Эти преобразования дополняют модель $l \cdot n$ переменными и $3 \cdot l \cdot n$ ограничениями.
+
+Суммарная стоимость реализованных требований:
+
+$$
+\sum^{l}_{\tilde{l} = 1}\sum^{n}_{\tilde{n} = 1}\varphi_{\tilde{l}, \tilde{n}}
+$$
+
+Таким образом сформулирована задача линейного программирования:
+
+|     | $\sum^{l}_{\tilde{l} = 1}\sum^{n}_{\tilde{n} = 1}\varphi_{\tilde{l}, \tilde{n}}$ | 
+| :-: |  :-  | 
+|s.t.  | $\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n} - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
+|     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0$ | 
+|     | $\varphi_{\tilde{l}, \tilde{n}} - (\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n}) \le 0$ | 
+|     | $\gamma_{\tilde{l}, \tilde{n}} - \big(q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}} ) \big) \le 0$ | 
+|     | $q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}}) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
+|     |  $x_{\tilde{m}, \tilde{l}} + \alpha_{\tilde{l}, \tilde{k}} - (\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} + 1) \le 0$ | 
+|     | $\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - x_{\tilde{m}, \tilde{k}} \le 0$ | 
+|     | $\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - \alpha_{\tilde{l}, \tilde{k}} \le 0$ | 
+|     | $\alpha_{\tilde{l}, \tilde{k}} + 1 / M - (\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}}) \le 0$ |
+|     |  $\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}} \cdot x_{m, 1} - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0$ |
+|     |  $\sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$ |
+|w.b. | $\varphi \in \{0, 1\}$ |
+|     | $\gamma \in \{0, 1\}$ |
+|     | $\beta \in \{0, 1\}$ |
+|     | $\alpha \in \{0, 1\}$ |
+|     | $x \in \{0, 1\}$ |
 
 ### Генетический алгоритм
