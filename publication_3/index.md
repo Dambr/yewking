@@ -342,7 +342,7 @@ $$P =
 \end{pmatrix}
 $$
 
-Определение состава поставляемого кода:
+Cостав поставляемого кода:
 
 $$\dot{F} = X \cdot P^{T} =
  
@@ -366,7 +366,7 @@ $$\dot{F} = X \cdot P^{T} =
 \end{pmatrix}
 $$
 
-Выражения в матрице $\dot{F}$ нелинейны. Однако в силу того, что переменные $x$ и $\alpha$ бинарные, каждое из этих выражений может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\beta \in \{0, 1\}$ и дополнию модели следующими ограничениями:
+Выражения в матрице $\dot{F}$ нелинейны. Однако в силу того, что переменные $x$ и $\alpha$ бинарные, каждое из этих выражений может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\beta \in \{0, 1\}$ и дополнению модели следующими ограничениями:
 
 $$
 \begin{cases}
@@ -399,7 +399,7 @@ $$
 \end{cases}
 $$
 
-Состав поствляемого кода:
+Тогда состав поставляемого кода с учетом введенных переменных:
 
 $$\dot{F} =
 \begin{pmatrix}
@@ -419,10 +419,66 @@ $$\dot{F} =
     \beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2} &
     \cdots &
     \beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l} \\
+\end{pmatrix}
+$$
+
+Определение состава реализованных требований в комплектациях:
+
+$$\dot{R} = f_{im}\big((Q \cdot \dot{F})^{T}\big)$$
+
+$$(Q \cdot \dot{F})^{T} = 
+\begin{pmatrix}
+    q_{1, 1} \cdot (\beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1}) + q_{1, 2} \cdot (\beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1}) + \cdots + q_{1, m} \cdot (\beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1}) &
+
+    q_{2, 1} \cdot (\beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1}) + q_{2, 2} \cdot (\beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1}) + \cdots + q_{2, m} \cdot (\beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1}) &
+
+    \cdots &
+
+    q_{n, 1} \cdot (\beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1}) + q_{n, 2} \cdot (\beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1}) + \cdots + q_{n, m} \cdot (\beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1}) \\
+
+    q_{1, 1} \cdot (\beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2}) + q_{1, 2} \cdot (\beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2}) + \cdots + q_{1, m} \cdot (\beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2}) &
+
+    q_{2, 1} \cdot (\beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2}) + q_{2, 2} \cdot (\beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2}) + \cdots + q_{2, m} \cdot (\beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2}) &
+
+    \cdots &
+
+    q_{n, 1} \cdot (\beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2}) + q_{n, 2} \cdot (\beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2}) + \cdots + q_{n, m} \cdot (\beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2}) \\
+
+    \vdots & \vdots & \ddots & \vdots \\
+
+    q_{1, 1} \cdot (\beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l}) + q_{1, 2} \cdot (\beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l}) + \cdots + q_{1, m} \cdot (\beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l}) &
+
+    q_{2, 1} \cdot (\beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l}) + q_{2, 2} \cdot (\beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l}) + \cdots + q_{2, m} \cdot (\beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l}) &
+
+    \cdots &
+
+    q_{n, 1} \cdot (\beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l}) + q_{n, 2} \cdot (\beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l}) + \cdots + q_{n, m} \cdot (\beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l}) \\
 
 \end{pmatrix}
 $$
 
+Для функции $f_{im}$ необходимо выполнить линеаризацию. По аналогии с линеаризацией $f_{in}$ используется метод big M. Модель дополняется бинарной переменной $\gamma \in \{0, 1\}$, на которую действуют следующие ограничения:
 
+$$f_{im}(x) =
+\begin{cases}
+    x \ge \gamma \\
+    x < M \cdot \gamma + 1
+\end{cases}
+$$
+
+Доказательство корректности ограничений методом разбора случаев приведено в таблице:
+
+| $x$   | $\gamma$   | $f_{1}=(x \ge \gamma)$ | $f_{2} = (x < M \cdot \gamma + 1)$ | $f_{1} \wedge f_{2}$
+|     :-:      |  :-:  | :-:   |  :-:  |  :-:  |
+|      0       |   0   | true  | true  | true  |
+|      0       |   1   | false | true  | false |
+|    (0;1)     |   0   | true  | true  | true  |
+|    (0;1)     |   1   | false | true  | false |
+|      1       |   0   | true  | false | false |
+|      1       |   1   | true  | true  | true  |
+| (1;$\infty$) |   0   | true  | false | false |
+| (1;$\infty$) |   1   | true  | true  | true  |
+
+Эти преобразования дополняют модель $l \cdot n$ переменными и $2 \cdot l \cdot n$ ограничениями:
 
 ### Генетический алгоритм
