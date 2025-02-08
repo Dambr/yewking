@@ -202,17 +202,19 @@ $$c_{i, j} \in \mathbb{R} \quad i = \overline{1, n} \quad j = \overline{1, n}$$
 Рассмотрим результирующую стоимость $i$-го требования в комплектации $\tilde{l}$:
 
 <!-- $$\dot{r}_{1} \cdot c_{i, 1} + \dot{r}_{2} \cdot c_{i, 2} + ... + \dot{r}_{n} \cdot c_{i, n}$$ -->
-$$с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n}$$
+<!-- $$с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n}$$ -->
+
+$$\sum_{\tilde{n} = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, \tilde{n}})$$
 
 Данное выражение описывает стоимость требования как если бы оно входило в комплектацию. Однако даже если само оно не реализовано по этой формуле оно может иметь ненулевую стоимость. Чтобы невилировать это обстоятельство данное выражение необходимо домножить на признак реализованности $i$-го требования:
 
-$$\dot{r}_{\tilde{l}, i} \cdot (с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n})$$
+$$\dot{r}_{\tilde{l}, i} \cdot \sum_{\tilde{n} = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, \tilde{n}})$$
 
 Стоимость одной комплектации - это суммарная стоимость всех реализованных в ней требований:
 
-$$\sum^{n}_{i = 1} \big(\dot{r}_{\tilde{l}, i} \cdot (с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n})\big) = \dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}$$
+$$\sum^{n}_{i = 1} \big(\dot{r}_{\tilde{l}, i} \cdot \sum_{\tilde{n} = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, \tilde{n}})\big) = \dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}$$
 
-Суммарная стоимость всех требований во всех комплектациях:
+Суммарная стоимость всех реализованных требований во всех комплектациях:
 
 $$\sum^{l}_{\tilde{l} = 1} (\dot{R}^{T}_{\tilde{l}} \cdot C \cdot \dot{R}_{\tilde{l}})$$
 
@@ -264,12 +266,12 @@ $$\sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$$
 
 Следуя алгоритму определения состава комплектаций первые три шага не подразумевают наличия переменных, а значит для целевой функции важны значения матрицы $\hat{F}$:
 
-$$\hat{F} \gets R \cdot Q \ \sum^{m}_{s = 0} D^{s} =
+$$\hat{F} \gets R \cdot Q \cdot \sum^{m}_{s = 0} D^{s} =
 \begin{pmatrix}
     \hat{f}_{1, 1} & \hat{f}_{1, 2} & \cdots & \hat{f}_{1, m} \\
     \hat{f}_{2, 1} & \hat{f}_{2, 2} & \cdots & \hat{f}_{2, m} \\
     \vdots         & \vdots         & \ddots & \vdots         \\
-    \hat{f}_{n, 1} & \hat{f}_{n, 2} & \cdots & \hat{f}_{n, m}
+    \hat{f}_{l, 1} & \hat{f}_{l, 2} & \cdots & \hat{f}_{l, m}
 \end{pmatrix}
 $$
 
@@ -278,22 +280,31 @@ $$
 $$
 P \gets \hat{F} \cdot X = 
 \begin{pmatrix}
-    \hat{f}_{1, 1} \cdot x_{1, 1} + \hat{f}_{1, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{1, m} \cdot x_{m, 1} &
-    \hat{f}_{1, 1} \cdot x_{1, 2} + \hat{f}_{1, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{1, m} \cdot x_{m, 2} &
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{1, \tilde{m}} \cdot x_{\tilde{m}, 1}) & 
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{1, \tilde{m}} \cdot x_{\tilde{m}, 2}) &
     \cdots &
-    \hat{f}_{1, 1} \cdot x_{1, k} + \hat{f}_{1, 2} \cdot x_{2, k} + \cdots + \hat{f}_{1, m} \cdot x_{m, k} \\
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{1, \tilde{m}} \cdot x_{\tilde{m}, k}) \\
 
-    \hat{f}_{2, 1} \cdot x_{1, 1} + \hat{f}_{2, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{2, m} \cdot x_{m, 1} &
-    \hat{f}_{2, 1} \cdot x_{1, 2} + \hat{f}_{2, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{2, m} \cdot x_{m, 2} &
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{2, \tilde{m}} \cdot x_{\tilde{m}, 1}) & 
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{2, \tilde{m}} \cdot x_{\tilde{m}, 2}) &
     \cdots &
-    \hat{f}_{2, 1} \cdot x_{1, k} + \hat{f}_{2, 2} \cdot x_{2, k} + \cdots + \hat{f}_{2, m} \cdot x_{m, k} \\
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{2, \tilde{m}} \cdot x_{\tilde{m}, k}) \\
 
     \vdots   & \vdots   & \ddots & \vdots   \\
 
-    \hat{f}_{n, 1} \cdot x_{1, 1} + \hat{f}_{n, 2} \cdot x_{2, 1} + \cdots + \hat{f}_{n, m} \cdot x_{m, 1} &
-    \hat{f}_{n, 1} \cdot x_{1, 2} + \hat{f}_{n, 2} \cdot x_{2, 2} + \cdots + \hat{f}_{n, m} \cdot x_{m, 2} &
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{l, \tilde{m}} \cdot x_{\tilde{m}, 1}) & 
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{l, \tilde{m}} \cdot x_{\tilde{m}, 2}) &
     \cdots &
-    \hat{f}_{n, 1} \cdot x_{1, k} + \hat{f}_{n, 2} \cdot x_{2, k} + \cdots + \hat{f}_{n, m} \cdot x_{m, k} \\
+    \displaystyle
+    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{l, \tilde{m}} \cdot x_{\tilde{m}, k}) \\
 \end{pmatrix}
 $$
 
@@ -322,11 +333,11 @@ $$
 
 Для будущей программной реализации строгое неравенство должно быть заменено нестрогим. С этой целью вводится постоянная величина $1 / M$ - условно малое число. Тогда, например, выражение вида $a < b$ будет записано как $a + 1 / M \le b$.
 
-Выражение $f_{in}(\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}})$ заменяется на $\alpha_{\tilde{l}, \tilde{k}}$, а модель дополняется ограничениями:
+Выражение $f_{in}\big(\displaystyle \sum_{\tilde{m}}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}})\big)$ заменяется на $\alpha_{\tilde{l}, \tilde{k}}$, а модель дополняется ограничениями:
 $$
 \begin{cases}
-    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - (\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}}) \le 0 \\
-    \hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}} \cdot x_{m, 1} - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
+    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{\tilde{m}  =1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) \le 0 \\
+    \displaystyle \sum_{\tilde{m} = 1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
 \end{cases}
 $$
 
@@ -337,32 +348,42 @@ $$P =
 \begin{pmatrix}
     \alpha_{1, 1} & \alpha_{1, 2} & \cdots & \alpha_{1, k} \\
     \alpha_{2, 1} & \alpha_{2, 2} & \cdots & \alpha_{2, k} \\
-    \vdots        & \vdots        & \ddots & \vdots         \\
+    \vdots        & \vdots        & \ddots & \vdots        \\
     \alpha_{l, 1} & \alpha_{l, 2} & \cdots & \alpha_{l, k}
 \end{pmatrix}
 $$
 
 Cостав поставляемого кода:
 
-$$\dot{F} \gets X \cdot P^{T} =
- 
+$$
+\dot{F} \gets X \cdot P^{T} =
 \begin{pmatrix}
-    x_{1, 1} \cdot \alpha_{1, 1} + x_{1, 2} \cdot \alpha_{1, 2} + \cdots + x_{1, k} \cdot \alpha_{1, k} &
-    x_{1, 1} \cdot \alpha_{2, 1} + x_{1, 2} \cdot \alpha_{2, 2} + \cdots + x_{1, k} \cdot \alpha_{2, k} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{1, \tilde{k}} \cdot \alpha_{1, \tilde{k}}) &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{1, \tilde{k}} \cdot \alpha_{2, \tilde{k}}) &
     \cdots &
-    x_{1, 1} \cdot \alpha_{l, 1} + x_{1, 2} \cdot \alpha_{l, 2} + \cdots + x_{1, k} \cdot \alpha_{l, k} \\
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{1, \tilde{k}} \cdot \alpha_{l, \tilde{k}}) \\
 
-    x_{2, 1} \cdot \alpha_{1, 1} + x_{2, 2} \cdot \alpha_{1, 2} + \cdots + x_{2, k} \cdot \alpha_{1, k} &
-    x_{2, 1} \cdot \alpha_{2, 1} + x_{2, 2} \cdot \alpha_{2, 2} + \cdots + x_{2, k} \cdot \alpha_{2, k} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{2, \tilde{k}} \cdot \alpha_{1, \tilde{k}}) &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{2, \tilde{k}} \cdot \alpha_{2, \tilde{k}}) &
     \cdots &
-    x_{2, 1} \cdot \alpha_{l, 1} + x_{2, 2} \cdot \alpha_{l, 2} + \cdots + x_{2, k} \cdot \alpha_{l, k} \\
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{2, \tilde{k}} \cdot \alpha_{l, \tilde{k}}) \\
 
     \vdots & \vdots & \ddots & \vdots \\
 
-    x_{m, 1} \cdot \alpha_{1, 1} + x_{m, 2} \cdot \alpha_{1, 2} + \cdots + x_{m, k} \cdot \alpha_{1, k} &
-    x_{m, 1} \cdot \alpha_{2, 1} + x_{m, 2} \cdot \alpha_{2, 2} + \cdots + x_{m, k} \cdot \alpha_{2, k} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{m, \tilde{k}} \cdot \alpha_{1, \tilde{k}}) &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{m, \tilde{k}} \cdot \alpha_{2, \tilde{k}}) &
     \cdots &
-    x_{m, 1} \cdot \alpha_{l, 1} + x_{m, 2} \cdot \alpha_{l, 2} + \cdots + x_{m, k} \cdot \alpha_{l, k} \\
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}(x_{m, \tilde{k}} \cdot \alpha_{l, \tilde{k}}) \\
+
 \end{pmatrix}
 $$
 
@@ -401,24 +422,34 @@ $$
 
 Тогда состав поставляемого кода с учетом введенных переменных:
 
-$$\dot{F} =
+$$
+\dot{F} =
 \begin{pmatrix}
-    \beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1} & 
-    \beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (1 - 1) + \tilde{k}, 1} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (1 - 1) + \tilde{k}, 2} &
     \cdots &
-    \beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l} \\
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (1 - 1) + \tilde{k}, l} \\
 
-    \beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1} &
-    \beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (2 - 1) + \tilde{k}, 1} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (2 - 1) + \tilde{k}, 2} &
     \cdots &
-    \beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l} \\
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (2 - 1) + \tilde{k}, l} \\
 
     \vdots & \vdots & \ddots & \vdots \\
 
-    \beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1} &
-    \beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (m - 1) + \tilde{k}, 1} &
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (m - 1) + \tilde{k}, 2} &
     \cdots &
-    \beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l} \\
+    \displaystyle
+    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (m - 1) + \tilde{k}, l} \\
 \end{pmatrix}
 $$
 
@@ -428,31 +459,40 @@ $$\dot{R} \gets f_{im}\big((Q \cdot \dot{F})^{T}\big)$$
 
 $$(Q \cdot \dot{F})^{T} = 
 \begin{pmatrix}
-    q_{1, 1} \cdot (\beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1}) + q_{1, 2} \cdot (\beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1}) + \cdots + q_{1, m} \cdot (\beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1}) &
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{1, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 1}\big) &
 
-    q_{2, 1} \cdot (\beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1}) + q_{2, 2} \cdot (\beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1}) + \cdots + q_{2, m} \cdot (\beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1}) &
-
-    \cdots &
-
-    q_{n, 1} \cdot (\beta_{1, 1} + \beta_{2, 1} + \cdots + \beta_{k, 1}) + q_{n, 2} \cdot (\beta_{k + 1, 1} + \beta_{k + 2, 1} + \cdots + \beta_{2 \cdot k, 1}) + \cdots + q_{n, m} \cdot (\beta_{k \cdot (m -1) + 1, 1} + \beta_{k \cdot (m -1) + 2, 1} + \cdots + \beta_{k \cdot m, 1}) \\
-
-    q_{1, 1} \cdot (\beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2}) + q_{1, 2} \cdot (\beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2}) + \cdots + q_{1, m} \cdot (\beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2}) &
-
-    q_{2, 1} \cdot (\beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2}) + q_{2, 2} \cdot (\beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2}) + \cdots + q_{2, m} \cdot (\beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2}) &
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{2, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 1}\big) &
 
     \cdots &
 
-    q_{n, 1} \cdot (\beta_{1, 2} + \beta_{2, 2} + \cdots + \beta_{k, 2}) + q_{n, 2} \cdot (\beta_{k + 1, 2} + \beta_{k + 2, 2} + \cdots + \beta_{2 \cdot k, 2}) + \cdots + q_{n, m} \cdot (\beta_{k \cdot (m -1) + 1, 2} + \beta_{k \cdot (m -1) + 2, 2} + \cdots + \beta_{k \cdot m, 2}) \\
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{n, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 1}\big) \\
+
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{1, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 2}\big) &
+
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{2, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 2}\big) &
+
+    \cdots &
+
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{n, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 2}\big) \\
 
     \vdots & \vdots & \ddots & \vdots \\
 
-    q_{1, 1} \cdot (\beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l}) + q_{1, 2} \cdot (\beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l}) + \cdots + q_{1, m} \cdot (\beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l}) &
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{1, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, l}\big) &
 
-    q_{2, 1} \cdot (\beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l}) + q_{2, 2} \cdot (\beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l}) + \cdots + q_{2, m} \cdot (\beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l}) &
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{2, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, l}\big) &
 
     \cdots &
 
-    q_{n, 1} \cdot (\beta_{1, l} + \beta_{2, l} + \cdots + \beta_{k, l}) + q_{n, 2} \cdot (\beta_{k + 1, l} + \beta_{k + 2, l} + \cdots + \beta_{2 \cdot k, l}) + \cdots + q_{n, m} \cdot (\beta_{k \cdot (m -1) + 1, l} + \beta_{k \cdot (m -1) + 2, l} + \cdots + \beta_{k \cdot m, l}) \\
+    \displaystyle
+    \sum_{\tilde{m}}^{m}\big(q_{n, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, l}\big) \\
 
 \end{pmatrix}
 $$
@@ -483,8 +523,11 @@ $$
 
 $$
 \begin{cases}
-    \gamma_{\tilde{l}, \tilde{n}} - \big(q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}} ) \big) \le 0 \\
-    q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}}) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0
+    \displaystyle
+    \gamma_{\tilde{l}, \tilde{n}} - \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) \le 0 \\
+    
+    \displaystyle
+    \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0
 \end{cases}
 $$
 
@@ -502,20 +545,19 @@ $$
 
 Определение суммарной стоимости реализованных требований в комплектациях:
 
-$$
-\sum^{l}_{\tilde{l} = 1} (\dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}) = 
-    \sum^{l}_{\tilde{l} = 1} \big(
-        \gamma_{\tilde{l}, \tilde{n}} \cdot (\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n})
-    \big)
-$$
+$$\sum_{\tilde{l} = 1}^{l}\sum_{\tilde{n} = 1}^{n}\Big(\gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i})\Big)$$
 
-Выражение нелинейно. Однако в силу того, что переменные $\gamma$ бинарные, это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$ и дополнению модели следующими ограничениями от умножения бинарных переменных:
+Выражение $\displaystyle \gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i})$ нелинейно. Однако в силу того, что переменные $\gamma$ бинарные, это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$ и дополнению модели следующими ограничениями от умножения бинарных переменных:
 
 $$
 \begin{cases}
-    \gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n} - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0 \\
+    \displaystyle
+    \gamma_{\tilde{l}, \tilde{n}} + \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0 \\
+    \\
     \varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0 \\
-    \varphi_{\tilde{l}, \tilde{n}} - (\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n}) \le 0
+    \\
+    \displaystyle
+    \varphi_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) \le 0
 \end{cases}
 $$
 
@@ -527,20 +569,27 @@ $$
 \sum^{l}_{\tilde{l} = 1}\sum^{n}_{\tilde{n} = 1}\varphi_{\tilde{l}, \tilde{n}}
 $$
 
+$$
+\begin{cases}
+    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{\tilde{m}  =1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) \le 0 \\
+    \displaystyle \sum_{\tilde{m} = 1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
+\end{cases}
+$$
+
 Таким образом сформулирована задача линейного программирования:
 
 |     | $\displaystyle \sum^{l}_{\tilde{l} = 1}\sum^{n}_{\tilde{n} = 1}\varphi_{\tilde{l}, \tilde{n}}$ | 
 | :-: |  :-  | 
-|s.t.  | $\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n} - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
+|s.t.  | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} + \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
 |     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0$ | 
-|     | $\varphi_{\tilde{l}, \tilde{n}} - (\gamma_{\tilde{l}, 1} \cdot c_{1, 1} + \gamma_{\tilde{l}, 2} \cdot c_{1, 2} + \cdots + \gamma_{\tilde{l}, n} \cdot c_{1, n}) \le 0$ | 
-|     | $\gamma_{\tilde{l}, \tilde{n}} - \big(q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}} ) \big) \le 0$ | 
-|     | $q_{\tilde{n}, 1} \cdot (\beta_{1, \tilde{l}} + \beta_{2, \tilde{l}} + \cdots + \beta_{k, \tilde{l}}) + q_{\tilde{n}, 2} \cdot (\beta_{k + 1, \tilde{l}} + \beta_{k + 2, \tilde{l}} + \beta_{2 \cdot k, \tilde{l}}) + \cdots + q_{\tilde{n}, m} \cdot (\beta_{k \cdot (m - 1) + 1, \tilde{l}} + \beta_{k \cdot (m - 1) + 2, \tilde{l}} + \cdots + \beta_{k \cdot m, \tilde{l}}) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
+|     | $\displaystyle \varphi_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) \le 0$ | 
+|     | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} - \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) \le 0$ | 
+|     | $\displaystyle \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
 |     |  $x_{\tilde{m}, \tilde{l}} + \alpha_{\tilde{l}, \tilde{k}} - (\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} + 1) \le 0$ | 
 |     | $\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - x_{\tilde{m}, \tilde{k}} \le 0$ | 
 |     | $\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - \alpha_{\tilde{l}, \tilde{k}} \le 0$ | 
-|     | $\alpha_{\tilde{l}, \tilde{k}} + 1 / M - (\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}}) \le 0$ |
-|     |  $\hat{f}_{\tilde{l}, 1} \cdot x_{1, \tilde{k}} + \hat{f}_{\tilde{l}, 2} \cdot x_{2, \tilde{k}} + \cdots + \hat{f}_{\tilde{l}, m} \cdot x_{m, \tilde{k}} \cdot x_{m, 1} - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0$ |
+|     | $\alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{\tilde{m}  =1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) \le 0$ |
+|     |  $\displaystyle \sum_{\tilde{m} = 1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0$ |
 |     |  $\displaystyle \sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$ |
 | | $\tilde{l} = \overline{1, l} \quad \tilde{n} = \overline{1, n} \quad \tilde{m} = \overline{1, m} \quad \tilde{k} = \overline{1, k}$ |
 |w.b. | $x, \alpha, \beta, \gamma, \varphi \in \{0, 1\}$ |
@@ -586,7 +635,7 @@ $$j = \ddot{x}_{i} \quad x_{i, j} = 1 \quad i = \overline{1, m}$$
 
 Анализ операторов генетического алгоритма не выявил лучший вариант для применения. Поэтому в рамках проводимого исследования были выполнены $3$ реализации генетического алгоритма, включающие следующую конфигурацию:
 
-| оператор | 1 | 2 | 3 |
+| оператор | #1 | #2 | #3 |
 | :-: | :-: | :-: | :-: |
 | кол-во поколений | 1000 | 100 | 100 |
 | кол-во хромосом | 100 | 100 | 400 |
