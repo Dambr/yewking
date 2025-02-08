@@ -83,7 +83,7 @@ $$F = R \cdot Q$$
 
 Такие связи можно представить в виде матрицы бинарных отношений $D_{m \times m} = ||d_{i, j}||$. В ней номера строк и столбцов соответствуют индексам файлов исходного кода. Если $i$-й фал имеет зависимость на $j$-й, то $d_{i, j} = 1$. Иначе $d_{i, j} = 0$. Полагается, что файл не зависит сам от себя, поэтому значения элементов на главной диагонале равны $0$.
 
-$$d_{i, j} \in \{0, 1\} \quad d_{\tilde{m}, \tilde{m}} = 0 \quad i = \overline{1, m} \quad j = \overline{1, m} \quad \tilde{m} = \overline{1, m}$$
+$$d_{i, j} \in \{0, 1\} \quad d_{i, i} = 0 \quad i = \overline{1, m} \quad j = \overline{1, m}$$
 
 ### Разрешение зависимостей между файлами исходного кода
 
@@ -201,22 +201,19 @@ $$c_{i, j} \in \mathbb{R} \quad i = \overline{1, n} \quad j = \overline{1, n}$$
 
 Рассмотрим результирующую стоимость $i$-го требования в комплектации $\tilde{l}$:
 
-<!-- $$\dot{r}_{1} \cdot c_{i, 1} + \dot{r}_{2} \cdot c_{i, 2} + ... + \dot{r}_{n} \cdot c_{i, n}$$ -->
-<!-- $$с_{i, 1} \cdot \dot{r}_{\tilde{l}, 1} + с_{i, 2} \cdot \dot{r}_{\tilde{l}, 2} + ... + с_{i, n} \cdot \dot{r}_{\tilde{l}, n}$$ -->
-
-$$\sum_{\tilde{n} = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, \tilde{n}})$$
+$$\sum_{j = 1}^{n}(c_{i, j} \cdot \dot{r}_{\tilde{l}, j})$$
 
 Данное выражение описывает стоимость требования как если бы оно входило в комплектацию. Однако даже если само оно не реализовано по этой формуле оно может иметь ненулевую стоимость. Чтобы невилировать это обстоятельство данное выражение необходимо домножить на признак реализованности $i$-го требования:
 
-$$\dot{r}_{\tilde{l}, i} \cdot \sum_{\tilde{n} = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, \tilde{n}})$$
+$$\dot{r}_{\tilde{l}, i} \cdot \sum_{j = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, j})$$
 
 Стоимость одной комплектации - это суммарная стоимость всех реализованных в ней требований:
 
-$$\sum^{n}_{i = 1} \big(\dot{r}_{\tilde{l}, i} \cdot \sum_{\tilde{n} = 1}^{n}(c_{i, \tilde{n}} \cdot \dot{r}_{\tilde{l}, \tilde{n}})\big) = \dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}$$
+$$\sum^{n}_{i = 1} \big(\dot{r}_{\tilde{l}, i} \cdot \sum_{j = 1}^{n}(c_{i, j} \cdot \dot{r}_{\tilde{l}, j})\big) = \dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}}$$
 
 Суммарная стоимость всех реализованных требований во всех комплектациях:
 
-$$\sum^{l}_{\tilde{l} = 1} (\dot{R}^{T}_{\tilde{l}} \cdot C \cdot \dot{R}_{\tilde{l}})$$
+$$\sum(\dot{R}^{T}_{\tilde{l}} \cdot C \cdot \dot{R}_{\tilde{l}})$$
 
 ### Алгоритм определения стоимости комплектаций
 
@@ -234,11 +231,8 @@ $$\dot{R}_{l \times n} \gets f_{im}\big((Q \cdot \dot{F})^{T}\big)$$
 
 4. Рассчитать стоимость комплектаций:
 
-$$\sum^{l}_{\tilde{l} = 1} (\dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}})$$
+$$\sum(\dot{R}_{\tilde{l}} \cdot C \cdot \dot{R}^{T}_{\tilde{l}})$$
 
-<!-- $$\varPhi \quad \varphi \quad \Alpha \quad \alpha \quad \Beta \quad \beta \quad \Gamma \quad \gamma$$ -->
-
-<!-- Про линеаризацию и построение задачи линейного программирования -->
 ### Задача линейного программирования
 
 Оптимизационная задача может быть решена как задача линейного программирования. С этой целью необходимо построить математическую модель: описать целевую функции и ограничения на значения задействованных переменных.
@@ -260,7 +254,7 @@ $$
 
 Используя введенные переменные вышеуказанные ограничения будут записаны так:
 
-$$\sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$$
+$$\sum^{k}_{i = 1} x_{\tilde{m}, i} = 1$$
 
 Формирование целевой функции осуществляется при следовании этапам вышеописанных алгоритмов.
 
@@ -281,30 +275,30 @@ $$
 P \gets \hat{F} \cdot X = 
 \begin{pmatrix}
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{1, \tilde{m}} \cdot x_{\tilde{m}, 1}) & 
+    \sum^{m}_{i = 1}(\hat{f}_{1, i} \cdot x_{i, 1}) & 
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{1, \tilde{m}} \cdot x_{\tilde{m}, 2}) &
+    \sum^{m}_{i = 1}(\hat{f}_{1, i} \cdot x_{i, 2}) &
     \cdots &
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{1, \tilde{m}} \cdot x_{\tilde{m}, k}) \\
+    \sum^{m}_{i = 1}(\hat{f}_{1, i} \cdot x_{i, k}) \\
 
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{2, \tilde{m}} \cdot x_{\tilde{m}, 1}) & 
+    \sum^{m}_{i = 1}(\hat{f}_{2, i} \cdot x_{i, 1}) & 
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{2, \tilde{m}} \cdot x_{\tilde{m}, 2}) &
+    \sum^{m}_{i = 1}(\hat{f}_{2, i} \cdot x_{i, 2}) &
     \cdots &
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{2, \tilde{m}} \cdot x_{\tilde{m}, k}) \\
+    \sum^{m}_{i = 1}(\hat{f}_{2, i} \cdot x_{i, k}) \\
 
     \vdots   & \vdots   & \ddots & \vdots   \\
 
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{l, \tilde{m}} \cdot x_{\tilde{m}, 1}) & 
+    \sum^{m}_{i = 1}(\hat{f}_{l, i} \cdot x_{i, 1}) & 
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{l, \tilde{m}} \cdot x_{\tilde{m}, 2}) &
+    \sum^{m}_{i = 1}(\hat{f}_{l, i} \cdot x_{i, 2}) &
     \cdots &
     \displaystyle
-    \sum^{m}_{\tilde{m} = 1}(\hat{f}_{l, \tilde{m}} \cdot x_{\tilde{m}, k}) \\
+    \sum^{m}_{i = 1}(\hat{f}_{l, i} \cdot x_{i, k}) \\
 \end{pmatrix}
 $$
 
@@ -333,11 +327,11 @@ $$
 
 Для будущей программной реализации строгое неравенство должно быть заменено нестрогим. С этой целью вводится постоянная величина $1 / M$ - условно малое число. Тогда, например, выражение вида $a < b$ будет записано как $a + 1 / M \le b$.
 
-Выражение $f_{in}\big(\displaystyle \sum_{\tilde{m}}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}})\big)$ заменяется на $\alpha_{\tilde{l}, \tilde{k}}$, а модель дополняется ограничениями:
+Выражение $f_{in}\big(\displaystyle \sum_{i = 1}^{m}(\hat{f}_{\tilde{l}, i} \cdot x_{i, \tilde{k}})\big)$ заменяется на $\alpha_{\tilde{l}, \tilde{k}}$, а модель дополняется ограничениями:
 $$
 \begin{cases}
-    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{\tilde{m}  =1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) \le 0 \\
-    \displaystyle \sum_{\tilde{m} = 1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
+    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{i  =1}^{m}(\hat{f}_{\tilde{l}, i} \cdot x_{i, \tilde{k}}) \le 0 \\
+    \displaystyle \sum_{i = 1}^{m}(\hat{f}_{\tilde{l}, i} \cdot x_{i, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
 \end{cases}
 $$
 
@@ -359,30 +353,30 @@ $$
 \dot{F} \gets X \cdot P^{T} =
 \begin{pmatrix}
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{1, \tilde{k}} \cdot \alpha_{1, \tilde{k}}) &
+    \sum_{i = 1}^{k}(x_{1, i} \cdot \alpha_{1, i}) &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{1, \tilde{k}} \cdot \alpha_{2, \tilde{k}}) &
+    \sum_{i = 1}^{k}(x_{1, i} \cdot \alpha_{2, i}) &
     \cdots &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{1, \tilde{k}} \cdot \alpha_{l, \tilde{k}}) \\
+    \sum_{i = 1}^{k}(x_{1, i} \cdot \alpha_{l, i}) \\
 
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{2, \tilde{k}} \cdot \alpha_{1, \tilde{k}}) &
+    \sum_{i = 1}^{k}(x_{2, i} \cdot \alpha_{1, i}) &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{2, \tilde{k}} \cdot \alpha_{2, \tilde{k}}) &
+    \sum_{i = 1}^{k}(x_{2, i} \cdot \alpha_{2, i}) &
     \cdots &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{2, \tilde{k}} \cdot \alpha_{l, \tilde{k}}) \\
+    \sum_{i = 1}^{k}(x_{2, i} \cdot \alpha_{l, i}) \\
 
     \vdots & \vdots & \ddots & \vdots \\
 
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{m, \tilde{k}} \cdot \alpha_{1, \tilde{k}}) &
+    \sum_{i = 1}^{k}(x_{m, i} \cdot \alpha_{1, i}) &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{m, \tilde{k}} \cdot \alpha_{2, \tilde{k}}) &
+    \sum_{i = 1}^{k}(x_{m, i} \cdot \alpha_{2, i}) &
     \cdots &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}(x_{m, \tilde{k}} \cdot \alpha_{l, \tilde{k}}) \\
+    \sum_{i = 1}^{k}(x_{m, i} \cdot \alpha_{l, i}) \\
 
 \end{pmatrix}
 $$
@@ -426,30 +420,30 @@ $$
 \dot{F} =
 \begin{pmatrix}
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (1 - 1) + \tilde{k}, 1} &
+    \sum_{i = 1}^{k}\beta_{k \cdot (1 - 1) + i, 1} &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (1 - 1) + \tilde{k}, 2} &
+    \sum_{i = 1}^{k}\beta_{k \cdot (1 - 1) + i, 2} &
     \cdots &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (1 - 1) + \tilde{k}, l} \\
+    \sum_{i = 1}^{k}\beta_{k \cdot (1 - 1) + i, l} \\
 
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (2 - 1) + \tilde{k}, 1} &
+    \sum_{i = 1}^{k}\beta_{k \cdot (2 - 1) + i, 1} &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (2 - 1) + \tilde{k}, 2} &
+    \sum_{i = 1}^{k}\beta_{k \cdot (2 - 1) + i, 2} &
     \cdots &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (2 - 1) + \tilde{k}, l} \\
+    \sum_{i = 1}^{k}\beta_{k \cdot (2 - 1) + i, l} \\
 
     \vdots & \vdots & \ddots & \vdots \\
 
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (m - 1) + \tilde{k}, 1} &
+    \sum_{i = 1}^{k}\beta_{k \cdot (m - 1) + i, 1} &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (m - 1) + \tilde{k}, 2} &
+    \sum_{i = 1}^{k}\beta_{k \cdot (m - 1) + i, 2} &
     \cdots &
     \displaystyle
-    \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (m - 1) + \tilde{k}, l} \\
+    \sum_{i = 1}^{k}\beta_{k \cdot (m - 1) + i, l} \\
 \end{pmatrix}
 $$
 
@@ -460,39 +454,39 @@ $$\dot{R} \gets f_{im}\big((Q \cdot \dot{F})^{T}\big)$$
 $$(Q \cdot \dot{F})^{T} = 
 \begin{pmatrix}
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{1, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 1}\big) &
+    \sum_{i = 1}^{m}\big(q_{1, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, 1}\big) &
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{2, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 1}\big) &
+    \sum_{i = 1}^{m}\big(q_{2, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, 1}\big) &
 
     \cdots &
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{n, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 1}\big) \\
+    \sum_{i = 1}^{m}\big(q_{n, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, 1}\big) \\
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{1, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 2}\big) &
+    \sum_{i = 1}^{m}\big(q_{1, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, 2}\big) &
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{2, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 2}\big) &
+    \sum_{i = 1}^{m}\big(q_{2, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, 2}\big) &
 
     \cdots &
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{n, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, 2}\big) \\
+    \sum_{i = 1}^{m}\big(q_{n, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, 2}\big) \\
 
     \vdots & \vdots & \ddots & \vdots \\
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{1, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, l}\big) &
+    \sum_{i = 1}^{m}\big(q_{1, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, l}\big) &
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{2, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, l}\big) &
+    \sum_{i = 1}^{m}\big(q_{2, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, l}\big) &
 
     \cdots &
 
     \displaystyle
-    \sum_{\tilde{m}}^{m}\big(q_{n, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, l}\big) \\
+    \sum_{i = 1}^{m}\big(q_{n, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, l}\big) \\
 
 \end{pmatrix}
 $$
@@ -524,10 +518,10 @@ $$
 $$
 \begin{cases}
     \displaystyle
-    \gamma_{\tilde{l}, \tilde{n}} - \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) \le 0 \\
+    \gamma_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) \le 0 \\
     
     \displaystyle
-    \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0
+    \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0
 \end{cases}
 $$
 
@@ -543,9 +537,9 @@ $$
 \end{pmatrix}
 $$
 
-Определение суммарной стоимости реализованных требований в комплектациях:
+Суммарная стоимость реализованных требований в $\tilde{l}$-й комплектации:
 
-$$\sum_{\tilde{l} = 1}^{l}\sum_{\tilde{n} = 1}^{n}\Big(\gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i})\Big)$$
+$$\sum\Big(\gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i})\Big)$$
 
 Выражение $\displaystyle \gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i})$ нелинейно. Однако в силу того, что переменные $\gamma$ бинарные, это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$ и дополнению модели следующими ограничениями от умножения бинарных переменных:
 
@@ -565,32 +559,21 @@ $$
 
 Суммарная стоимость реализованных требований:
 
-$$
-\sum^{l}_{\tilde{l} = 1}\sum^{n}_{\tilde{n} = 1}\varphi_{\tilde{l}, \tilde{n}}
-$$
-
-$$
-\begin{cases}
-    \alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{\tilde{m}  =1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) \le 0 \\
-    \displaystyle \sum_{\tilde{m} = 1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0
-\end{cases}
-$$
-
 Таким образом сформулирована задача линейного программирования:
 
-|     | $\displaystyle \sum^{l}_{\tilde{l} = 1}\sum^{n}_{\tilde{n} = 1}\varphi_{\tilde{l}, \tilde{n}}$ | 
+|     | $min \displaystyle \sum_{i = 1}^{l}\sum_{j = 1}^{n}\varphi_{i, j}$ | 
 | :-: |  :-  | 
 |s.t.  | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} + \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
 |     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0$ | 
 |     | $\displaystyle \varphi_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) \le 0$ | 
-|     | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} - \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) \le 0$ | 
-|     | $\displaystyle \sum_{\tilde{m} = 1}^{m}\big(q_{\tilde{n}, \tilde{m}} \cdot \sum_{\tilde{k} = 1}^{k}\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
+|     | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) \le 0$ | 
+|     | $\displaystyle \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
 |     |  $x_{\tilde{m}, \tilde{l}} + \alpha_{\tilde{l}, \tilde{k}} - (\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} + 1) \le 0$ | 
 |     | $\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - x_{\tilde{m}, \tilde{k}} \le 0$ | 
 |     | $\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} - \alpha_{\tilde{l}, \tilde{k}} \le 0$ | 
-|     | $\alpha_{\tilde{l}, \tilde{k}} + 1 / M - \displaystyle \sum_{\tilde{m}  =1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) \le 0$ |
-|     |  $\displaystyle \sum_{\tilde{m} = 1}^{m}(\hat{f}_{\tilde{l}, \tilde{m}} \cdot x_{\tilde{m}, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0$ |
-|     |  $\displaystyle \sum^{k}_{\tilde{k} = 1} x_{\tilde{m}, \tilde{k}} = 1$ |
+|     | $\displaystyle \alpha_{\tilde{l}, \tilde{k}} + 1 / M - \sum_{i = 1}^{m}(\hat{f}_{\tilde{l}, i} \cdot x_{i, \tilde{k}}) \le 0$ |
+|     |  $\displaystyle \sum_{i = 1}^{m}(\hat{f}_{\tilde{l}, i} \cdot x_{i, \tilde{k}}) - M \cdot \alpha_{\tilde{l}, \tilde{k}} \le 0$ |
+|     |  $\displaystyle \sum^{k}_{i = 1} x_{\tilde{m}, i} = 1$ |
 | | $\tilde{l} = \overline{1, l} \quad \tilde{n} = \overline{1, n} \quad \tilde{m} = \overline{1, m} \quad \tilde{k} = \overline{1, k}$ |
 |w.b. | $x, \alpha, \beta, \gamma, \varphi \in \{0, 1\}$ |
 
