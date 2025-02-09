@@ -19,4 +19,4 @@ class ModelSizeCalculator:
         m = self.m
         n = self.n
 
-        return l * (m + 3 * m * k + 2 * k + 5 * n)
+        return m + l * (3 * m * k + 2 * k + 5 * n)
