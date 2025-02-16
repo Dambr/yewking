@@ -36,6 +36,8 @@ class CostCalculator:
             requirements_in_delivery = np.array([f_im(x) for x in requirements_in_delivery])
             
             prices = np.dot(C, requirements_in_delivery)
+            print('prices')
+            print(prices)
             
             cost = np.dot(requirements_in_delivery, prices)
             
