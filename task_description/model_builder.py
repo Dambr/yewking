@@ -70,5 +70,5 @@ class ModelBuilder():
             equipment_cost = calculate_equipment_cost_action.calculate()
             equipment_costs.append(equipment_cost)
             
-        model.OBJ = pyo.Objective(expr = 1, sense=pyo.minimize)
+        model.OBJ = pyo.Objective(expr = sum(equipment_costs), sense=pyo.minimize)
         return model

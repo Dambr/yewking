@@ -15,7 +15,6 @@ class CalculateEquipmentCostAction():
         C = self.C
 
         R = calculate_delivery_requirements_action.calculate()
-        # costs = np.dot(C, delivery_requirements)
         result = bin_multiply(C, R)
         return result
     
@@ -48,12 +47,3 @@ class CalculateEquipmentCostAction():
                 result.append(element)
 
         return sum(result)
-        
-        # result = []
-        # length = len(vector1)
-        # for i in range(length):
-        #     p1 = vector1[i]
-        #     p2 = vector2[i]
-        #     f = add_multiply_constraints_action.add_multiply_constraints(p1, p2)
-        #     result.append(f)
-        # return sum(result)
