@@ -541,16 +541,16 @@ $$
 
 $$\gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) = \sum^{n}_{i = 1}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i})$$
 
-Выражение $\gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i}$ нелинейно. Однако в силу того, что переменные $\gamma$ бинарные это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$. Из ассоциативного свойства $\gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i} = \gamma_{\tilde{l}, i} \cdot \gamma_{\tilde{l}, \tilde{n}}$ следует, что дополнительная переменная $\varphi$ может быть переиспользована, а введение новой требуется при $i = \overline{1, \tilde{n}}$.
+Выражение $\gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i}$ нелинейно. Однако в силу того, что переменные $\gamma$ бинарные это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$. Из ассоциативного свойства $\gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i} = \gamma_{\tilde{l}, i} \cdot \gamma_{\tilde{l}, \tilde{n}}$ следует, что дополнительная переменная $\varphi$ может быть переиспользована, а введение новой требуется при $i \in \{1, \tilde{n}\}$.
 
 Для $\tilde{l}$ комплектации дополнительные переменные $\varphi$ удобно представить в виде нижнетреугольной матрицы:
 
 $$
     \begin{pmatrix}
-    \varphi_{1, 1} & 0 & \cdots & 0 \\
-    \varphi_{2, 1} & \varphi_{2, 2} & \cdots & 0 \\
+    \varphi_{\tilde{l}, 1, 1} & 0 & \cdots & 0 \\
+    \varphi_{\tilde{l}, 2, 1} & \varphi_{\tilde{l}, 2, 2} & \cdots & 0 \\
     \vdots & \vdots & \ddots & \vdots \\
-    \varphi_{n, 1} & \varphi_{n, 2} & \cdots & \varphi_{n, n}
+    \varphi_{\tilde{l}, n, 1} & \varphi_{\tilde{l}, n, 2} & \cdots & \varphi_{\tilde{l}, n, n}
     \end{pmatrix}
 $$
 
@@ -578,9 +578,9 @@ $$\sum^{n}_{i, j = 1}C_{i, j} \cdot \varphi_{\tilde{l}, max(i, j), min(i, j)}$$
 
 |     | $min \displaystyle \sum_{\tilde{l}}\sum^{n}_{i, j = 1}C_{i, j} \cdot \varphi_{\tilde{l}, max(i, j), min(i, j)}$ | 
 | :-: |  :-  | 
-|s.t.  | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} + \gamma_{\tilde{l}, i} - (\varphi_{\tilde{l}, \tilde{n}, i} + 1) \le 0 \quad i = \overline{1, \tilde{n}}$ | 
-|     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0$ | 
-|     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, i} \le 0 \quad i = \overline{1, \tilde{n}}$ | 
+|s.t.  | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} + \gamma_{\tilde{l}, i} - (\varphi_{\tilde{l}, max(\tilde{n}, i), min(\tilde{n}, i)} + 1) \le 0 \quad i = \overline{1, n}$ | 
+|     | $\varphi_{\tilde{l}, max(\tilde{n}, i), min(\tilde{n}, i)} - \gamma_{\tilde{l}, \tilde{n}} \le 0 \quad i = \overline{1, n}$ | 
+|     | $\varphi_{\tilde{l}, max(\tilde{n}, i), min(\tilde{n}, i)} - \gamma_{\tilde{l}, i} \le 0 \quad i = \overline{1, \tilde{n}}$ | 
 |     | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) \le 0$ | 
 |     | $\displaystyle \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
 |     |  $x_{\tilde{m}, \tilde{l}} + \alpha_{\tilde{l}, \tilde{k}} - (\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} + 1) \le 0$ | 
