@@ -539,33 +539,48 @@ $$
 
 Стоимость реализованного $\tilde{n}$-го требования в $\tilde{l}$-й комплектации:
 
-$$\gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i})$$
+$$\gamma_{\tilde{l}, \tilde{n}} \cdot \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) = \sum^{n}_{i = 1}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i})$$
 
-Выражение нелинейно. Однако в силу того, что переменные $\gamma$ бинарные, это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$ и дополнению модели следующими ограничениями от умножения бинарных переменных:
+Выражение $\gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i}$ нелинейно. Однако в силу того, что переменные $\gamma$ бинарные это выражение может быть приведено к линейному виду благодаря вводу дополнительной бинарной переменной $\varphi \in \{0, 1\}$. Из ассоциативного свойства $\gamma_{\tilde{l}, \tilde{n}} \cdot \gamma_{\tilde{l}, i} = \gamma_{\tilde{l}, i} \cdot \gamma_{\tilde{l}, \tilde{n}}$ следует, что дополнительная переменная $\varphi$ может быть переиспользована, а введение новой требуется при $i = \overline{1, \tilde{n}}$.
+
+Для $\tilde{l}$ комплектации дополнительные переменные $\varphi$ удобно представить в виде нижнетреугольной матрицы:
+
+$$
+    \begin{pmatrix}
+    \varphi_{1, 1} & 0 & \cdots & 0 \\
+    \varphi_{2, 1} & \varphi_{2, 2} & \cdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \varphi_{n, 1} & \varphi_{n, 2} & \cdots & \varphi_{n, n}
+    \end{pmatrix}
+$$
+
+При этом модель дополняется следующими ограничениями:
 
 $$
 \begin{cases}
     \displaystyle
-    \gamma_{\tilde{l}, \tilde{n}} + \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0 \\
-    \\
-    \varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0 \\
-    \\
+    \gamma_{\tilde{l}, \tilde{n}} + \gamma_{\tilde{l}, i} - (\varphi_{\tilde{l}, max(\tilde{n}, i), min(\tilde{n}, i)} + 1) \le 0 \\
+    \varphi_{\tilde{l}, max(\tilde{n}, i), min(\tilde{n}, i)} - \gamma_{\tilde{l}, \tilde{n}} \le 0 \\
     \displaystyle
-    \varphi_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) \le 0
+    \varphi_{\tilde{l}, max(\tilde{n}, i), min(\tilde{n}, i)} - \gamma_{\tilde{l}, i} \le 0
 \end{cases}
 $$
 
-Эти преобразования дополняют модель $l \cdot n$ переменными и $3 \cdot l \cdot n$ ограничениями.
+$$i = \overline{1, n}$$
 
-Суммарная стоимость реализованных требований:
+Эти преобразования дополняют модель $l \cdot n \cdot (n + 1) / 2$ переменными и $3 \cdot l \cdot n \cdot (n + 1) / 2$ ограничениями.
+
+Суммарная стоимость реализованных требований в $\tilde{l}$ комплектации:
+
+$$\sum^{n}_{i, j = 1}C_{i, j} \cdot \varphi_{\tilde{l}, max(i, j), min(i, j)}$$
 
 Таким образом сформулирована задача линейного программирования:
 
-|     | $min \displaystyle \sum_{i = 1}^{l}\sum_{j = 1}^{n}\varphi_{i, j}$ | 
+|     | $min \displaystyle \sum_{\tilde{l}}\sum^{n}_{i, j = 1}C_{i, j} \cdot \varphi_{\tilde{l}, max(i, j), min(i, j)}$ | 
 | :-: |  :-  | 
-|s.t.  | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} + \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) - (\varphi_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
+|s.t.  | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} + \gamma_{\tilde{l}, i} - (\varphi_{\tilde{l}, \tilde{n}, i} + 1) \le 0 \quad i = \overline{1, \tilde{n}}$ | 
 |     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, \tilde{n}} \le 0$ | 
-|     | $\displaystyle \varphi_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{n}(c_{\tilde{n}, i} \cdot \gamma_{\tilde{l}, i}) \le 0$ | 
+|     | $\varphi_{\tilde{l}, \tilde{n}} - \gamma_{\tilde{l}, i} \le 0 \quad i = \overline{1, \tilde{n}}$ | 
 |     | $\displaystyle \gamma_{\tilde{l}, \tilde{n}} - \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) \le 0$ | 
 |     | $\displaystyle \sum_{i = 1}^{m}\big(q_{\tilde{n}, i} \cdot \sum_{j = 1}^{k}\beta_{k \cdot (i - 1) + j, \tilde{l}}\big) + 1 / M - (M \cdot \gamma_{\tilde{l}, \tilde{n}} + 1) \le 0$ | 
 |     |  $x_{\tilde{m}, \tilde{l}} + \alpha_{\tilde{l}, \tilde{k}} - (\beta_{k \cdot (\tilde{m} - 1) + \tilde{k}, \tilde{l}} + 1) \le 0$ | 
@@ -579,9 +594,9 @@ $$
 
 Размер модели:
 
-1. Количество переменных: $m \cdot k + l \cdot (k + k \cdot m + 2 \cdot n)$
+1. Количество переменных: $m \cdot k + l \cdot \Big(k \cdot (m + 1) + n \cdot \big(0.5 \cdot (n + 1) + 1\big)\Big)$
 
-2. Количество ограничений: $m + l \cdot (3 \cdot m \cdot k + 2 \cdot k + 5 \cdot n)$
+2. Количество ограничений: $m + l \cdot \big(k \cdot (3 \cdot m + 2) + n \cdot (1.5 \cdot (n + 1) + 2)\big)$
 
 ### Генетический алгоритм
 

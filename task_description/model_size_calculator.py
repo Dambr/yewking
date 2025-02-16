@@ -11,7 +11,7 @@ class ModelSizeCalculator:
         m = self.m
         n = self.n
 
-        return m * k + l * (k * (1 + m) + 2 * n)
+        return int(m * k + l * k + l * m * k + l * n + l * n * (n + 1) / 2)
 
     def calculate_constraints_count(self):
         k = self.k
@@ -19,4 +19,4 @@ class ModelSizeCalculator:
         m = self.m
         n = self.n
 
-        return m + l * (3 * m * k + 2 * k + 5 * n)
+        return int(m + 2 * l * k + 3 * l * m * k + 2 * l * n + 3 * l * n * (n + 1) / 2)
