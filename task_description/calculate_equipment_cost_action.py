@@ -14,19 +14,46 @@ class CalculateEquipmentCostAction():
         bin_multiply = self.__bin_multiply
         C = self.C
 
-        delivery_requirements = calculate_delivery_requirements_action.calculate()
-        costs = np.dot(C, delivery_requirements)
-        result = bin_multiply(delivery_requirements, costs)
+        R = calculate_delivery_requirements_action.calculate()
+        # costs = np.dot(C, delivery_requirements)
+        result = bin_multiply(C, R)
         return result
     
-    def __bin_multiply(self, vector1, vector2):
+    def __bin_multiply(self, C, R):
         add_multiply_constraints_action = self.add_multiply_constraints_action
-        
+
         result = []
-        length = len(vector1)
-        for i in range(length):
-            p1 = vector1[i]
-            p2 = vector2[i]
-            f = add_multiply_constraints_action.add_multiply_constraints(p1, p2)
-            result.append(f)
+        cashed = {}
+        n = len(R)
+
+        # сначала перемножаем переменные попарно
+        for i in range(n):
+            for j in range(n):
+                record = (i, j)
+                contains = record in cashed
+                if not contains:
+                    r_i = R[i]
+                    r_j = R[j]
+                    f = add_multiply_constraints_action.add_multiply_constraints(r_i, r_j)
+                    reverse_record = (j, i)
+                    cashed[record] = f
+                    cashed[reverse_record] = f
+
+        # теперь умножаем элементы матрицы на переменные
+        for i in range(n):
+            for j in range(n):
+                record = (i, j)
+                f = cashed[record]
+                element = C[i][j] * f
+                result.append(element)
+
         return sum(result)
+        
+        # result = []
+        # length = len(vector1)
+        # for i in range(length):
+        #     p1 = vector1[i]
+        #     p2 = vector2[i]
+        #     f = add_multiply_constraints_action.add_multiply_constraints(p1, p2)
+        #     result.append(f)
+        # return sum(result)
