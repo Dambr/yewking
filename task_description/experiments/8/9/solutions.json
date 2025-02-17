@@ -1,0 +1,38 @@
+[
+  {
+    "name": "random",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -218.0,
+          "duration": 7.390975952148438e-05
+        }
+      }
+    ]
+  },
+  {
+    "name": "cbc",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -213.0,
+          "duration": 0.21702098846435547
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#2",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -197.0,
+          "duration": 0.787736177444458
+        }
+      }
+    ]
+  }
+]

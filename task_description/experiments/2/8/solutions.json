@@ -1,0 +1,50 @@
+[
+  {
+    "name": "random",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -8.0,
+          "duration": 2.5987625122070312e-05
+        }
+      }
+    ]
+  },
+  {
+    "name": "cbc",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -5.0,
+          "duration": 0.08905982971191406
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#1",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -8.0,
+          "duration": 1.2449798583984375
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#2",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -5.0,
+          "duration": 0.23261594772338867
+        }
+      }
+    ]
+  }
+]

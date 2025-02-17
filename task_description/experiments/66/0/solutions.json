@@ -1,0 +1,26 @@
+[
+  {
+    "name": "random",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -3655.0,
+          "duration": 0.0001251697540283203
+        }
+      }
+    ]
+  },
+  {
+    "name": "cbc",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -3320.0,
+          "duration": 1.883133888244629
+        }
+      }
+    ]
+  }
+]
