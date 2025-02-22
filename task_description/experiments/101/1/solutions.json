@@ -22,5 +22,53 @@
         }
       }
     ]
+  },
+  {
+    "name": "glpk",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -7186.0,
+          "duration": 11.431413888931274
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#1",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -6116.0,
+          "duration": 2.3990190029144287
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#2",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -5890.0,
+          "duration": 0.3234379291534424
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#3",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -5728.0,
+          "duration": 2.1929080486297607
+        }
+      }
+    ]
   }
 ]

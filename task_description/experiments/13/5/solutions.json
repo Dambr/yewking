@@ -30,7 +30,43 @@
         "config": {},
         "result": {
           "fitness": -279.0,
-          "duration": 0.5522160530090332
+          "duration": 0.2831389904022217
+        }
+      }
+    ]
+  },
+  {
+    "name": "glpk",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -300.0,
+          "duration": 0.3634059429168701
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#1",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -313.0,
+          "duration": 1.4880268573760986
+        }
+      }
+    ]
+  },
+  {
+    "name": "genetic#3",
+    "solutions": [
+      {
+        "config": {},
+        "result": {
+          "fitness": -279.0,
+          "duration": 1.8300881385803223
         }
       }
     ]
