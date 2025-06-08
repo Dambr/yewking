@@ -1,0 +1,2447 @@
+[
+  {
+    "requirement": "1.1.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/data/managedData.ts",
+      "src/data/dataSource.ts",
+      "src/components/toolbar/Toolbar.vue",
+      "src/components/toolbar/TopToolbar.vue",
+      "src/components/panels/debug-panel/DebugPanel.vue",
+      "src/components/panels/debug-panel/DebugInfoForMode.vue",
+      "src/components/panels/ai-prompts/AiPromptsData.vue",
+      "src/components/dialogs/csvimport/importCsvUtils.ts",
+      "src/components/dialogs/csvimport/delimiterSeparatorUtils.ts"
+    ]
+  },
+  {
+    "requirement": "1.1.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupAnnotations.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts"
+    ]
+  },
+  {
+    "requirement": "1.1.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupAnnotations.ts"
+    ]
+  },
+  {
+    "requirement": "1.1.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts"
+    ]
+  },
+  {
+    "requirement": "1.2.1",
+    "files": [
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/data/managedData.ts",
+      "src/data/dataSource.ts",
+      "src/components/toolbar/Toolbar.vue",
+      "src/components/toolbar/TopToolbar.vue",
+      "src/components/panels/debug-panel/DebugPanel.vue",
+      "src/components/panels/debug-panel/DebugInfoForMode.vue",
+      "src/components/panels/ai-prompts/AiPromptsData.vue",
+      "src/components/dialogs/csvimport/importCsvUtils.ts",
+      "src/components/dialogs/csvimport/delimiterSeparatorUtils.ts"
+    ]
+  },
+  {
+    "requirement": "1.2.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupAnnotations.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts"
+    ]
+  },
+  {
+    "requirement": "1.2.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupAnnotations.ts"
+    ]
+  },
+  {
+    "requirement": "1.2.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts"
+    ]
+  },
+  {
+    "requirement": "1.3.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/dataformats/pathIndexLink.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/defaultFormats.ts"
+    ]
+  },
+  {
+    "requirement": "1.3.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupAnnotations.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts"
+    ]
+  },
+  {
+    "requirement": "1.3.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupAnnotations.ts"
+    ]
+  },
+  {
+    "requirement": "1.3.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts"
+    ]
+  },
+  {
+    "requirement": "1.4.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "1.4.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "1.4.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "1.4.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "1.4.5",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "1.4.6",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "1.5.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.5.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.5.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.5.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.5.5",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.6.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.6.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.6.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.6.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.6.5",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.6.6",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.7.1",
+    "files": [
+      "src/data/undoManager.ts",
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue"
+    ]
+  },
+  {
+    "requirement": "1.7.2",
+    "files": [
+      "src/data/undoManager.ts",
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue"
+    ]
+  },
+  {
+    "requirement": "1.7.3",
+    "files": [
+      "src/data/undoManager.ts",
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue"
+    ]
+  },
+  {
+    "requirement": "1.7.4",
+    "files": [
+      "src/data/undoManager.ts",
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue"
+    ]
+  },
+  {
+    "requirement": "1.8.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.5",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.6",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.7",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.8",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.9",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.10",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.11",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.8.12",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.9.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.9.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.9.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.9.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.9.5",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.9.6",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.10.1",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.10.2",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.10.3",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.10.4",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.10.5",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "1.10.6",
+    "files": [
+      "src/components/panels/code-editor/CodeEditor.vue",
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/components/panels/code-editor/aceUtility.ts"
+    ]
+  },
+  {
+    "requirement": "2.1.1",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/data/managedValidation.ts",
+      "src/data/managedJsonSchema.ts",
+      "src/packaged-schemas/schemaCollection.ts",
+      "src/packaged-schemas/schemaOption.ts",
+      "src/components/panels/ai-prompts/schemaProcessor.ts",
+      "src/components/panels/ai-prompts/AiPromptsSchema.vue",
+      "src/components/panels/ai-prompts/AiPromptsTemplate.vue",
+      "src/schema/inferJsonSchema.ts",
+      "src/schema/mergeAllOfs.ts"
+    ]
+  },
+  {
+    "requirement": "2.1.2",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.1.3",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.1.4",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.2.1",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/schemaReadingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.2.2",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.2.3",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.2.4",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.3.1",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/schemaReadingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.3.2",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.3.3",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.3.4",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.4.1",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.4.2",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.4.3",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.4.4",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.5.1",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.5.2",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.5.3",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.5.4",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.6.1",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.6.2",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.6.3",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "2.6.4",
+    "files": [
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.1.1",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/data/managedData.ts",
+      "src/data/oneOfAnyOfSelectionOption.ts",
+      "src/data/undoManager.ts",
+      "src/components/panels/list-analysis/ListAnalysisPanel.vue",
+      "src/components/panels/list-analysis/listAnalysisUtils.ts",
+      "src/components/dialogs/csvimport/importCsvUtils.ts",
+      "src/components/dialogs/csvimport/csvImportTypes.ts",
+      "src/utility/arrayPathUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.1.2",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.1.3",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.1.4",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.1.5",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.2.1",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.2.2",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.2.3",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.2.4",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.2.5",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.3.1",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.3.2",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.3.3",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.3.4",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.3.5",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.4.1",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.4.2",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.4.3",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.4.4",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.5.1",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.5.2",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.5.3",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.5.4",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.6.1",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.6.2",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.6.3",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.6.4",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "3.6.5",
+    "files": [
+      "src/components/panels/gui-editor/GuiEditor.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.1.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.1.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.1.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.1.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.2.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.2.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.2.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.2.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.3.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.3.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.3.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.3.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.4.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.4.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.4.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.4.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.5.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.5.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.5.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.5.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.6.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.6.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.6.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.6.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.7.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.7.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.7.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.7.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.8.1",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.8.2",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.8.3",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "4.8.4",
+    "files": [
+      "src/components/panels/schema-diagram/SchemaDiagram.vue",
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.1.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.1.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.1.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.1.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "5.2.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.2.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.2.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.2.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/pathIndexLinkYaml.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "5.3.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.3.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.3.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.3.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "5.4.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.4.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.4.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.4.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "5.5.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.5.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.5.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.5.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "5.6.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.6.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.6.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.6.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "5.7.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/panels/shared-components/CurrentPathBreadcrump.vue",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "requirement": "5.7.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/dataToString.ts",
+      "src/utility/resolveDataAtPath.ts"
+    ]
+  },
+  {
+    "requirement": "5.7.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/components/toolbar/SearchBar.vue",
+      "src/components/toolbar/ModeSelector.vue"
+    ]
+  },
+  {
+    "requirement": "5.7.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts"
+    ]
+  },
+  {
+    "requirement": "6.1.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts"
+    ]
+  },
+  {
+    "requirement": "6.1.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "6.1.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "6.1.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "6.2.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts"
+    ]
+  },
+  {
+    "requirement": "6.2.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "6.2.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "6.2.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "6.3.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.3.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.3.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.3.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.4.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.4.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.4.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "6.4.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.1.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts"
+    ]
+  },
+  {
+    "requirement": "7.1.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "7.1.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "7.1.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "7.2.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts"
+    ]
+  },
+  {
+    "requirement": "7.2.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "7.2.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "7.2.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "7.3.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.3.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.3.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.3.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.4.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.4.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.4.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "7.4.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.1.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/schema/detectSchemaFeatures.ts"
+    ]
+  },
+  {
+    "requirement": "8.1.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "8.1.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "8.1.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "8.2.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/schema/detectSchemaFeatures.ts"
+    ]
+  },
+  {
+    "requirement": "8.2.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "8.2.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "8.2.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "8.3.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.3.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.3.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.3.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.4.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.4.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.4.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "8.4.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.1.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/schema/metaSchemaBuilder.ts",
+      "src/schema/oneTimeSchemaPreprocessor.ts"
+    ]
+  },
+  {
+    "requirement": "9.1.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "9.1.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "9.1.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkJson.ts"
+    ]
+  },
+  {
+    "requirement": "9.2.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/schema/metaSchemaBuilder.ts",
+      "src/schema/oneTimeSchemaPreprocessor.ts"
+    ]
+  },
+  {
+    "requirement": "9.2.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "9.2.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "9.2.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "requirement": "9.3.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/schema/metaSchemaBuilder.ts",
+      "src/schema/oneTimeSchemaPreprocessor.ts"
+    ]
+  },
+  {
+    "requirement": "9.3.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.3.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.3.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.4.1",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.4.2",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.4.3",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "9.4.4",
+    "files": [
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/defaultFormats.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLink.ts"
+    ]
+  },
+  {
+    "requirement": "10.1.1",
+    "files": [
+      "src/schema/schemaDescriptor.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/schema/schemaProcessingUtils.ts"
+    ]
+  },
+  {
+    "requirement": "10.1.2",
+    "files": [
+      "src/components/toolbar/Toolbar.vue",
+      "src/components/toolbar/TopToolbar.vue"
+    ]
+  },
+  {
+    "requirement": "10.1.3",
+    "files": [
+      "src/components/toolbar/Toolbar.vue",
+      "src/components/toolbar/TopToolbar.vue"
+    ]
+  },
+  {
+    "requirement": "10.1.4",
+    "files": [
+      "src/components/toolbar/Toolbar.vue",
+      "src/components/toolbar/TopToolbar.vue"
+    ]
+  },
+  {
+    "requirement": "10.2.1",
+    "files": [
+      "src/components/dialogs/AboutDialog.vue",
+      "src/components/dialogs/UrlInputDialog.vue",
+      "src/components/dialogs/InitialSchemaSelectionDialog.vue",
+      "src/components/dialogs/ImportCsvDialog.vue",
+      "src/components/dialogs/SaveSnapshotDialog.vue",
+      "src/components/dialogs/CodeGenerationDialog.vue",
+      "src/components/dialogs/FetchedSchemasSelectionDialog.vue"
+    ]
+  },
+  {
+    "requirement": "10.2.2",
+    "files": [
+      "src/components/dialogs/AboutDialog.vue",
+      "src/components/dialogs/UrlInputDialog.vue",
+      "src/components/dialogs/InitialSchemaSelectionDialog.vue",
+      "src/components/dialogs/ImportCsvDialog.vue",
+      "src/components/dialogs/SaveSnapshotDialog.vue",
+      "src/components/dialogs/CodeGenerationDialog.vue",
+      "src/components/dialogs/FetchedSchemasSelectionDialog.vue"
+    ]
+  },
+  {
+    "requirement": "10.2.3",
+    "files": [
+      "src/components/dialogs/AboutDialog.vue",
+      "src/components/dialogs/UrlInputDialog.vue",
+      "src/components/dialogs/InitialSchemaSelectionDialog.vue",
+      "src/components/dialogs/ImportCsvDialog.vue",
+      "src/components/dialogs/SaveSnapshotDialog.vue",
+      "src/components/dialogs/CodeGenerationDialog.vue",
+      "src/components/dialogs/FetchedSchemasSelectionDialog.vue"
+    ]
+  },
+  {
+    "requirement": "10.2.4",
+    "files": [
+      "src/components/dialogs/AboutDialog.vue",
+      "src/components/dialogs/UrlInputDialog.vue",
+      "src/components/dialogs/InitialSchemaSelectionDialog.vue",
+      "src/components/dialogs/ImportCsvDialog.vue",
+      "src/components/dialogs/SaveSnapshotDialog.vue",
+      "src/components/dialogs/CodeGenerationDialog.vue",
+      "src/components/dialogs/FetchedSchemasSelectionDialog.vue"
+    ]
+  },
+  {
+    "requirement": "10.3.1",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.3.2",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.3.3",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.3.4",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.4.1",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.4.2",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.4.3",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "requirement": "10.4.4",
+    "files": [
+      "src/settings/settingsTypes.ts",
+      "src/settings/settingsSchema.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/useSettings.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  }
+] 
