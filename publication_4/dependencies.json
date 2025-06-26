@@ -1,0 +1,732 @@
+[
+  {
+    "file": "src/components/panels/code-editor/AceEditor.vue",
+    "dependencies": [
+      "src/components/panels/code-editor/setupAnnotations.ts",
+      "src/components/panels/code-editor/setupLinkToSelectionAndData.ts",
+      "src/settings/useSettings.ts",
+      "src/store/sessionMode.ts",
+      "src/components/panels/shared-components/aceUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/code-editor/CodeEditorPanel.vue",
+    "dependencies": [
+      "src/components/panels/code-editor/AceEditor.vue",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/gui-editor/PropertiesPanel.vue",
+    "dependencies": [
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/components/panels/gui-editor/PropertyData.vue",
+      "src/components/panels/gui-editor/PropertyMetadata.vue",
+      "src/components/panels/gui-editor/configTreeNodeResolver.ts",
+      "src/utility/path.ts",
+      "src/constants.ts",
+      "src/components/panels/gui-editor/configDataTreeNode.ts",
+      "src/utility/pathUtils.ts",
+      "src/components/panels/gui-editor/SchemaInfoOverlay.vue",
+      "src/utility/focusUtils.ts",
+      "src/data/useDataLink.ts",
+      "src/utility/resolveDataAtPath.ts",
+      "src/store/sessionMode.ts",
+      "src/utility/renameUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/gui-editor/PropertyData.vue",
+    "dependencies": [
+      "src/components/panels/gui-editor/configDataTreeNode.ts",
+      "src/utility/path.ts",
+      "src/components/panels/gui-editor/resolveCorrespondingComponent.ts",
+      "src/utility/pathUtils.ts",
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/components/panels/gui-editor/configTreeNodeReadingUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/gui-editor/PropertyMetadata.vue",
+    "dependencies": [
+      "src/components/panels/gui-editor/configDataTreeNode.ts",
+      "src/utility/path.ts",
+      "src/utility/focusUtils.ts",
+      "src/settings/useSettings.ts",
+      "src/store/sessionMode.ts",
+      "src/data/useDataLink.ts",
+      "src/schema/validationService.ts",
+      "src/components/panels/gui-editor/configTreeNodeReadingUtils.ts",
+      "src/schema/schemaReadingUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/gui-editor/configTreeNodeResolver.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/components/panels/gui-editor/configDataTreeNode.ts",
+      "src/utility/path.ts",
+      "src/utility/pathUtils.ts",
+      "src/settings/settingsTypes.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/schema/mergeAllOfs.ts",
+      "src/settings/useSettings.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/store/sessionMode.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/gui-editor/configDataTreeNode.ts",
+    "dependencies": [
+      "src/utility/path.ts",
+      "src/schema/jsonSchemaWrapper.ts"
+    ]
+  },
+  {
+    "file": "src/data/undoManager.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/data/managedData.ts",
+    "dependencies": [
+      "src/dataformats/formatRegistry.ts",
+      "src/utility/path.ts",
+      "src/utility/resolveDataAtPath.ts",
+      "src/utility/pathUtils.ts",
+      "src/data/undoManager.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/CombinedEditorComponent.vue",
+    "dependencies": [
+      "src/components/toolbar/Toolbar.vue",
+      "src/utility/confirmationService.ts",
+      "src/utility/toastService.ts",
+      "src/router/router.ts",
+      "src/utility/readFileContent.ts",
+      "src/data/useDataLink.ts",
+      "src/settings/useSettings.ts",
+      "src/store/sessionMode.ts",
+      "src/store/sessionStore.ts",
+      "src/settings/settingsTypes.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/utility/settingsUpdater.ts",
+      "src/components/panels/panelTypeRegistry.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/menuItems.ts",
+    "dependencies": [
+      "src/components/toolbar/uploadFile.ts",
+      "src/components/toolbar/downloadFile.ts",
+      "src/components/toolbar/clearFile.ts",
+      "src/store/sessionStore.ts",
+      "src/components/toolbar/createSampleData.ts",
+      "src/data/useDataLink.ts",
+      "src/data/dataSource.ts",
+      "src/store/sessionMode.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/settingsTypes.ts",
+      "src/components/panels/panelTypeRegistry.ts",
+      "src/components/panels/defaultPanelTypes.ts",
+      "src/components/toolbar/importFile.ts",
+      "src/components/toolbar/extractSchemaDefinitions.ts"
+    ]
+  },
+  {
+    "file": "src/data/dataSource.ts",
+    "dependencies": [
+      "src/settings/defaultSettingsData.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/metaSchemaBuilder.ts",
+      "src/settings/settingsSchema.ts"
+    ]
+  },
+  {
+    "file": "src/schema/validationService.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts",
+      "src/utility/path.ts",
+      "src/utility/pathUtils.ts"
+    ]
+  },
+  {
+    "file": "src/data/managedValidation.ts",
+    "dependencies": [
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/schema/validationService.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/SearchBar.vue",
+    "dependencies": [
+      "src/store/sessionStore.ts",
+      "src/main.ts",
+      "src/utility/search.ts",
+      "src/utility/focusUtils.ts",
+      "src/constants.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/utility/search.ts",
+    "dependencies": [
+      "src/utility/path.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/utility/pathUtils.ts",
+      "src/utility/dataToString.ts",
+      "src/constants.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/data/managedSession.ts",
+    "dependencies": [
+      "src/utility/path.ts",
+      "src/utility/pathUtils.ts",
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/utility/search.ts",
+      "src/schema/effectiveSchemaCalculator.ts",
+      "src/components/panels/gui-editor/configDataTreeNode.ts"
+    ]
+  },
+  {
+    "file": "src/dataformats/dataConverter.ts",
+    "dependencies": [
+      "src/settings/useSettings.ts"
+    ]
+  },
+  {
+    "file": "src/dataformats/defaultFormats.ts",
+    "dependencies": [
+      "src/dataformats/dataFormatDefinition.ts",
+      "src/dataformats/dataConverter.ts",
+      "src/dataformats/pathIndexLinkJson.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/dataformats/pathIndexLinkYaml.ts"
+    ]
+  },
+  {
+    "file": "src/dataformats/pathIndexLinkYaml.ts",
+    "dependencies": [
+      "src/dataformats/pathIndexLink.ts",
+      "src/utility/path.ts",
+      "src/main.ts"
+    ]
+  },
+  {
+    "file": "src/dataformats/pathIndexLinkJson.ts",
+    "dependencies": [
+      "src/dataformats/pathIndexLink.ts",
+      "src/utility/path.ts",
+      "src/main.ts"
+    ]
+  },
+  {
+    "file": "src/packaged-schemas/schemaCollection.ts",
+    "dependencies": [
+      "src/packaged-schemas/schemaOption.ts",
+      "src/packaged-schemas/defaultSchema.ts",
+      "src/packaged-schemas/strendaSchema.ts",
+      "src/packaged-schemas/enzymemlSchema.ts",
+      "src/packaged-schemas/autonomousVehicleSchema.ts"
+    ]
+  },
+  {
+    "file": "src/packaged-schemas/defaultSchema.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/packaged-schemas/strendaSchema.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/packaged-schemas/enzymemlSchema.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/packaged-schemas/autonomousVehicleSchema.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/Toolbar.vue",
+    "dependencies": [
+      "src/components/dialogs/InitialSchemaSelectionDialog.vue",
+      "src/components/dialogs/AboutDialog.vue",
+      "src/components/toolbar/fetchSchemasFromJsonSchemaStore.ts",
+      "src/components/toolbar/uploadFile.ts",
+      "src/store/sessionMode.ts",
+      "src/packaged-schemas/schemaCollection.ts",
+      "src/components/dialogs/csvimport/ImportCsvDialog.vue",
+      "src/components/dialogs/snapshot/SaveSnapshotDialog.vue",
+      "src/components/dialogs/code-generation/CodeGenerationDialog.vue",
+      "src/components/dialogs/FetchedSchemasSelectionDialog.vue",
+      "src/components/dialogs/UrlInputDialog.vue",
+      "src/components/toolbar/TopToolbar.vue"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/TopToolbar.vue",
+    "dependencies": [
+      "src/utility/focusUtils.ts",
+      "src/store/sessionMode.ts",
+      "src/settings/useSettings.ts",
+      "src/dataformats/formatRegistry.ts",
+      "src/components/toolbar/ModeSelector.vue",
+      "src/components/toolbar/TopToolbarMenuButtons.vue",
+      "src/components/toolbar/SearchBar.vue"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/TopToolbarMenuButtons.vue",
+    "dependencies": [
+      "src/components/toolbar/menuItems.ts",
+      "src/data/useDataLink.ts",
+      "src/settings/settingsTypes.ts",
+      "src/settings/useSettings.ts",
+      "src/schema/inferJsonSchema.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/ModeSelector.vue",
+    "dependencies": [
+      "src/store/sessionMode.ts",
+      "src/settings/settingsTypes.ts",
+      "src/settings/useSettings.ts"
+    ]
+  },
+  {
+    "file": "src/components/dialogs/csvimport/importCsvUtils.ts",
+    "dependencies": [
+      "src/utility/readFileContent.ts",
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/utility/pathUtils.ts",
+      "src/schema/inferJsonSchema.ts",
+      "src/schema/mergeAllOfs.ts",
+      "src/utility/arrayPathUtils.ts",
+      "src/utility/stringToIdentifier.ts",
+      "src/components/dialogs/csvimport/csvImportTypes.ts",
+      "src/components/dialogs/csvimport/delimiterSeparatorUtils.ts",
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/uploadFile.ts",
+    "dependencies": [
+      "src/utility/readFileContent.ts",
+      "src/data/useDataLink.ts",
+      "src/data/managedData.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/importFile.ts",
+    "dependencies": [
+      "src/utility/readFileContent.ts",
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/data/managedData.ts",
+      "src/schema/schemaReadingUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/downloadFile.ts",
+    "dependencies": [
+      "src/data/useDataLink.ts",
+      "src/settings/useSettings.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/clearFile.ts",
+    "dependencies": [
+      "src/store/sessionStore.ts",
+      "src/utility/toastService.ts",
+      "src/utility/confirmationService.ts",
+      "src/data/useDataLink.ts",
+      "src/data/managedData.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/utility/backend/backendApi.ts",
+    "dependencies": [
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/settings/useSettings.ts",
+      "src/main.ts"
+    ]
+  },
+  {
+    "file": "src/utility/settingsUpdater.ts",
+    "dependencies": [
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/settings/defaultSettingsData.ts",
+      "src/settings/settingsTypes.ts",
+      "src/components/panels/panelTypeRegistry.ts",
+      "src/data/dataSource.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/detectSchemaFeatures.ts"
+    ]
+  },
+  {
+    "file": "src/views/SchemaEditorView.vue",
+    "dependencies": [
+      "src/components/CombinedEditorComponent.vue",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/schema-diagram/SchemaDiagramPanel.vue",
+    "dependencies": [
+      "src/store/sessionMode.ts",
+      "src/components/panels/schema-diagram/JsonSchemaDiagramPanel.vue"
+    ]
+  },
+  {
+    "file": "src/components/panels/schema-diagram/JsonSchemaDiagramPanel.vue",
+    "dependencies": [
+      "src/utility/path.ts",
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/components/panels/schema-diagram/VueFlowPanel.vue"
+    ]
+  },
+  {
+    "file": "src/components/panels/gui-editor/SchemaInfoPanel.vue",
+    "dependencies": [
+      "src/store/sessionMode.ts",
+      "src/data/useDataLink.ts",
+      "src/schema/schemaReadingUtils.ts"
+    ]
+  },
+  {
+    "file": "src/schema/schemaManipulationUtils.ts",
+    "dependencies": [
+      "src/utility/resolveDataAtPath.ts",
+      "src/utility/pathUtils.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/data/managedData.ts",
+      "src/schema/graph-representation/schemaGraphConstructor.ts",
+      "src/schema/graph-representation/schemaGraphTypes.ts",
+      "src/utility/renameUtils.ts",
+      "src/utility/stringToIdentifier.ts"
+    ]
+  },
+  {
+    "file": "src/schema/schemaDescriptor.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/schema/schemaLazyResolver.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/schema/mergeAllOfs.ts",
+      "src/store/sessionMode.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/schema/schemaReadingUtils.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts",
+      "src/utility/path.ts",
+      "src/data/managedData.ts"
+    ]
+  },
+  {
+    "file": "src/schema/jsonSchemaWrapper.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts",
+      "src/schema/schemaProcessingUtils.ts",
+      "src/utility/path.ts",
+      "src/schema/schemaLazyResolver.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/fetchSchemasFromJsonSchemaStore.ts",
+    "dependencies": [
+      "src/packaged-schemas/schemaOption.ts",
+      "src/constants.ts"
+    ]
+  },
+  {
+    "file": "src/utility/fetchExternalContent.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/components/panels/schema-diagram/VueFlowPanel.vue",
+    "dependencies": []
+  },
+  {
+    "file": "src/components/panels/schema-diagram/SchemaObjectNode.vue",
+    "dependencies": []
+  },
+  {
+    "file": "src/components/panels/schema-diagram/SchemaEnumNode.vue",
+    "dependencies": [
+      "src/schema/graph-representation/schemaGraphTypes.ts",
+      "src/utility/path.ts",
+      "src/settings/useSettings.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/schema/graph-representation/schemaGraphConstructor.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/schema-diagram/SchemaObjectAttribute.vue",
+    "dependencies": [
+      "src/schema/graph-representation/schemaGraphTypes.ts",
+      "src/utility/path.ts",
+      "src/settings/useSettings.ts",
+      "src/schema/graph-representation/typeUtils.ts"
+    ]
+  },
+  {
+    "file": "src/schema/graph-representation/schemaGraphConstructor.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts",
+      "src/utility/path.ts",
+      "src/schema/schemaReadingUtils.ts",
+      "src/utility/pathUtils.ts",
+      "src/settings/useSettings.ts",
+      "src/schema/mergeAllOfs.ts",
+      "src/utility/resolveDataAtPath.ts",
+      "src/schema/graph-representation/schemaGraphTypes.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/schema-diagram/schemaDiagramTypes.ts",
+    "dependencies": [
+      "src/schema/graph-representation/schemaGraphTypes.ts"
+    ]
+  },
+  {
+    "file": "src/schema/graph-representation/schemaGraphTypes.ts",
+    "dependencies": [
+      "src/utility/path.ts",
+      "src/schema/jsonSchemaType.ts",
+      "src/utility/pathUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/schema-diagram/DiagramOptionsPanel.vue",
+    "dependencies": [
+      "src/settings/useSettings.ts"
+    ]
+  },
+  {
+    "file": "src/settings/settingsSchema.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/settings/settingsTypes.ts",
+    "dependencies": [
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/settings/defaultSettingsData.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/utility/deleteUtils.ts",
+    "dependencies": [
+      "src/data/managedData.ts",
+      "src/utility/path.ts",
+      "src/utility/pathUtils.ts"
+    ]
+  },
+  {
+    "file": "src/schema/inferJsonSchema.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/schema/oneTimeSchemaPreprocessor.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/schema/graph-representation/typeUtils.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts",
+      "src/utility/pathUtils.ts",
+      "src/schema/graph-representation/schemaGraphTypes.ts",
+      "src/utility/path.ts"
+    ]
+  },
+  {
+    "file": "src/utility/toastService.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/components/toolbar/extractSchemaDefinitions.ts",
+    "dependencies": [
+      "src/utility/toastService.ts",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/fetchSchemaFromUrl.ts",
+    "dependencies": [
+      "src/components/toolbar/clearFile.ts",
+      "src/utility/toastService.ts",
+      "src/data/dataSource.ts",
+      "src/utility/fetchExternalContent.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/createSampleData.ts",
+    "dependencies": [
+      "src/utility/confirmationService.ts",
+      "src/utility/toastService.ts",
+      "src/data/useDataLink.ts",
+      "src/data/dataSource.ts"
+    ]
+  },
+  {
+    "file": "src/components/toolbar/fetchExampleSchemas.ts",
+    "dependencies": [
+      "src/components/toolbar/clearFile.ts",
+      "src/utility/toastService.ts",
+      "src/data/dataSource.ts",
+      "src/packaged-schemas/schemaCollection.ts",
+      "src/utility/settingsUpdater.ts"
+    ]
+  },
+  {
+    "file": "src/utility/errorService.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/utility/confirmationService.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/components/panels/gui-editor/properties/OntologyUriProperty.vue",
+    "dependencies": [
+      "src/utility/dataToString.ts",
+      "src/utility/path.ts",
+      "src/schema/validationService.ts",
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/components/panels/gui-editor/configTreeNodeReadingUtils.ts",
+      "src/utility/rdf/findSuggestionsForSearchTerm.ts",
+      "src/utility/rdf/findJsonLdPrefixes.ts",
+      "src/store/sessionMode.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/utility/rdf/findSuggestionsForSearchTerm.ts",
+    "dependencies": [
+      "src/settings/useSettings.ts"
+    ]
+  },
+  {
+    "file": "src/components/dialogs/code-generation/CodeGenerationDialog.vue",
+    "dependencies": [
+      "src/utility/codeGenerationUtils.ts",
+      "src/store/sessionMode.ts",
+      "src/data/useDataLink.ts",
+      "src/data/dataSource.ts",
+      "src/components/toolbar/downloadFile.ts"
+    ]
+  },
+  {
+    "file": "src/utility/codeGenerationUtils.ts",
+    "dependencies": []
+  },
+  {
+    "file": "src/components/panels/list-analysis/listAnalysisUtils.ts",
+    "dependencies": [
+      "src/utility/resolveDataAtPath.ts",
+      "src/utility/pathUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/list-analysis/ListAnalysisPanel.vue",
+    "dependencies": [
+      "src/store/sessionMode.ts",
+      "src/utility/arrayPathUtils.ts",
+      "src/utility/path.ts",
+      "src/data/useDataLink.ts",
+      "src/components/panels/list-analysis/listAnalysisUtils.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/debug-panel/DebugPanel.vue",
+    "dependencies": [
+      "src/store/sessionMode.ts",
+      "src/components/panels/debug-panel/DebugInfoForMode.vue",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/debug-panel/DebugInfoForMode.vue",
+    "dependencies": [
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/test-panel/TestPanel.vue",
+    "dependencies": [
+      "src/store/sessionMode.ts",
+      "src/components/panels/test-panel/TestComponentForMode.vue",
+      "src/schema/schemaManipulationUtils.ts",
+      "src/data/useDataLink.ts"
+    ]
+  },
+  {
+    "file": "src/components/panels/test-panel/TestComponentForMode.vue",
+    "dependencies": [
+      "src/data/useDataLink.ts",
+      "src/store/sessionMode.ts",
+      "src/utility/pathUtils.ts"
+    ]
+  },
+  {
+    "file": "src/schema/mergeAllOfs.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaType.ts"
+    ]
+  },
+  {
+    "file": "src/schema/effectiveSchemaCalculator.ts",
+    "dependencies": [
+      "src/schema/jsonSchemaWrapper.ts",
+      "src/utility/path.ts",
+      "src/utility/resolveDataAtPath.ts",
+      "src/store/sessionStore.ts",
+      "src/data/useDataLink.ts"
+    ]
+  }
+]
