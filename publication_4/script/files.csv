@@ -1,3 +1,4 @@
+file
 src/components/panels/code-editor/AceEditor.vue
 src/components/panels/code-editor/CodeEditorPanel.vue
 src/components/panels/gui-editor/PropertiesPanel.vue
