@@ -379,14 +379,6 @@
     ]
   },
   {
-    "requirement": "2.1.5",
-    "files": [
-      "src/components/panels/gui-editor/PropertiesPanel.vue",
-      "src/components/panels/gui-editor/configTreeNodeResolver.ts",
-      "src/components/panels/gui-editor/configDataTreeNode.ts"
-    ]
-  },
-  {
     "requirement": "2.2.1",
     "files": [
       "src/components/panels/gui-editor/PropertiesPanel.vue",
@@ -412,14 +404,6 @@
   },
   {
     "requirement": "2.2.4",
-    "files": [
-      "src/components/panels/gui-editor/PropertiesPanel.vue",
-      "src/components/panels/gui-editor/configTreeNodeResolver.ts",
-      "src/components/panels/gui-editor/configDataTreeNode.ts"
-    ]
-  },
-  {
-    "requirement": "2.2.5",
     "files": [
       "src/components/panels/gui-editor/PropertiesPanel.vue",
       "src/components/panels/gui-editor/configTreeNodeResolver.ts",
@@ -459,14 +443,6 @@
     ]
   },
   {
-    "requirement": "2.3.5",
-    "files": [
-      "src/components/panels/gui-editor/PropertiesPanel.vue",
-      "src/components/panels/gui-editor/configTreeNodeResolver.ts",
-      "src/components/panels/gui-editor/configDataTreeNode.ts"
-    ]
-  },
-  {
     "requirement": "2.4.1",
     "files": [
       "src/components/panels/gui-editor/PropertiesPanel.vue",
@@ -499,14 +475,6 @@
     ]
   },
   {
-    "requirement": "2.4.5",
-    "files": [
-      "src/components/panels/gui-editor/PropertiesPanel.vue",
-      "src/components/panels/gui-editor/configTreeNodeResolver.ts",
-      "src/components/panels/gui-editor/configDataTreeNode.ts"
-    ]
-  },
-  {
     "requirement": "2.5.1",
     "files": [
       "src/components/panels/gui-editor/PropertiesPanel.vue",
@@ -532,14 +500,6 @@
   },
   {
     "requirement": "2.5.4",
-    "files": [
-      "src/components/panels/gui-editor/PropertiesPanel.vue",
-      "src/components/panels/gui-editor/configTreeNodeResolver.ts",
-      "src/components/panels/gui-editor/configDataTreeNode.ts"
-    ]
-  },
-  {
-    "requirement": "2.5.5",
     "files": [
       "src/components/panels/gui-editor/PropertiesPanel.vue",
       "src/components/panels/gui-editor/configTreeNodeResolver.ts",
@@ -718,26 +678,6 @@
     ]
   },
   {
-    "requirement": "4.1.5",
-    "files": [
-      "src/views/SchemaEditorView.vue",
-      "src/components/CombinedEditorComponent.vue",
-      "src/components/panels/schema-diagram/SchemaDiagramPanel.vue",
-      "src/components/panels/schema-diagram/JsonSchemaDiagramPanel.vue",
-      "src/components/panels/gui-editor/PropertiesPanel.vue",
-      "src/components/panels/gui-editor/SchemaInfoPanel.vue",
-      "src/components/toolbar/menuItems.ts",
-      "src/components/toolbar/importFile.ts",
-      "src/components/toolbar/uploadFile.ts",
-      "src/components/toolbar/downloadFile.ts",
-      "src/schema/schemaManipulationUtils.ts",
-      "src/schema/schemaDescriptor.ts",
-      "src/schema/schemaLazyResolver.ts",
-      "src/schema/schemaReadingUtils.ts",
-      "src/schema/jsonSchemaWrapper.ts"
-    ]
-  },
-  {
     "requirement": "4.2.1",
     "files": [
       "src/components/toolbar/menuItems.ts",
@@ -772,17 +712,6 @@
   },
   {
     "requirement": "4.2.4",
-    "files": [
-      "src/components/toolbar/menuItems.ts",
-      "src/components/toolbar/fetchSchemasFromJsonSchemaStore.ts",
-      "src/utility/fetchExternalContent.ts",
-      "src/components/toolbar/importFile.ts",
-      "src/components/toolbar/uploadFile.ts",
-      "src/components/toolbar/downloadFile.ts"
-    ]
-  },
-  {
-    "requirement": "4.2.5",
     "files": [
       "src/components/toolbar/menuItems.ts",
       "src/components/toolbar/fetchSchemasFromJsonSchemaStore.ts",

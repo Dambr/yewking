@@ -5,7 +5,14 @@ class DfTokenizer():
         self.value_column = value_column
 
     def get_token(self, value):
-        pass
+        df = self.df
+        value_column = self.value_column
 
-    def get_value(self, token):
-        pass
+        tmp = df[df[value_column] == value]
+        index = tmp.index
+        values = index.values
+        count = len(values)
+        if count == 1:
+            return values[0]
+
+        raise ValueError("undefined value for " + value)

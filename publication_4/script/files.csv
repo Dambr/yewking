@@ -80,4 +80,6 @@ src/components/panels/test-panel/TestPanel.vue
 src/components/panels/test-panel/TestComponentForMode.vue
 src/schema/mergeAllOfs.ts
 src/schema/validationService.ts
-src/schema/effectiveSchemaCalculator.ts 
+src/schema/effectiveSchemaCalculator.ts
+src/utility/darkModeUtils.ts
+src/main.ts
