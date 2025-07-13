@@ -21,7 +21,7 @@
 
 Компоненты GUI редактора:
 
-1. src/components/panels/gui-editor/properties/*.vue
+1. src/components/panels/gui-editor/properties/\*.vue
 2. src/components/panels/gui-editor/SchemaInfoPanel.vue
 3. src/components/panels/gui-editor/PropertiesPanel.vue
 
