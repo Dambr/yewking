@@ -4,8 +4,9 @@ import gymnasium as gym
 import numpy as np
 
 class RlEnv(gym.Env):
-    def __init__(self, config, fitness_calculator, progress, graphic):
+    def __init__(self, M, config, fitness_calculator, progress, graphic):
         super(RlEnv, self).__init__()
+        self.M = M
         self.fitness_calculator = fitness_calculator
         self.progress = progress
         self.graphic = graphic
@@ -15,13 +16,14 @@ class RlEnv(gym.Env):
         self.default_observation = np.zeros(config.count, dtype=self.dtype)
         self.observation = self.default_observation
         self.best_solution = self.default_observation
-        self.best_fitness = 0
+        self.best_fitness = -M
         self.info = {}
 
     def step(self, action):
         self.observation = np.array(action).astype(self.dtype)
 
         fitness = self.fitness_calculator.calculate(self.observation)
+        # print(action, fitness, self.best_fitness)
         if fitness >= self.best_fitness:
             self.best_fitness = fitness
             self.best_solution = self.observation
@@ -37,6 +39,6 @@ class RlEnv(gym.Env):
     def reset(self, seed=None, options=None):
         self.observation = self.default_observation
         self.best_solution = self.default_observation
-        self.best_fitness = 0
+        self.best_fitness = -self.M
         self.graphic.clear()
         return (self.observation, self.info)

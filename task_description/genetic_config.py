@@ -3,7 +3,7 @@
 
 class GeneticConfig:
     def __init__(self):
-        self.num_generations = 100
+        self.num_generations = 10000
         self.sol_per_pop = 4
         self.num_parents_mating = 2
         self.parent_selection_type = "sss" # sss, rws, sus, rank, random, tournament
