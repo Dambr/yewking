@@ -16,35 +16,35 @@
 
 Для достижения цели и выполнения обозначенных задач использовано программно-инструментальное средство конфигурирования с открытым исходным кодом "meta-configurator" (https://github.com/MetaConfigurator/meta-configurator.git на ревизии 6068f048) [2-5] и был проведен анализ с целью выявления:
 
+1. функциональных требований
+2. файлов исхоного кода
+3. трассируемости требований на файлы исходного кода
+4. зависимостей между файлами исходного кода
+
+Так же по результатам анализа должны были быть сформированы предполагаемые составы комплектаций.
+
 В ходе анализаци было проанализировано:
-| Язык (формат) | Количество файлов | Количество строк |
-| :-: | :-: | :-: |
-| TypeScript      | 143 | 19095 |
-| JSON            |  12 | 12397 |
-| Vuejs Component |  56 |  6656 |
-| Text            |  13 |   195 |
-| JavaScript      |   4 |    66 |
-| Markdown        |   2 |    68 |
-| YAML            |   2 |    28 |
-| HTML            |   1 |    15 |
-| Dockerfile      |   1 |    22 |
-| CSS             |   1 |     5 |
-| Итого           | 241 | 38547 |
+|  Язык (формат)  | Количество файлов | Количество строк |
+|       :-:       |       :-:         |        :-:       |
+| TypeScript      |       143         |       19095      |
+| JSON            |        12         |       12397      |
+| Vuejs Component |        56         |        6656      |
+| Text            |        13         |         195      |
+| JavaScript      |         4         |          66      |
+| Markdown        |         2         |          68      |
+| YAML            |         2         |          28      |
+| Dockerfile      |         1         |          22      |
+| HTML            |         1         |          15      |
+| CSS             |         1         |           5      |
+| Итого           |       241         |       38547      |
 
-Не все  По результатам анализа сформировано:
+Не все проанализированные файлы содержат исходный код. Кроме того, не все файлы исходного кода заействованы в реализации каких-либо функциональных требований. Анализ показал, что часть файлов содержат отладочные процедуры, являются конфигурационными или в них описаны сценарии сборки проекта. По результатам анализа сформировано:
 
-1. список функциональных требований, которое реализует программно-инструментальное средство 
-(https://github.com/AlexeyShabliy/codebase-overview/blob/main/requirements.csv);
-2. список файлов исходного кода, которые реализуют выявленные функциональные требования 
-(https://github.com/AlexeyShabliy/codebase-overview/blob/main/files.csv);
-3. трассируемость функциональных требований на файлы исходного кода 
-(https://github.com/AlexeyShabliy/codebase-overview/blob/main/tracer.json);
-4. зависимости между файлами исходного кода 
-(https://github.com/AlexeyShabliy/codebase-overview/blob/main/dependencies.json);
-5. перечень комплектаций с указанием состава реализуемых в них требований 
-(https://github.com/AlexeyShabliy/codebase-overview/blob/main/complectations.json).
-
-
+1. список функциональных требований, которое реализует программно-инструментальное средство: https://github.com/AlexeyShabliy/codebase-overview/blob/main/requirements.csv;
+2. список файлов исходного кода, которые реализуют выявленные функциональные требования: https://github.com/AlexeyShabliy/codebase-overview/blob/main/files.csv;
+3. трассируемость функциональных требований на файлы исходного кода: https://github.com/AlexeyShabliy/codebase-overview/blob/main/tracer.json;
+4. зависимости между файлами исходного кода: https://github.com/AlexeyShabliy/codebase-overview/blob/main/dependencies.json;
+5. перечень комплектаций с указанием состава реализуемых в них требований: https://github.com/AlexeyShabliy/codebase-overview/blob/main/complectations.json.
 
 ## Методы
 
