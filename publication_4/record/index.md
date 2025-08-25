@@ -341,7 +341,6 @@ Reinforcement Lerning (RL) - обучение с подкреплением, я�
 15. F. Neubauer, "Data model creation with MetaConfigurator", Institute for Visualization and Interactive Systems, University of Stuttgart Universitätsstraße 38 D–70569 Stuttgart. https://doi.org/10.18419/opus-15126. pp. 1-83. Masterarbeit
 16. F. Neubauer, B. Uekermann, J. Pleiss, "Data Model Creation with MetaConfigurator", Zenodo. 2025. https://doi.org/10.5281/zenodo.14981537
 17. P. Ladosz, L. Weng, M. Kim, H. Oh, "Exploration in deep reinforcement learning: A survey", Information Fusion, Volume 85, September 2022, pp. 1-22, https://doi.org/10.1016/j.inffus.2022.03.003
-18. D. Abel, A. Barreto, B. Van Roy, D. Precup, H. Van Hasselt, "A definition of continual reinforcement learning", NIPS '23: Proceedings of the 37th International Conference on Neural Information Processing Systems
-Article No.: 2192, pp. 50377 - 50407
+18. D. Abel, A. Barreto, B. Van Roy, D. Precup, H. Van Hasselt, "A definition of continual reinforcement learning", NIPS '23: Proceedings of the 37th International Conference on Neural Information Processing Systems Article No.: 2192, pp. 50377 - 50407
 19. Y. Song, L. Wei, Q. Yang, J. Wu, L. Xing, Y. Chen, "RL-GA: A Reinforcement Learning-based Genetic Algorithm for Electromagnetic Detection Satellite Scheduling Problem", Swarm and Evolutionary Computation, Volume 77, March 2023, 101236, pp. 1-29, https://doi.org/10.1016/j.swevo.2023.101236
 20. S. Huang, A. Kanervisto, A. Raffin, W. Wang, S. Ontañón, R. Fernand Julien Dossa, "A2C is a special case of PPO", arXiv:2205.09123, https://doi.org/10.48550/arXiv.2205.09123
